@@ -3,18 +3,32 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Team Lider · אימוני כושר קבוצתיים בראש העין — ילדים, אבות ואמהות</title>
-  <meta name="description" content="קהילת כושר קטנה בראש העין. אימונים קבוצתiים בפארק לילדים (בנים 6–15), לאבות ולאמהות. קבוצות קטנות, מאמן שמכיר כל אחד בשמו. אימון ניסיון ב-30₪." />
+  <title>אימוני כושר לילדים בראש העין | Team Lider — ילדים, אבות ואמהות</title>
+  <meta name="description" content="אימוני כושר לילדים בראש העין (בנים 6–15), ולקבוצות אבות ואמהות — בפארק, בקבוצות קטנות של 8–12, עם מאמן שמכיר כל אחד בשמו. מעל 500 ילדים כבר התאמנו איתנו. אימון ניסיון ב-30₪." />
+
+  <link rel="canonical" href="https://teamlider.co.il/" />
 
   <!-- Open Graph -->
-  <meta property="og:title" content="Team Lider · כושר שבונה ביטחון, כוח וחברים" />
-  <meta property="og:description" content="אימוני כושר קבוצתיים בפארק בראש העין — לילדים, לאבות ולאמהות. אימון ניסיון ב-30₪." />
+  <meta property="og:title" content="אימוני כושר לילדים בראש העין — Team Lider" />
+  <meta property="og:description" content="אימוני כושר קבוצתיים בפארק בראש העין — לילדים, לאבות ולאמהות. קבוצות קטנות, מאמן שמכיר כל אחד בשמו. אימון ניסיון ב-30₪." />
   <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://teamlider.co.il/" />
+  <meta property="og:site_name" content="Team Lider" />
+  <meta property="og:locale" content="he_IL" />
+  <meta property="og:image" content="https://teamlider.co.il/assets/og-cover.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="קבוצת Team Lider מתאמנת בפארק בראש העין" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="אימוני כושר לילדים בראש העין — Team Lider" />
+  <meta name="twitter:description" content="אימונים קבוצתיים בפארק לילדים, אבות ואמהות. אימון ניסיון ב-30₪." />
+  <meta name="twitter:image" content="https://teamlider.co.il/assets/og-cover.jpg" />
+  <meta name="theme-color" content="#0A1929" />
 
   <link rel="icon" type="image/png" href="assets/logo-square.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700;800;900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700;800;900&display=swap" rel="stylesheet" />
 
   <style>
     :root {
@@ -331,6 +345,21 @@
     .reveal { opacity: 0; transform: translateY(24px); transition: opacity .6s ease, transform .6s ease; }
     .reveal.in { opacity: 1; transform: none; }
 
+    /* Honeypot (spam trap) — hidden from users, visible to bots */
+    .hp-field { position: absolute; left: -9999px; top: auto; width: 1px; height: 1px; overflow: hidden; opacity: 0; pointer-events: none; }
+
+    /* Keyboard focus ring */
+    a:focus-visible, button:focus-visible, input:focus-visible {
+      outline: 2px solid var(--cyan-bright); outline-offset: 3px;
+    }
+
+    /* Respect reduced-motion preference */
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .reveal { opacity: 1; transform: none; transition: none; }
+      *, *::before, *::after { animation-duration: .001ms !important; transition-duration: .001ms !important; }
+    }
+
     /* ---------- Responsive ---------- */
     @media (max-width: 940px) {
       .hero-grid { grid-template-columns: 1fr; gap: 40px; }
@@ -359,6 +388,57 @@
       .float-badge { display: none; }
     }
   </style>
+
+  <!-- Structured data: business entity (address/hours/socials enriched on confirmation) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SportsActivityLocation",
+    "@id": "https://teamlider.co.il/#business",
+    "name": "Team Lider",
+    "alternateName": "טים לידר",
+    "slogan": "ילדים חזקים, הורים גאים",
+    "description": "אימוני כושר קבוצתיים בפארק בראש העין: קבוצות ילדים (בנים 6–15) בשלוש קבוצות גיל, קבוצת אבות וקבוצת אמהות. קבוצות קטנות של 8–12 מתאמנים, באוויר הפתוח, עם ציוד מקצועי. מעל 500 ילדים התאמנו בקהילה. אימון ניסיון ב-30₪.",
+    "url": "https://teamlider.co.il/",
+    "telephone": "+972549747713",
+    "image": "https://teamlider.co.il/assets/og-cover.jpg",
+    "logo": "https://teamlider.co.il/assets/logo-square.png",
+    "priceRange": "₪30–₪370",
+    "currenciesAccepted": "ILS",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "ראש העין",
+      "addressCountry": "IL"
+    },
+    "areaServed": { "@type": "City", "name": "ראש העין" },
+    "founder": { "@type": "Person", "name": "רועי לידרמן" },
+    "employee": { "@type": "Person", "name": "תמיר סיטון", "jobTitle": "מאמן ראשי" },
+    "makesOffer": [
+      { "@type": "Offer", "name": "אימון ניסיון", "price": "30", "priceCurrency": "ILS" },
+      { "@type": "Offer", "name": "מנוי ילדים — פעם בשבוע", "price": "250", "priceCurrency": "ILS" },
+      { "@type": "Offer", "name": "מנוי ילדים — פעמיים בשבוע", "price": "370", "priceCurrency": "ILS" },
+      { "@type": "Offer", "name": "קבוצת אבות / אמהות — מחיר השקה חודשי", "price": "190", "priceCurrency": "ILS" }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      { "@type": "Question", "name": "באיזה גיל אפשר להתחיל?", "acceptedAnswer": { "@type": "Answer", "text": "קבוצות הילדים מתחילות מגיל 6 ועד 15, בשלוש קבוצות גיל נפרדות. יש גם קבוצות מבוגרים לאבות ולאמהות מגיל 18." } },
+      { "@type": "Question", "name": "מה אם הילד שלי לא ספורטיבי?", "acceptedAnswer": { "@type": "Answer", "text": "בדיוק בשבילו זה נבנה. אנחנו לא מחפשים אלופים — אנחנו בונים ביטחון בקצב אישי. רוב הילדים מגיעים בלי רקע, ותוך שבועות מגלים כמה הם מסוגלים." } },
+      { "@type": "Question", "name": "איפה בדיוק מתאמנים?", "acceptedAnswer": { "@type": "Answer", "text": "בפארק בראש העין, קרוב לבית. באימונים באוויר הפתוח, ובימי גשם עוברים למתחם מקורה. את המיקום המדויק תקבלו כשנתאם אימון ניסיון." } },
+      { "@type": "Question", "name": "מה צריך להביא לאימון?", "acceptedAnswer": { "@type": "Answer", "text": "בגדי ספורט נוחים, נעלי ספורט ובקבוק מים. את כל הציוד — משקולות, גומיות, TRX — אנחנו מביאים." } },
+      { "@type": "Question", "name": "יש התחייבות לתקופה ארוכה?", "acceptedAnswer": { "@type": "Answer", "text": "לא. מתחילים באימון ניסיון ב-30₪ בלי התחייבות, וממשיכים במנוי חודשי גמיש. נשארים כי כיף — לא כי חייבים." } },
+      { "@type": "Question", "name": "איך נרשמים?", "acceptedAnswer": { "@type": "Answer", "text": "שולחים הודעת וואטסאפ למספר 054-974-7713 ואנחנו חוזרים אליכם עם כל הפרטים ותיאום אימון ניסיון." } },
+      { "@type": "Question", "name": "אימוני כוח לילדים — זה בטוח?", "acceptedAnswer": { "@type": "Answer", "text": "כן, כשהם מודרכים נכון. האימונים מותאמים לגיל ולגוף של כל ילד — בלי משקלים כבדים ובלי עומס לא מתאים. הדגש על טכניקה נכונה, שליטה בגוף וחיזוק הדרגתי, תחת עינו של מאמן מוסמך. זו אחת הדרכים הבטוחות לבנות אצל ילדים כוח, יציבה וביטחון." } },
+      { "@type": "Question", "name": "מה ההבדל בין זה לחוג כדורגל?", "acceptedAnswer": { "@type": "Answer", "text": "בכדורגל הילד לומד משחק ספציפי; אצלנו הוא בונה את הבסיס הגופני שמשרת אותו בכל ספורט — כוח, זריזות, קואורדינציה וסיבולת — לצד ביטחון עצמי ומשמעת. הרבה ילדים מתאמנים אצלנו במקביל לחוג כדורגל." } },
+      { "@type": "Question", "name": "מה קורה בחורף או בימי גשם?", "acceptedAnswer": { "@type": "Answer", "text": "רוב השנה מתאמנים בפארק באוויר הפתוח. בימי גשם עוברים למתחם מקורה, כך שהאימון מתקיים כרגיל ולא מבוטל בגלל מזג האוויר." } },
+      { "@type": "Question", "name": "הילד שלי במשקל עודף — זה מתאים לו?", "acceptedAnswer": { "@type": "Answer", "text": "בהחלט. לא מודדים אף אחד מול אחרים — כל ילד מתקדם בקצב שלו, באווירה תומכת ובלי בושה. הרבה הורים מספרים על שינוי בריא במשקל ובביטחון העצמי אחרי כמה חודשים." } }
+    ]
+  }
+  </script>
 </head>
 <body>
 
@@ -403,8 +483,9 @@
           <a href="#tracks" class="btn btn-ghost">מצאו את הקבוצה שלכם</a>
         </div>
         <form class="lead-form" onsubmit="return submitLead(this)">
-          <input name="name" type="text" required placeholder="שם מלא" autocomplete="name" />
-          <input name="phone" type="tel" required placeholder="טלפון" autocomplete="tel" inputmode="tel" />
+          <input name="name" type="text" required placeholder="שם מלא" autocomplete="name" aria-label="שם מלא" />
+          <input name="phone" type="tel" required placeholder="טלפון" autocomplete="tel" inputmode="tel" aria-label="מספר טלפון" />
+          <input type="text" name="company" class="hp-field" tabindex="-1" autocomplete="off" aria-hidden="true" />
           <button type="submit" class="btn btn-primary lead-btn">שריינו לי מקום</button>
         </form>
         <div class="lead-msg" aria-live="polite"></div>
@@ -416,7 +497,12 @@
 
       <div class="hero-visual">
         <div class="hero-card">
-          <img src="assets/hero-group.jpg" alt="קבוצת טים לידר עם המאמן מתאמנת בפארק בראש העין" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover" />
+          <img src="assets/hero-group-960.webp"
+               srcset="assets/hero-group-480.webp 480w, assets/hero-group-600.webp 600w, assets/hero-group-960.webp 960w"
+               sizes="(max-width: 940px) 90vw, 470px"
+               alt="קבוצת טים לידר עם המאמן מתאמנת בפארק בראש העין"
+               fetchpriority="high" decoding="async"
+               style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover" />
           <div style="position:absolute;inset:0;background:linear-gradient(180deg,transparent 52%,rgba(4,12,20,.78))"></div>
           <div style="position:absolute;bottom:18px;inset-inline:18px;font-weight:800;font-size:18px;text-align:center">אנרגיה. חבר'ה. תוצאות.</div>
         </div>
@@ -579,7 +665,11 @@
         </div>
       </div>
       <div class="how-photo reveal">
-        <img src="assets/training-1.jpg" alt="נערים מתאמנים על הדשא בפארק בראש העין" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border-radius:24px" />
+        <img src="assets/training-1-800.webp"
+             srcset="assets/training-1-480.webp 480w, assets/training-1-800.webp 800w"
+             sizes="(max-width: 940px) 90vw, 540px"
+             alt="נערים מתאמנים על הדשא בפארק בראש העין" loading="lazy" decoding="async"
+             style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border-radius:24px" />
         <div style="position:absolute;inset:0;border-radius:24px;background:linear-gradient(180deg,transparent 58%,rgba(4,12,20,.72))"></div>
         <div style="position:absolute;bottom:18px;inset-inline:18px;font-weight:800;font-size:17px;text-align:center">ציוד מקצועי · הכל נייד · הכל בפארק</div>
       </div>
@@ -667,10 +757,21 @@
         <p class="section-sub">לא בימוי ולא סטודיו — רגעים אמיתיים מהאימונים בפארק בראש העין.</p>
       </div>
       <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px;margin-top:44px">
-        <img src="assets/training-1.jpg" alt="נערים מתאמנים על הדשא בפארק" loading="lazy" style="width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:16px;border:1px solid var(--line)" />
-        <img src="assets/hero-group.jpg" alt="קבוצת טים לידר עם המאמן בפארק" loading="lazy" style="width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:16px;border:1px solid var(--line)" />
-        <img src="assets/training-2.jpg" alt="מתאמנים במגרש בשעת בין הערביים" loading="lazy" style="width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:16px;border:1px solid var(--line)" />
-        <img src="assets/training-3.jpg" alt="אימון קבוצתי בפארק" loading="lazy" style="width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:16px;border:1px solid var(--line)" />
+        <img src="assets/training-1-480.webp" alt="נערים מתאמנים על הדשא בפארק" loading="lazy" decoding="async" style="width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:16px;border:1px solid var(--line)" />
+        <img src="assets/hero-group-480.webp" alt="קבוצת טים לידר עם המאמן בפארק" loading="lazy" decoding="async" style="width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:16px;border:1px solid var(--line)" />
+        <img src="assets/training-2-600.webp" alt="מתאמנים במגרש בשעת בין הערביים" loading="lazy" decoding="async" style="width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:16px;border:1px solid var(--line)" />
+        <img src="assets/training-3-600.webp" alt="אימון קבוצתי בפארק" loading="lazy" decoding="async" style="width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:16px;border:1px solid var(--line)" />
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== GEO ANCHOR ===================== -->
+  <section class="section-pad" style="padding-top:0">
+    <div class="wrap">
+      <div class="center reveal" style="max-width:780px;margin-inline:auto">
+        <span class="eyebrow">בקצרה</span>
+        <h2 class="section-title">אימוני כושר לילדים בראש העין — בקצרה</h2>
+        <p class="section-sub" style="margin-inline:auto">Team Lider (טים לידר) מפעילה אימוני כושר קבוצתיים לילדים בגילאי 6–15 בפארק בראש העין, בשלוש קבוצות גיל, לצד קבוצת אבות וקבוצת אמהות. הקבוצות קטנות — 8 עד 12 מתאמנים — בהובלת מאמן מוסמך, באוויר הפתוח. מעל 500 ילדים כבר התאמנו בקהילה, עם עשרות ביקורות חמישה כוכבים של הורים בגוגל. אימון ניסיון עולה 30₪.</p>
       </div>
     </div>
   </section>
@@ -689,6 +790,10 @@
         <div class="qa"><button>מה צריך להביא לאימון?<span class="plus"></span></button><div class="ans"><p>בגדי ספורט נוחים, נעלי ספורט ובקבוק מים. את כל הציוד — משקולות, גומיות, TRX — אנחנו מביאים.</p></div></div>
         <div class="qa"><button>יש התחייבות לתקופה ארוכה?<span class="plus"></span></button><div class="ans"><p>לא. מתחילים באימון ניסיון ב-30₪ בלי התחייבות, וממשיכים במנוי חודשי גמיש. נשארים כי כיף — לא כי חייבים.</p></div></div>
         <div class="qa"><button>איך נרשמים?<span class="plus"></span></button><div class="ans"><p>הכי פשוט — שולחים לנו הודעת וואטסאפ למספר 054-974-7713, ואנחנו חוזרים אליכם עם כל הפרטים ותיאום אימון ניסיון.</p></div></div>
+        <div class="qa"><button>אימוני כוח לילדים — זה בטוח?<span class="plus"></span></button><div class="ans"><p>כן, כשהם מודרכים נכון. האימונים מותאמים לגיל ולגוף של כל ילד — בלי משקלים כבדים ובלי עומס לא מתאים. הדגש הוא על טכניקה נכונה, שליטה בגוף וחיזוק הדרגתי, תחת עינו של מאמן מוסמך. זו אחת הדרכים הבטוחות לבנות אצל ילדים כוח, יציבה וביטחון.</p></div></div>
+        <div class="qa"><button>מה ההבדל בין זה לחוג כדורגל?<span class="plus"></span></button><div class="ans"><p>בכדורגל הילד לומד משחק ספציפי; אצלנו הוא בונה את הבסיס הגופני שמשרת אותו בכל ספורט — כוח, זריזות, קואורדינציה וסיבולת — לצד ביטחון עצמי ומשמעת. הרבה ילדים מתאמנים אצלנו במקביל לחוג כדורגל ומרגישים את ההבדל גם על המגרש.</p></div></div>
+        <div class="qa"><button>מה קורה בחורף או בימי גשם?<span class="plus"></span></button><div class="ans"><p>רוב השנה מתאמנים בפארק באוויר הפתוח. בימי גשם עוברים למתחם מקורה, כך שהאימון מתקיים כרגיל ולא מבוטל בגלל מזג האוויר.</p></div></div>
+        <div class="qa"><button>הילד שלי במשקל עודף — זה מתאים לו?<span class="plus"></span></button><div class="ans"><p>בהחלט. לא מודדים אף אחד מול אחרים — כל ילד מתקדם בקצב שלו, באווירה תומכת ובלי בושה. הרבה הורים מספרים דווקא על שינוי בריא במשקל ובביטחון העצמי אחרי כמה חודשים.</p></div></div>
       </div>
     </div>
   </section>
@@ -700,8 +805,9 @@
         <h2>מוכנים להתחיל?</h2>
         <p>השאירו שם וטלפון ונחזור אליכם עוד היום לתאם אימון ניסיון ב-30₪, בלי התחייבות.</p>
         <form class="lead-form" style="margin-inline:auto;justify-content:center" onsubmit="return submitLead(this)">
-          <input name="name" type="text" required placeholder="שם מלא" autocomplete="name" />
-          <input name="phone" type="tel" required placeholder="טלפון" autocomplete="tel" inputmode="tel" />
+          <input name="name" type="text" required placeholder="שם מלא" autocomplete="name" aria-label="שם מלא" />
+          <input name="phone" type="tel" required placeholder="טלפון" autocomplete="tel" inputmode="tel" aria-label="מספר טלפון" />
+          <input type="text" name="company" class="hp-field" tabindex="-1" autocomplete="off" aria-hidden="true" />
           <button type="submit" class="btn btn-primary lead-btn">שריינו לי מקום</button>
         </form>
         <div class="lead-msg" aria-live="polite"></div>
@@ -745,8 +851,8 @@
         </div>
       </div>
       <div class="foot-bottom">
-        <div>© Team Lider · כל הזכויות שמורות</div>
-        <div>אימוני כושר קבוצתיים · ראש העין</div>
+        <div>© Team Lider · כל הזכויות שמורות · אימוני כושר קבוצתיים בראש העין</div>
+        <div><a href="accessibility.html">הצהרת נגישות</a> · <a href="privacy.html">מדיניות פרטיות</a> · המחירים והלו״ז נכונים ליולי 2026</div>
       </div>
     </div>
   </footer>
@@ -765,12 +871,15 @@
 
     // FAQ accordion
     document.querySelectorAll('.qa button').forEach(btn => {
+      btn.setAttribute('aria-expanded', 'false');
+      const ans0 = btn.parentElement.querySelector('.ans');
+      if (ans0) ans0.setAttribute('role', 'region');
       btn.addEventListener('click', () => {
         const qa = btn.parentElement;
         const ans = qa.querySelector('.ans');
         const open = qa.classList.contains('open');
-        document.querySelectorAll('.qa').forEach(o => { o.classList.remove('open'); o.querySelector('.ans').style.maxHeight = null; });
-        if (!open) { qa.classList.add('open'); ans.style.maxHeight = ans.scrollHeight + 'px'; }
+        document.querySelectorAll('.qa').forEach(o => { o.classList.remove('open'); o.querySelector('.ans').style.maxHeight = null; o.querySelector('button').setAttribute('aria-expanded', 'false'); });
+        if (!open) { qa.classList.add('open'); ans.style.maxHeight = ans.scrollHeight + 'px'; btn.setAttribute('aria-expanded', 'true'); }
       });
     });
 
@@ -785,6 +894,8 @@
     function submitLead(form) {
       var box = form.closest('.hero-copy, .final-card, section') || document;
       var msg = box.querySelector('.lead-msg');
+      // Honeypot — bots fill the hidden field; drop silently
+      if (form.company && form.company.value) return false;
       var name = (form.name.value || '').trim();
       var phone = (form.phone.value || '').trim();
       if (!name || phone.replace(/\D/g, '').length < 9) {
@@ -793,12 +904,30 @@
       }
       form.classList.add('sending');
       if (msg) { msg.textContent = 'שולח…'; msg.className = 'lead-msg'; }
-      fetch(LEAD_ENDPOINT, { method: 'POST', mode: 'no-cors', body: new URLSearchParams({ name: name, phone: phone }) })
-        .then(function () { if (msg) { msg.textContent = 'קיבלנו! נחזור אליך עוד היום 💙'; msg.className = 'lead-msg ok'; } form.reset(); })
+      var qs = new URLSearchParams(location.search);
+      var payload = new URLSearchParams({
+        name: name, phone: phone,
+        utm_source: qs.get('utm_source') || '', utm_medium: qs.get('utm_medium') || '',
+        utm_campaign: qs.get('utm_campaign') || '', utm_content: qs.get('utm_content') || '',
+        referrer: document.referrer || '', page: location.href
+      });
+      fetch(LEAD_ENDPOINT, { method: 'POST', mode: 'no-cors', body: payload })
+        .then(function () {
+          if (msg) { msg.textContent = 'קיבלנו! נחזור אליך עוד היום 💙'; msg.className = 'lead-msg ok'; }
+          if (window.gtag) gtag('event', 'generate_lead', { method: 'form' });
+          form.reset();
+        })
         .catch(function () { if (msg) { msg.textContent = 'קרתה תקלה — נסו שוב או שלחו לנו וואטסאפ'; msg.className = 'lead-msg err'; } })
         .finally(function () { form.classList.remove('sending'); });
       return false;
     }
+
+    // WhatsApp click tracking (no-op until GA4 is added)
+    document.querySelectorAll('a[href^="https://wa.me"]').forEach(function (a) {
+      a.addEventListener('click', function () {
+        if (window.gtag) gtag('event', 'whatsapp_click', { location: (a.closest('section, header, footer') || {}).id || 'float' });
+      });
+    });
   </script>
 </body>
 </html>
