@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script>if (location.protocol === 'http:' && location.hostname.indexOf('teamlider.co.il') !== -1) location.replace('https://teamlider.co.il' + location.pathname + location.search + location.hash);</script>
+  <title>תודה — נחזור אליכם עוד היום | Team Lider</title>
+  <meta name="robots" content="noindex, follow" />
+  <meta name="theme-color" content="#0A1929" />
+
+  <!-- Google Analytics 4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-67KSD0RPP4"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-67KSD0RPP4');
+  </script>
+
+  <link rel="icon" type="image/png" href="assets/logo-square.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700;800;900&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --deep: #0A1929; --deep-2: #0d2135; --mid: #143D52;
+      --cyan: #29B5E8; --cyan-bright: #5CCBF0; --white: #FFFFFF;
+      --muted: rgba(255,255,255,0.72); --muted-2: rgba(255,255,255,0.55);
+      --line: rgba(255,255,255,0.10); --card: rgba(255,255,255,0.045);
+      --wa: #25D366; --radius: 20px; --shadow: 0 20px 50px -20px rgba(0,0,0,0.6); --maxw: 720px;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Heebo', system-ui, -apple-system, 'Segoe UI', sans-serif;
+      background: var(--deep); color: var(--white); line-height: 1.6;
+      overflow-x: hidden; -webkit-font-smoothing: antialiased;
+      min-height: 100vh;
+      background-image:
+        radial-gradient(900px 480px at 80% -10%, rgba(41,181,232,0.18), transparent 60%),
+        radial-gradient(700px 420px at 5% 4%, rgba(20,61,82,0.5), transparent 62%);
+    }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+    .wrap { width: 100%; max-width: var(--maxw); margin: 0 auto; padding: 0 22px; }
+
+    header { border-bottom: 1px solid var(--line); }
+    .nav { display: flex; align-items: center; justify-content: center; height: 66px; }
+    .brand { display: flex; align-items: center; gap: 11px; font-weight: 900; font-size: 19px; letter-spacing: .5px; }
+    .brand img { width: 36px; height: 36px; border-radius: 9px; }
+
+    main { padding: clamp(34px, 6vw, 60px) 0 90px; }
+
+    /* Confirmation */
+    .confirm { text-align: center; margin-bottom: 40px; }
+    .check-wrap {
+      width: 84px; height: 84px; margin: 0 auto 22px; border-radius: 50%;
+      display: grid; place-items: center;
+      background: radial-gradient(circle at 50% 35%, rgba(87,227,154,.28), rgba(41,181,232,.10));
+      border: 1px solid rgba(87,227,154,.4);
+      animation: pop .5s cubic-bezier(.2,.9,.3,1.3) both;
+    }
+    @keyframes pop { 0% { transform: scale(.6); opacity: 0; } 100% { transform: scale(1); opacity: 1; } }
+    .confirm h1 { font-size: clamp(27px, 5vw, 40px); font-weight: 900; letter-spacing: -.5px; line-height: 1.18; margin-bottom: 14px; }
+    .confirm p { color: var(--muted); font-size: clamp(16px, 2.2vw, 19px); max-width: 540px; margin: 0 auto; }
+
+    .card {
+      background: var(--card); border: 1px solid var(--line); border-radius: var(--radius);
+      padding: 24px 24px; margin-bottom: 18px;
+    }
+    .card-title { font-size: 13px; font-weight: 800; letter-spacing: .5px; text-transform: uppercase; color: var(--cyan-bright); margin-bottom: 16px; }
+
+    /* Steps */
+    .steps { list-style: none; display: flex; flex-direction: column; gap: 14px; }
+    .steps li { display: flex; gap: 14px; align-items: flex-start; }
+    .steps .n {
+      flex: none; width: 34px; height: 34px; border-radius: 10px; font-weight: 900; font-size: 15px;
+      display: grid; place-items: center; color: var(--cyan-bright);
+      background: rgba(41,181,232,.10); border: 1px solid rgba(41,181,232,.28);
+    }
+    .steps .n.done { color: #57E39A; border-color: rgba(87,227,154,.4); background: rgba(87,227,154,.10); }
+    .steps .txt { padding-top: 5px; font-size: 16px; color: rgba(255,255,255,.9); }
+    .steps .txt small { display: block; color: var(--muted-2); font-size: 13.5px; font-weight: 500; margin-top: 2px; }
+
+    /* Video */
+    .video-sec { margin: 28px 0 18px; }
+    .video-sec h2 { text-align: center; font-size: clamp(21px, 3.4vw, 28px); font-weight: 900; letter-spacing: -.4px; margin-bottom: 6px; }
+    .video-sec .vsub { text-align: center; color: var(--muted); font-size: 15.5px; margin-bottom: 20px; }
+    .video-shell {
+      position: relative; border-radius: 22px; overflow: hidden; border: 1px solid var(--line);
+      box-shadow: var(--shadow); background: #000;
+    }
+    .video-shell video { width: 100%; height: auto; display: block; }
+    /* Placeholder (swapped for <video> when the file arrives) */
+    .video-ph {
+      position: relative; aspect-ratio: 16 / 9; width: 100%;
+      display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px;
+      text-align: center; padding: 26px;
+      background:
+        radial-gradient(120% 100% at 50% 0%, rgba(41,181,232,0.26), transparent 60%),
+        linear-gradient(160deg, var(--mid), var(--deep));
+    }
+    .video-ph .play {
+      width: 66px; height: 66px; border-radius: 50%; display: grid; place-items: center;
+      background: rgba(255,255,255,.14); border: 1px solid rgba(255,255,255,.25); backdrop-filter: blur(4px);
+    }
+    .video-ph .play svg { margin-inline-start: 3px; }
+    .video-ph .cap { font-size: 15.5px; font-weight: 700; color: rgba(255,255,255,.92); }
+    .video-ph .cap small { display: block; font-weight: 500; color: var(--muted-2); font-size: 13px; margin-top: 4px; }
+
+    /* WhatsApp band */
+    .wa-band {
+      text-align: center; border-radius: var(--radius); padding: 26px 24px; margin: 20px 0;
+      background: radial-gradient(500px 240px at 50% 0%, rgba(37,211,102,.16), transparent 62%), var(--card);
+      border: 1px solid rgba(37,211,102,.28);
+    }
+    .wa-band h3 { font-size: 20px; font-weight: 900; margin-bottom: 6px; }
+    .wa-band p { color: var(--muted); font-size: 15px; max-width: 440px; margin: 0 auto 18px; }
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+      font-family: inherit; font-weight: 800; font-size: 17px; cursor: pointer;
+      padding: 15px 30px; border-radius: 100px; border: none; transition: transform .18s ease, box-shadow .18s ease;
+      white-space: nowrap;
+    }
+    .btn-wa { background: var(--wa); color: #fff; box-shadow: 0 10px 30px -8px rgba(37,211,102,.5); }
+    .btn-wa:hover { transform: translateY(-2px); box-shadow: 0 16px 40px -10px rgba(37,211,102,.7); }
+    .btn-ghost { background: transparent; color: var(--white); border: 1.5px solid var(--line); }
+    .btn-ghost:hover { border-color: var(--cyan); background: rgba(41,181,232,.08); }
+
+    /* Trust */
+    .trust { text-align: center; margin: 26px 0 8px; }
+    .g-badge {
+      display: inline-flex; align-items: center; gap: 9px; font-size: 15px; font-weight: 700;
+      color: var(--white); background: rgba(255,255,255,.05); border: 1px solid var(--line);
+      padding: 9px 16px; border-radius: 100px; margin-bottom: 20px;
+    }
+    .g-badge .stars { color: #FFCC4D; letter-spacing: 1px; }
+    .g-badge b { color: var(--cyan-bright); }
+    .quotes { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .quote { background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 18px 20px; text-align: start; }
+    .quote .stars { color: var(--cyan-bright); font-size: 14px; letter-spacing: 2px; margin-bottom: 8px; }
+    .quote p { font-size: 14.5px; color: rgba(255,255,255,.9); line-height: 1.6; margin-bottom: 10px; }
+    .quote .by { font-size: 13px; color: var(--muted-2); }
+    .quote .by b { color: var(--white); font-weight: 700; }
+    .trust .sum { color: var(--muted); font-size: 15px; margin-top: 16px; }
+
+    footer { border-top: 1px solid var(--line); padding: 26px 0; text-align: center; color: var(--muted-2); font-size: 13px; margin-top: 10px; }
+    footer a:hover { color: var(--cyan-bright); }
+
+    .wa-float {
+      position: fixed; bottom: 22px; inset-inline-start: 22px; z-index: 90;
+      width: 58px; height: 58px; border-radius: 50%; background: var(--wa);
+      display: grid; place-items: center; box-shadow: 0 12px 30px -6px rgba(37,211,102,.6); transition: transform .2s;
+    }
+    .wa-float:hover { transform: scale(1.08); }
+
+    a:focus-visible, button:focus-visible { outline: 2px solid var(--cyan-bright); outline-offset: 3px; }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .check-wrap { animation: none; } .btn { transition: none; } }
+    @media (max-width: 520px) { .quotes { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="wrap nav">
+      <a href="/" class="brand" aria-label="Team Lider — לדף הבית">
+        <img src="assets/logo-square.png" alt="Team Lider" />
+        <span style="font-weight:900">TEAM<b style="color:var(--cyan-bright)"> LIDER</b></span>
+      </a>
+    </div>
+  </header>
+
+  <main>
+    <div class="wrap">
+
+      <!-- 1. Personal confirmation -->
+      <section class="confirm">
+        <div class="check-wrap">
+          <svg width="40" height="40" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="#57E39A" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <h1 id="conf-title">מעולה! קיבלנו את הפרטים 💪</h1>
+        <p id="conf-sub">נחזור אליכם עוד היום לתיאום אימון — בלי התחייבות.</p>
+      </section>
+
+      <!-- 2. What happens now -->
+      <section class="card">
+        <div class="card-title">מה קורה עכשיו</div>
+        <ul class="steps">
+          <li><span class="n done">✓</span><div class="txt">קיבלנו את הפרטים שלכם<small>ממש עכשיו</small></div></li>
+          <li><span class="n">2</span><div class="txt">נחזור אליכם עוד היום לתיאום<small>בוואטסאפ או בשיחת טלפון</small></div></li>
+          <li><span class="n">3</span><div class="txt" id="step3">נפגשים בפארק לאימון</div></li>
+        </ul>
+      </section>
+
+      <!-- 3. Kids testimonials video -->
+      <section class="video-sec">
+        <h2>אל תאמינו לנו — תשמעו את זה מהילדים</h2>
+        <p class="vsub">רגע קטן מהמגרש, במילים שלהם.</p>
+        <div class="video-shell">
+          <!--
+            כשמגיע הקובץ מרועי: מוחקים את כל ה-<div class="video-ph"> למטה,
+            מבטלים את ההערה על ה-<video>, ומעלים ל-assets/ את הקובץ + תמונת ה-poster.
+            אם הסרטון אנכי (9:16) — משנים ב-CSS את .video-ph aspect-ratio ל-9/16 ומגבילים max-height:72vh.
+          <video controls playsinline preload="none" poster="assets/thanks-video-poster.jpg" id="kidsVideo">
+            <source src="assets/kids-testimonials.mp4" type="video/mp4" />
+            הדפדפן לא תומך בניגון וידאו — <a href="https://wa.me/972549747713">דברו איתנו בוואטסאפ</a>.
+          </video>
+          -->
+          <div class="video-ph">
+            <div class="play"><svg width="26" height="26" viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></div>
+            <div class="cap">הסרטון עולה ממש בקרוב 🎬<small>ילדים מספרים על האימונים</small></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 4. WhatsApp fast-track -->
+      <section class="wa-band">
+        <h3>רוצים לסגור כבר עכשיו?</h3>
+        <p>לא בא לכם לחכות? שלחו לנו הודעה ונתאם לכם את האימון הראשון ישר בוואטסאפ.</p>
+        <a class="btn btn-wa wa-cta" href="https://wa.me/972549747713" target="_blank" rel="noopener">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="#fff"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21 5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2zm5.8 14.01c-.24.68-1.42 1.3-1.95 1.35-.5.05-1.13.24-3.67-.77-3.09-1.22-5.06-4.37-5.22-4.57-.15-.2-1.24-1.65-1.24-3.15s.79-2.24 1.07-2.54c.28-.3.61-.38.81-.38.2 0 .4.002.58.01.19.008.44-.07.68.52.24.59.83 2.04.9 2.19.07.15.12.32.02.52-.1.2-.15.32-.3.5-.15.18-.32.4-.45.53-.15.15-.31.32-.13.62.17.3.77 1.27 1.65 2.06 1.14 1.01 2.1 1.33 2.4 1.48.3.15.47.12.64-.07.17-.2.74-.86.94-1.16.2-.3.4-.25.67-.15.27.1 1.72.81 2.01.96.3.15.5.22.57.35.07.12.07.72-.17 1.4z"/></svg>
+          לשלוח וואטסאפ עכשיו
+        </a>
+      </section>
+
+      <!-- 5. Reassurance / decision reinforcement -->
+      <section class="trust">
+        <div class="g-badge">
+          <svg width="18" height="18" viewBox="0 0 24 24"><path fill="#4285F4" d="M22.5 12.2c0-.7-.06-1.4-.18-2.05H12v3.88h5.9a5.05 5.05 0 0 1-2.19 3.31v2.75h3.54c2.07-1.9 3.25-4.72 3.25-8.09z"/><path fill="#34A853" d="M12 23c2.95 0 5.43-.98 7.24-2.65l-3.54-2.75c-.98.66-2.24 1.05-3.7 1.05-2.85 0-5.26-1.92-6.12-4.5H2.22v2.84A11 11 0 0 0 12 23z"/><path fill="#FBBC05" d="M5.88 14.15a6.6 6.6 0 0 1 0-4.3V7.01H2.22a11 11 0 0 0 0 9.98l3.66-2.84z"/><path fill="#EA4335" d="M12 5.35c1.6 0 3.05.55 4.19 1.64l3.14-3.14C17.43 2.1 14.95 1 12 1A11 11 0 0 0 2.22 7.01l3.66 2.84C6.74 7.27 9.15 5.35 12 5.35z"/></svg>
+          <span class="stars">★★★★★</span> <b>4.7</b> · 84 ביקורות בגוגל
+        </div>
+        <div class="quotes">
+          <div class="quote">
+            <div class="stars">★★★★★</div>
+            <p>"הם מחכים בקוצר רוח לאימון, ואפילו התחילו לרדת במשקל באופן בריא. ממליצה בחום!"</p>
+            <div class="by"><b>מורן דיין</b> · ביקורת בגוגל</div>
+          </div>
+          <div class="quote">
+            <div class="stars">★★★★★</div>
+            <p>"עושה תרגילים שבחיים לא עשה, וסוף סוף יוצא ממסגרת המסכים. תודה לצוות המקסים!"</p>
+            <div class="by"><b>מיטל שקיטל</b> · ביקורת בגוגל</div>
+          </div>
+        </div>
+        <p class="sum">יותר מ-500 ילדים כבר התאמנו איתנו בפארק בראש העין. אתם בחברה טובה. 💙</p>
+      </section>
+
+      <!-- 6. First-training tips -->
+      <section class="card">
+        <div class="card-title">לקראת האימון הראשון</div>
+        <ul class="steps">
+          <li><span class="n">👟</span><div class="txt">בגדי ספורט נוחים, נעליים ובקבוק מים<small>את כל שאר הציוד — משקולות, גומיות, TRX — אנחנו מביאים</small></div></li>
+          <li><span class="n">📍</span><div class="txt">מגיעים כמה דקות לפני<small>את המיקום המדויק בפארק תקבלו כשנתאם איתכם</small></div></li>
+        </ul>
+      </section>
+
+    </div>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      © Team Lider · אימוני כושר קבוצתיים בראש העין ·
+      <a href="/">לדף הבית</a> · <a href="accessibility.html">נגישות</a> · <a href="privacy.html">פרטיות</a>
+    </div>
+  </footer>
+
+  <a class="wa-float wa-cta" href="https://wa.me/972549747713" target="_blank" rel="noopener" aria-label="וואטסאפ">
+    <svg width="30" height="30" viewBox="0 0 24 24" fill="#fff"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm5.8 14.01c-.24.68-1.42 1.3-1.95 1.35-.5.05-1.13.24-3.67-.77-3.09-1.22-5.06-4.37-5.22-4.57-.15-.2-1.24-1.65-1.24-3.15s.79-2.24 1.07-2.54c.28-.3.61-.38.81-.38.2 0 .4.002.58.01.19.008.44-.07.68.52.24.59.83 2.04.9 2.19.07.15.12.32.02.52-.1.2-.15.32-.3.5-.15.18-.32.4-.45.53-.15.15-.31.32-.13.62.17.3.77 1.27 1.65 2.06 1.14 1.01 2.1 1.33 2.4 1.48.3.15.47.12.64-.07.17-.2.74-.86.94-1.16.2-.3.4-.25.67-.15.27.1 1.72.81 2.01.96.3.15.5.22.57.35.07.12.07.72-.17 1.4z"/></svg>
+  </a>
+
+  <script>
+    (function () {
+      function getParam(n) { try { return new URLSearchParams(location.search).get(n) || ''; } catch (e) { return ''; } }
+      function ss(k) { try { return sessionStorage.getItem(k) || ''; } catch (e) { return ''; } }
+
+      var grp = getParam('g') || ss('tl_group') || '';
+      var name = ss('tl_name') || '';
+
+      var conf = {
+        'ילד': {
+          title: 'שריינו לכם מקום 💪',
+          sub: 'נחזור אליכם עוד היום — בוואטסאפ או בטלפון — ונתאם את אימון הניסיון הראשון של הילד. 30₪, בלי התחייבות.',
+          step3: 'נפגשים בפארק לאימון ניסיון ב-30₪',
+          wa: 'היי, השארתי עכשיו פרטים באתר לגבי קבוצת הילדים — אשמח לתאם אימון ניסיון 🙂'
+        },
+        'אבא': {
+          title: 'שריינו לך מקום 💪',
+          sub: 'נחזור אליך עוד היום ונתאם לך אימון השקה — חינם, בלי התחייבות.',
+          step3: 'נפגשים בפארק לאימון השקה — חינם',
+          wa: 'היי, השארתי עכשיו פרטים באתר לגבי קבוצת האבות — אשמח לתאם אימון השקה 🙂'
+        },
+        'אמא': {
+          title: 'שריינו לך מקום 💪',
+          sub: 'נחזור אליך עוד היום ונתאם לך אימון השקה — חינם, בלי התחייבות.',
+          step3: 'נפגשים בפארק לאימון השקה — חינם',
+          wa: 'היי, השארתי עכשיו פרטים באתר לגבי קבוצת האמהות — אשמח לתאם אימון השקה 🙂'
+        }
+      };
+      var d = conf[grp] || {
+        title: 'קיבלנו את הפרטים 💪',
+        sub: 'נחזור אליכם עוד היום לתיאום אימון — בלי התחייבות.',
+        step3: 'נפגשים בפארק לאימון',
+        wa: 'היי, השארתי עכשיו פרטים באתר — אשמח לתאם 🙂'
+      };
+
+      var greeting = name ? ('תודה, ' + name + '! ') : 'מעולה! ';
+      var t = document.getElementById('conf-title');
+      var s = document.getElementById('conf-sub');
+      var s3 = document.getElementById('step3');
+      if (t) t.textContent = greeting + d.title;
+      if (s) s.textContent = d.sub;
+      if (s3) s3.textContent = d.step3;
+
+      document.querySelectorAll('a.wa-cta').forEach(function (a) {
+        a.href = 'https://wa.me/972549747713?text=' + encodeURIComponent(d.wa);
+      });
+
+      // Fire the conversion here (moved off the form so navigation can't swallow it).
+      try {
+        if (sessionStorage.getItem('tl_lead') === '1') {
+          if (window.gtag) gtag('event', 'generate_lead', { method: 'form', group: grp });
+          sessionStorage.removeItem('tl_lead');
+        }
+      } catch (e) {}
+
+      // Event tracking
+      document.querySelectorAll('a[href^="https://wa.me"]').forEach(function (a) {
+        a.addEventListener('click', function () { if (window.gtag) gtag('event', 'whatsapp_click', { location: 'thanks' }); });
+      });
+      var v = document.getElementById('kidsVideo');
+      if (v) v.addEventListener('play', function () { if (window.gtag) gtag('event', 'video_play', { location: 'thanks' }); }, { once: true });
+    })();
+  </script>
+</body>
+</html>

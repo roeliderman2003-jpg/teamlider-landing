@@ -21,7 +21,7 @@
   <meta property="og:image:height" content="630" />
   <meta property="og:image:alt" content="קבוצת Team Lider מתאמנת בפארק בראש העין" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="אימוני כושר לילדים בראש העין — Team Lider" />
+  <meta name="twitter:title" content="אימוני כושר בראש העין לכל המשפחה — Team Lider" />
   <meta name="twitter:description" content="אימונים קבוצתיים בפארק לילדים, אבות ואמהות. אימון ניסיון ב-30₪." />
   <meta name="twitter:image" content="https://teamlider.co.il/assets/og-cover.jpg" />
   <meta name="theme-color" content="#0A1929" />
@@ -355,7 +355,7 @@
     .grp { display: flex; gap: 8px; flex: 1 1 100%; }
     .chip {
       flex: 1; font-family: inherit; font-size: 15px; font-weight: 700; cursor: pointer;
-      padding: 10px 6px; border-radius: 100px; border: 1.5px solid var(--line);
+      padding: 12px 6px; min-height: 44px; border-radius: 100px; border: 1.5px solid var(--line);
       background: rgba(255,255,255,.05); color: var(--muted); transition: border-color .15s, background .15s, color .15s;
     }
     .chip:hover { border-color: var(--cyan); color: var(--white); }
@@ -388,6 +388,28 @@
     a:focus-visible, button:focus-visible, input:focus-visible {
       outline: 2px solid var(--cyan-bright); outline-offset: 3px;
     }
+
+    /* Skip to content */
+    .skip-link {
+      position: absolute; inset-inline-start: 12px; top: -60px; z-index: 200;
+      background: var(--cyan-bright); color: #04121d; font-weight: 800; font-size: 15px;
+      padding: 10px 18px; border-radius: 0 0 12px 12px; transition: top .18s ease;
+    }
+    .skip-link:focus { top: 0; outline: none; }
+
+    /* Privacy note under lead forms */
+    .form-privacy { margin-top: 9px; font-size: 12.5px; color: var(--muted-2); line-height: 1.5; }
+    .form-privacy a { color: var(--muted); text-decoration: underline; }
+
+    /* Google rating badge */
+    .g-badge {
+      display: inline-flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 700;
+      color: var(--white); background: rgba(255,255,255,.05); border: 1px solid var(--line);
+      padding: 8px 15px; border-radius: 100px;
+    }
+    .g-badge .stars { color: #FFCC4D; letter-spacing: .5px; }
+    .g-badge b { color: var(--cyan-bright); }
+    .g-badge.hero-g { margin-top: 14px; }
 
     /* Respect reduced-motion preference */
     @media (prefers-reduced-motion: reduce) {
@@ -483,6 +505,8 @@
 </head>
 <body>
 
+  <a href="#main" class="skip-link">דלג לתוכן</a>
+
   <!-- ===================== NAV ===================== -->
   <header>
     <div class="wrap nav">
@@ -508,7 +532,7 @@
   <span id="top"></span>
 
   <!-- ===================== HERO ===================== -->
-  <section class="hero">
+  <section class="hero" id="main" tabindex="-1">
     <div class="wrap hero-grid">
       <div class="hero-copy">
         <span class="eyebrow">🏃 ראש העין · אימונים בפארק</span>
@@ -519,9 +543,9 @@
         </p>
         <form class="lead-form" id="leadform" onsubmit="return submitLead(this)">
           <div class="grp" role="group" aria-label="למי האימון?">
-            <button type="button" class="chip active" data-grp="ילד">לילד</button>
-            <button type="button" class="chip" data-grp="אבא">לאבא</button>
-            <button type="button" class="chip" data-grp="אמא">לאמא</button>
+            <button type="button" class="chip active" data-grp="ילד" aria-pressed="true">לילד</button>
+            <button type="button" class="chip" data-grp="אבא" aria-pressed="false">לאבא</button>
+            <button type="button" class="chip" data-grp="אמא" aria-pressed="false">לאמא</button>
           </div>
           <input type="hidden" name="group" value="ילד" />
           <input name="name" type="text" required placeholder="שם מלא" autocomplete="name" aria-label="שם מלא" />
@@ -534,6 +558,11 @@
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="#5CCBF0" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
           נחזור אליכם עוד היום · בלי התחייבות
         </div>
+        <div class="g-badge hero-g">
+          <svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path fill="#4285F4" d="M22.5 12.2c0-.7-.06-1.4-.18-2.05H12v3.88h5.9a5.05 5.05 0 0 1-2.19 3.31v2.75h3.54c2.07-1.9 3.25-4.72 3.25-8.09z"/><path fill="#34A853" d="M12 23c2.95 0 5.43-.98 7.24-2.65l-3.54-2.75c-.98.66-2.24 1.05-3.7 1.05-2.85 0-5.26-1.92-6.12-4.5H2.22v2.84A11 11 0 0 0 12 23z"/><path fill="#FBBC05" d="M5.88 14.15a6.6 6.6 0 0 1 0-4.3V7.01H2.22a11 11 0 0 0 0 9.98l3.66-2.84z"/><path fill="#EA4335" d="M12 5.35c1.6 0 3.05.55 4.19 1.64l3.14-3.14C17.43 2.1 14.95 1 12 1A11 11 0 0 0 2.22 7.01l3.66 2.84C6.74 7.27 9.15 5.35 12 5.35z"/></svg>
+          <span class="stars">★★★★★</span> <b>4.7</b> · 84 ביקורות בגוגל
+        </div>
+        <div class="form-privacy">הפרטים לתיאום בלבד — בלי ספאם ובלי רשימות תפוצה · <a href="privacy.html">מדיניות פרטיות</a></div>
         <div class="hero-cta" style="margin-top:18px">
           <a href="https://wa.me/972549747713?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A4%D7%A8%D7%98%D7%99%D7%9D%20%D7%A2%D7%9C%20%D7%90%D7%99%D7%9E%D7%95%D7%9F%20%D7%A0%D7%99%D7%A1%D7%99%D7%95%D7%9F" class="btn btn-wa" target="_blank" rel="noopener">
             עדיף בוואטסאפ? דברו איתנו
@@ -761,7 +790,13 @@
       <div class="center reveal">
         <span class="eyebrow">מה הורים מספרים</span>
         <h2 class="section-title">התוצאה האמיתית היא בבית</h2>
-        <p class="section-sub">ביקורות אמיתיות של הורים מדף הגוגל שלנו — חמישה כוכבים.</p>
+        <p class="section-sub">ביקורות אמיתיות של הורים מגוגל — דירוג 4.7 מתוך 84 ביקורות.</p>
+      </div>
+      <div style="text-align:center;margin-top:22px">
+        <span class="g-badge">
+          <svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path fill="#4285F4" d="M22.5 12.2c0-.7-.06-1.4-.18-2.05H12v3.88h5.9a5.05 5.05 0 0 1-2.19 3.31v2.75h3.54c2.07-1.9 3.25-4.72 3.25-8.09z"/><path fill="#34A853" d="M12 23c2.95 0 5.43-.98 7.24-2.65l-3.54-2.75c-.98.66-2.24 1.05-3.7 1.05-2.85 0-5.26-1.92-6.12-4.5H2.22v2.84A11 11 0 0 0 12 23z"/><path fill="#FBBC05" d="M5.88 14.15a6.6 6.6 0 0 1 0-4.3V7.01H2.22a11 11 0 0 0 0 9.98l3.66-2.84z"/><path fill="#EA4335" d="M12 5.35c1.6 0 3.05.55 4.19 1.64l3.14-3.14C17.43 2.1 14.95 1 12 1A11 11 0 0 0 2.22 7.01l3.66 2.84C6.74 7.27 9.15 5.35 12 5.35z"/></svg>
+          <span class="stars">★★★★★</span> <b>4.7</b> · 84 ביקורות בגוגל
+        </span>
       </div>
       <div class="tst-grid">
         <div class="tst reveal">
@@ -859,9 +894,9 @@
         <p>השאירו שם וטלפון ונחזור אליכם עוד היום לתאם אימון ניסיון ב-30₪, בלי התחייבות.</p>
         <form class="lead-form" style="margin-inline:auto;justify-content:center" onsubmit="return submitLead(this)">
           <div class="grp" role="group" aria-label="למי האימון?">
-            <button type="button" class="chip active" data-grp="ילד">לילד</button>
-            <button type="button" class="chip" data-grp="אבא">לאבא</button>
-            <button type="button" class="chip" data-grp="אמא">לאמא</button>
+            <button type="button" class="chip active" data-grp="ילד" aria-pressed="true">לילד</button>
+            <button type="button" class="chip" data-grp="אבא" aria-pressed="false">לאבא</button>
+            <button type="button" class="chip" data-grp="אמא" aria-pressed="false">לאמא</button>
           </div>
           <input type="hidden" name="group" value="ילד" />
           <input name="name" type="text" required placeholder="שם מלא" autocomplete="name" aria-label="שם מלא" />
@@ -870,6 +905,7 @@
           <button type="submit" class="btn btn-primary lead-btn">שריינו לי מקום</button>
         </form>
         <div class="lead-msg" aria-live="polite"></div>
+        <div class="form-privacy" style="text-align:center">הפרטים לתיאום בלבד — בלי ספאם ובלי רשימות תפוצה · <a href="privacy.html">מדיניות פרטיות</a></div>
         <div class="subtle" style="margin-top:20px">או ישירות בוואטסאפ</div>
         <a href="https://wa.me/972549747713?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%AA%D7%90%D7%9D%20%D7%90%D7%99%D7%9E%D7%95%D7%9F%20%D7%A0%D7%99%D7%A1%D7%99%D7%95%D7%9F" class="btn btn-wa" target="_blank" rel="noopener" style="margin-top:12px">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="#fff"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21 5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2zm5.8 14.01c-.24.68-1.42 1.3-1.95 1.35-.5.05-1.13.24-3.67-.77-3.09-1.22-5.06-4.37-5.22-4.57-.15-.2-1.24-1.65-1.24-3.15s.79-2.24 1.07-2.54c.28-.3.61-.38.81-.38.2 0 .4.002.58.01.19.008.44-.07.68.52.24.59.83 2.04.9 2.19.07.15.12.32.02.52-.1.2-.15.32-.3.5-.15.18-.32.4-.45.53-.15.15-.31.32-.13.62.17.3.77 1.27 1.65 2.06 1.14 1.01 2.1 1.33 2.4 1.48.3.15.47.12.64-.07.17-.2.74-.86.94-1.16.2-.3.4-.25.67-.15.27.1 1.72.81 2.01.96.3.15.5.22.57.35.07.12.07.72-.17 1.4z"/></svg>
@@ -940,13 +976,13 @@
     document.querySelectorAll('.qa button').forEach(btn => {
       btn.setAttribute('aria-expanded', 'false');
       const ans0 = btn.parentElement.querySelector('.ans');
-      if (ans0) ans0.setAttribute('role', 'region');
+      if (ans0) { ans0.setAttribute('role', 'region'); ans0.setAttribute('aria-hidden', 'true'); }
       btn.addEventListener('click', () => {
         const qa = btn.parentElement;
         const ans = qa.querySelector('.ans');
         const open = qa.classList.contains('open');
-        document.querySelectorAll('.qa').forEach(o => { o.classList.remove('open'); o.querySelector('.ans').style.maxHeight = null; o.querySelector('button').setAttribute('aria-expanded', 'false'); });
-        if (!open) { qa.classList.add('open'); ans.style.maxHeight = ans.scrollHeight + 'px'; btn.setAttribute('aria-expanded', 'true'); }
+        document.querySelectorAll('.qa').forEach(o => { o.classList.remove('open'); o.querySelector('.ans').style.maxHeight = null; o.querySelector('.ans').setAttribute('aria-hidden', 'true'); o.querySelector('button').setAttribute('aria-expanded', 'false'); });
+        if (!open) { qa.classList.add('open'); ans.style.maxHeight = ans.scrollHeight + 'px'; ans.setAttribute('aria-hidden', 'false'); btn.setAttribute('aria-expanded', 'true'); }
       });
     });
 
@@ -961,8 +997,9 @@
       c.addEventListener('click', function () {
         var f = c.closest('form');
         if (!f) return;
-        f.querySelectorAll('.chip').forEach(function (o) { o.classList.remove('active'); });
+        f.querySelectorAll('.chip').forEach(function (o) { o.classList.remove('active'); o.setAttribute('aria-pressed', 'false'); });
         c.classList.add('active');
+        c.setAttribute('aria-pressed', 'true');
         if (f.group) f.group.value = c.dataset.grp;
       });
     });
@@ -972,7 +1009,11 @@
       document.querySelectorAll('form.lead-form').forEach(function (f) {
         if (!f.group) return;
         f.group.value = g;
-        f.querySelectorAll('.chip').forEach(function (o) { o.classList.toggle('active', o.dataset.grp === g); });
+        f.querySelectorAll('.chip').forEach(function (o) {
+          var on = o.dataset.grp === g;
+          o.classList.toggle('active', on);
+          o.setAttribute('aria-pressed', on ? 'true' : 'false');
+        });
       });
     }
     document.querySelectorAll('.lead-link[data-grp], #stickyLead').forEach(function (a) {
@@ -1019,12 +1060,19 @@
       });
       fetch(LEAD_ENDPOINT, { method: 'POST', mode: 'no-cors', body: payload })
         .then(function () {
-          if (msg) { msg.textContent = 'קיבלנו! נחזור אליך עוד היום 💙'; msg.className = 'lead-msg ok'; }
-          if (window.gtag) gtag('event', 'generate_lead', { method: 'form', group: grp });
-          form.reset();
+          // Hand off to the thank-you page. Name goes via sessionStorage (never in the URL);
+          // group goes in the URL (not personal) so the page personalizes even if storage is blocked.
+          try {
+            sessionStorage.setItem('tl_lead', '1');
+            sessionStorage.setItem('tl_group', grp);
+            sessionStorage.setItem('tl_name', name.split(' ')[0]);
+          } catch (e) {}
+          location.href = 'thanks.html?g=' + encodeURIComponent(grp);
         })
-        .catch(function () { if (msg) { msg.textContent = 'קרתה תקלה — נסו שוב או שלחו לנו וואטסאפ'; msg.className = 'lead-msg err'; } })
-        .finally(function () { form.classList.remove('sending'); });
+        .catch(function () {
+          if (msg) { msg.textContent = 'קרתה תקלה — נסו שוב או שלחו לנו וואטסאפ'; msg.className = 'lead-msg err'; }
+          form.classList.remove('sending');
+        });
       return false;
     }
 

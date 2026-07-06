@@ -196,6 +196,27 @@
     .wa-float { position: fixed; bottom: 22px; inset-inline-start: 22px; z-index: 90; width: 58px; height: 58px; border-radius: 50%; background: var(--wa); display: grid; place-items: center; box-shadow: 0 12px 30px -6px rgba(37,211,102,.6); transition: transform .2s; }
     .wa-float:hover { transform: scale(1.08); }
 
+    /* Lead form */
+    .lead-form { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 24px; max-width: 520px; }
+    .lead-form input { flex: 1 1 155px; min-width: 130px; padding: 14px 16px; border-radius: 12px; border: 1px solid var(--line); background: rgba(255,255,255,.06); color: #fff; font-family: inherit; font-size: 16px; transition: border-color .15s, background .15s; }
+    .lead-form input::placeholder { color: var(--muted-2); }
+    .lead-form input:focus { outline: none; border-color: var(--cyan); background: rgba(41,181,232,.10); }
+    .lead-form .lead-btn { flex: 1 1 100%; padding: 15px; }
+    .lead-msg { min-height: 22px; margin-top: 10px; font-size: 15px; font-weight: 700; }
+    .lead-msg.ok { color: #57E39A; } .lead-msg.err { color: #FF7A7A; }
+    .lead-form.sending { opacity: .6; pointer-events: none; }
+    .grp { display: flex; gap: 8px; flex: 1 1 100%; }
+    .chip { flex: 1; font-family: inherit; font-size: 15px; font-weight: 700; cursor: pointer; padding: 12px 6px; min-height: 44px; border-radius: 100px; border: 1.5px solid var(--line); background: rgba(255,255,255,.05); color: var(--muted); transition: border-color .15s, background .15s, color .15s; }
+    .chip:hover { border-color: var(--cyan); color: var(--white); }
+    .chip.active { background: rgba(41,181,232,.16); border-color: var(--cyan); color: var(--cyan-bright); }
+    .hp-field { position: absolute; left: -9999px; top: auto; width: 1px; height: 1px; overflow: hidden; opacity: 0; pointer-events: none; }
+    .form-privacy { margin-top: 9px; font-size: 12.5px; color: var(--muted-2); line-height: 1.5; }
+    .form-privacy a { color: var(--muted); text-decoration: underline; }
+    .hero-micro { margin-top: 14px; font-size: 14px; color: var(--muted-2); display: flex; align-items: center; gap: 8px; }
+    .sticky-cta { position: fixed; bottom: 0; inset-inline: 0; z-index: 95; display: none; gap: 10px; padding: 10px 14px calc(10px + env(safe-area-inset-bottom)); background: rgba(10,25,41,.92); backdrop-filter: blur(12px); border-top: 1px solid var(--line); }
+    .sticky-cta .btn { flex: 1; padding: 13px 10px; font-size: 15.5px; white-space: nowrap; }
+    @media (max-width: 640px) { .sticky-cta.show { display: flex; } body.has-sticky .wa-float { bottom: 88px; } }
+
     @media (max-width: 560px) { .nav-cta .btn-ghost { display: none; } }
     @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .btn { transition: none; } }
     a:focus-visible, button:focus-visible { outline: 2px solid var(--cyan-bright); outline-offset: 3px; }
@@ -222,6 +243,24 @@
       <span class="eyebrow">🏃 ראש העין · אבות ואמהות</span>
       <h1>אימוני כושר למבוגרים בראש העין — <span class="cyan">קבוצות אבות ואמהות</span></h1>
       <p class="lead">כן, גם אתם. מעבר לקבוצות הילדים, Team Lider מפעילה קבוצות כושר למבוגרים בפארק בראש העין — לאבות ולאמהות. חבורה קבועה, אימון פונקציונלי קהילתי, קרוב לבית — בדיוק מה ששומר על ההתמדה כשחדר כושר רגיל "נעלם" מהחיים.</p>
+
+      <form class="lead-form" id="leadform" onsubmit="return submitLead(this)">
+        <div class="grp" role="group" aria-label="למי האימון?">
+          <button type="button" class="chip active" data-grp="אבא" aria-pressed="true">לאבא</button>
+          <button type="button" class="chip" data-grp="אמא" aria-pressed="false">לאמא</button>
+        </div>
+        <input type="hidden" name="group" value="אבא" />
+        <input name="name" type="text" required placeholder="שם מלא" autocomplete="name" aria-label="שם מלא" />
+        <input name="phone" type="tel" required placeholder="טלפון" autocomplete="tel" inputmode="tel" aria-label="מספר טלפון" />
+        <input type="text" name="company" class="hp-field" tabindex="-1" autocomplete="off" aria-hidden="true" />
+        <button type="submit" class="btn btn-primary lead-btn">שריינו לי אימון השקה חינם</button>
+      </form>
+      <div class="lead-msg" aria-live="polite"></div>
+      <div class="form-privacy">הפרטים לתיאום בלבד — בלי ספאם ובלי רשימות תפוצה · <a href="privacy.html">מדיניות פרטיות</a></div>
+      <div class="hero-micro">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="#5CCBF0" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        נחזור אליכם עוד היום · בלי התחייבות
+      </div>
     </div>
   </section>
 
@@ -304,9 +343,79 @@
     </div>
   </footer>
 
+  <div class="sticky-cta" id="stickyCta">
+    <a href="#leadform" class="btn btn-primary" id="stickyLead">אימון השקה חינם</a>
+    <a href="https://wa.me/972549747713?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A4%D7%A8%D7%98%D7%99%D7%9D%20%D7%A2%D7%9C%20%D7%90%D7%99%D7%9E%D7%95%D7%9F%20%D7%9C%D7%9E%D7%91%D7%95%D7%92%D7%A8%D7%99%D7%9D" class="btn btn-wa" target="_blank" rel="noopener">וואטסאפ</a>
+  </div>
+
   <a class="wa-float" href="https://wa.me/972549747713?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A4%D7%A8%D7%98%D7%99%D7%9D%20%D7%A2%D7%9C%20%D7%90%D7%99%D7%9E%D7%95%D7%9F%20%D7%9C%D7%9E%D7%91%D7%95%D7%92%D7%A8%D7%99%D7%9D" target="_blank" rel="noopener" aria-label="וואטסאפ">
     <svg width="30" height="30" viewBox="0 0 24 24" fill="#fff"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm5.8 14.01c-.24.68-1.42 1.3-1.95 1.35-.5.05-1.13.24-3.67-.77-3.09-1.22-5.06-4.37-5.22-4.57-.15-.2-1.24-1.65-1.24-3.15s.79-2.24 1.07-2.54c.28-.3.61-.38.81-.38.2 0 .4 0 .58.01.19.01.44-.07.68.52.24.59.83 2.04.9 2.19.07.15.12.32.02.52-.1.2-.15.32-.3.5-.15.18-.32.4-.45.53-.15.15-.31.32-.13.62.17.3.77 1.27 1.65 2.06 1.14 1.01 2.1 1.33 2.4 1.48.3.15.47.12.64-.07.17-.2.74-.86.94-1.16.2-.3.4-.25.67-.15.27.1 1.72.81 2.01.96.3.15.5.22.57.35.07.12.07.72-.17 1.4z"/></svg>
   </a>
+
+  <script>
+    // Group chips (father / mother)
+    document.querySelectorAll('.grp .chip').forEach(function (c) {
+      c.addEventListener('click', function () {
+        var f = c.closest('form'); if (!f) return;
+        f.querySelectorAll('.chip').forEach(function (o) { o.classList.remove('active'); o.setAttribute('aria-pressed', 'false'); });
+        c.classList.add('active'); c.setAttribute('aria-pressed', 'true');
+        if (f.group) f.group.value = c.dataset.grp;
+      });
+    });
+
+    // Sticky mobile CTA — shows once the hero form scrolls out of view
+    var leadForm = document.getElementById('leadform');
+    var stickyBar = document.getElementById('stickyCta');
+    if (leadForm && stickyBar && 'IntersectionObserver' in window) {
+      new IntersectionObserver(function (entries) {
+        var out = !entries[0].isIntersecting;
+        stickyBar.classList.toggle('show', out);
+        document.body.classList.toggle('has-sticky', out);
+      }, { threshold: 0 }).observe(leadForm);
+    }
+
+    // Lead form → Google Sheet (same endpoint/columns as the homepage), then hand off to thanks.html
+    var LEAD_ENDPOINT = 'https://script.google.com/macros/s/AKfycbyRi_rtFKXrmUezP_bwOE03-3adLs32Ik3w_iO6E1fP_EURHupnbPhqLt6o9vpgUvgZ/exec';
+    function submitLead(form) {
+      var msg = document.querySelector('.lead-msg');
+      if (form.company && form.company.value) return false;
+      var name = (form.name.value || '').trim();
+      var phone = (form.phone.value || '').trim();
+      if (!name || phone.replace(/\D/g, '').length < 9) {
+        if (msg) { msg.textContent = 'רגע — צריך שם וטלפון תקין'; msg.className = 'lead-msg err'; }
+        return false;
+      }
+      form.classList.add('sending');
+      if (msg) { msg.textContent = 'שולח…'; msg.className = 'lead-msg'; }
+      var qs = new URLSearchParams(location.search);
+      var grp = (form.group && form.group.value) || '';
+      var payload = new URLSearchParams({
+        name: name, phone: phone, group: grp,
+        utm_source: qs.get('utm_source') || '', utm_medium: qs.get('utm_medium') || '',
+        utm_campaign: qs.get('utm_campaign') || '', utm_content: qs.get('utm_content') || ('adults · קבוצה: ' + (grp || '')),
+        referrer: document.referrer || '', page: location.href
+      });
+      fetch(LEAD_ENDPOINT, { method: 'POST', mode: 'no-cors', body: payload })
+        .then(function () {
+          try {
+            sessionStorage.setItem('tl_lead', '1');
+            sessionStorage.setItem('tl_group', grp);
+            sessionStorage.setItem('tl_name', name.split(' ')[0]);
+          } catch (e) {}
+          location.href = 'thanks.html?g=' + encodeURIComponent(grp);
+        })
+        .catch(function () {
+          if (msg) { msg.textContent = 'קרתה תקלה — נסו שוב או שלחו לנו וואטסאפ'; msg.className = 'lead-msg err'; }
+          form.classList.remove('sending');
+        });
+      return false;
+    }
+
+    // WhatsApp click tracking
+    document.querySelectorAll('a[href^="https://wa.me"]').forEach(function (a) {
+      a.addEventListener('click', function () { if (window.gtag) gtag('event', 'whatsapp_click', { location: (a.closest('section, header, footer') || {}).id || 'float' }); });
+    });
+  </script>
 
 </body>
 </html>
