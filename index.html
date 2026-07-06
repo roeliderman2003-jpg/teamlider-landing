@@ -153,7 +153,7 @@
 
     /* ---------- Lead form ---------- */
     .lead-form { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 22px; max-width: 520px; }
-    .lead-form input { flex: 1 1 155px; min-width: 130px; padding: 14px 16px; border-radius: 12px; border: 1px solid var(--line); background: rgba(255,255,255,.06); color: #fff; font-family: inherit; font-size: 16px; transition: border-color .15s, background .15s; }
+    .lead-form input { flex: 1 1 155px; min-width: 130px; padding: 14px 16px; border-radius: 12px; border: 1px solid var(--line); background: rgba(255,255,255,.06); color: #fff; font-family: inherit; font-size: 16px; text-align: right; direction: rtl; transition: border-color .15s, background .15s; }
     .lead-form input::placeholder { color: var(--muted-2); }
     .lead-form input:focus { outline: none; border-color: var(--cyan); background: rgba(41,181,232,.10); }
     .lead-form .lead-btn { flex: 1 1 100%; padding: 15px; }
@@ -186,8 +186,8 @@
     }
     .float-badge .n { font-size: 22px; font-weight: 900; color: var(--cyan-bright); line-height: 1; }
     .float-badge .t { font-size: 12.5px; color: var(--muted); line-height: 1.25; }
-    .fb-1 { top: 22px; inset-inline-start: -18px; }
-    .fb-2 { bottom: 30px; inset-inline-end: -14px; }
+    .fb-1 { top: 16px; inset-inline-start: 14px; }
+    .fb-2 { bottom: 16px; inset-inline-end: 14px; }
 
     /* ---------- Stats bar ---------- */
     .stats { border-block: 1px solid var(--line); background: rgba(255,255,255,0.02); }
@@ -569,8 +569,7 @@
                alt="קבוצת טים לידר עם המאמן מתאמנת בפארק בראש העין"
                fetchpriority="high" decoding="async"
                style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover" />
-          <div style="position:absolute;inset:0;background:linear-gradient(180deg,transparent 52%,rgba(4,12,20,.78))"></div>
-          <div style="position:absolute;bottom:18px;inset-inline:18px;font-weight:800;font-size:18px;text-align:center">אנרגיה. חבר'ה. תוצאות.</div>
+          <div style="position:absolute;inset:0;background:linear-gradient(180deg,transparent 52%,rgba(4,12,20,.55))"></div>
         </div>
         <div class="float-badge fb-1">
           <div class="n">4.7</div>
