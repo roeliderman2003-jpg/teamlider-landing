@@ -1,50 +1,60 @@
 // Fetches Team Lider's live Google rating + review count and writes reviews.json.
 // Runs weekly in GitHub Actions (see .github/workflows/update-reviews.yml).
-// Requires env: GOOGLE_PLACES_API_KEY, PLACE_ID.
 //
-// Uses the Google Places API (New) v1 Place Details endpoint:
-//   GET https://places.googleapis.com/v1/places/{PLACE_ID}
-//   headers: X-Goog-Api-Key, X-Goog-FieldMask: rating,userRatingCount
+// Looks the business up BY NAME via the Google Places API (New) Text Search, so no
+// Place ID is needed — only the API key. A location bias around Rosh HaAyin makes the
+// match unambiguous.
+//   POST https://places.googleapis.com/v1/places:searchText
+//   headers: X-Goog-Api-Key, X-Goog-FieldMask
+//
+// Env: GOOGLE_PLACES_API_KEY (required). PLACE_QUERY (optional, overrides the search text).
 import { writeFileSync, readFileSync } from 'node:fs';
 
 const KEY = process.env.GOOGLE_PLACES_API_KEY;
-const PLACE_ID = process.env.PLACE_ID;
-
-if (!KEY || !PLACE_ID) {
-  console.error('Missing GOOGLE_PLACES_API_KEY or PLACE_ID env var.');
+if (!KEY) {
+  console.error('Missing GOOGLE_PLACES_API_KEY env var.');
   process.exit(1);
 }
 
-const res = await fetch(`https://places.googleapis.com/v1/places/${encodeURIComponent(PLACE_ID)}`, {
+const query = process.env.PLACE_QUERY || 'אימוני כושר לילדים בראש העין - Team Lider';
+
+const res = await fetch('https://places.googleapis.com/v1/places:searchText', {
+  method: 'POST',
   headers: {
+    'Content-Type': 'application/json',
     'X-Goog-Api-Key': KEY,
-    'X-Goog-FieldMask': 'rating,userRatingCount',
+    'X-Goog-FieldMask': 'places.id,places.displayName,places.rating,places.userRatingCount,places.formattedAddress',
   },
+  body: JSON.stringify({
+    textQuery: query,
+    languageCode: 'he',
+    // Team Lider's pin in Rosh HaAyin (גולדה מאיר 20 / פסגות אפק) — keeps the match unambiguous.
+    locationBias: { circle: { center: { latitude: 32.0878692, longitude: 34.9734947 }, radius: 3000 } },
+    maxResultCount: 1,
+  }),
 });
 
 if (!res.ok) {
   const body = await res.text();
-  console.error(`Places API HTTP ${res.status}: ${body.slice(0, 300)}`);
+  console.error(`Places API HTTP ${res.status}: ${body.slice(0, 400)}`);
   process.exit(1);
 }
 
 const data = await res.json();
-const rating = data.rating;               // e.g. 4.7
-const count = data.userRatingCount;       // e.g. 84
+const place = data.places && data.places[0];
 
-if (rating == null || count == null) {
-  console.error('Places API response missing rating/userRatingCount:', JSON.stringify(data).slice(0, 300));
+if (!place || place.rating == null) {
+  console.error('No place/rating in response:', JSON.stringify(data).slice(0, 400));
   process.exit(1);
 }
 
-// Keep one decimal for the rating (Google returns e.g. 4.7). Guard against 5.0 -> "5".
-const ratingStr = Number(rating).toFixed(1);
-const countStr = String(count);
+const ratingStr = Number(place.rating).toFixed(1);        // e.g. "4.7"
+const countStr = String(place.userRatingCount ?? 0);      // e.g. "84"
 
 let prev = {};
 try { prev = JSON.parse(readFileSync('reviews.json', 'utf8')); } catch {}
 
-const out = { rating: ratingStr, count: countStr, updated: new Date().toISOString().slice(0, 10) };
-writeFileSync('reviews.json', JSON.stringify(out, null, 2) + '\n');
+writeFileSync('reviews.json', JSON.stringify({ rating: ratingStr, count: countStr, updated: new Date().toISOString().slice(0, 10) }, null, 2) + '\n');
 
+console.log(`Matched "${place.displayName && place.displayName.text || ''}" (${place.formattedAddress || ''}).`);
 console.log(`reviews.json: rating ${prev.rating ?? '?'} -> ${ratingStr}, count ${prev.count ?? '?'} -> ${countStr}`);

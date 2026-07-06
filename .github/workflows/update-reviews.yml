@@ -27,7 +27,6 @@ jobs:
       - name: Fetch live rating from Google Places
         env:
           GOOGLE_PLACES_API_KEY: ${{ secrets.GOOGLE_PLACES_API_KEY }}
-          PLACE_ID: ${{ secrets.PLACE_ID }}
         run: node scripts/update-reviews.mjs
 
       - name: Commit if changed
