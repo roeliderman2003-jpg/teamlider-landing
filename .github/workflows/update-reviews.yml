@@ -1,0 +1,43 @@
+name: Update Google reviews
+
+# Refreshes reviews.json weekly from the Google Places API so the site's
+# rating badge stays current. Also runnable on demand from the Actions tab.
+on:
+  schedule:
+    - cron: '17 4 * * 1'   # Mondays 04:17 UTC (~weekly)
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-reviews
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Fetch live rating from Google Places
+        env:
+          GOOGLE_PLACES_API_KEY: ${{ secrets.GOOGLE_PLACES_API_KEY }}
+          PLACE_ID: ${{ secrets.PLACE_ID }}
+        run: node scripts/update-reviews.mjs
+
+      - name: Commit if changed
+        run: |
+          if git diff --quiet -- reviews.json; then
+            echo "No change to reviews.json."
+          else
+            git config user.name "github-actions[bot]"
+            git config user.email "github-actions[bot]@users.noreply.github.com"
+            git add reviews.json
+            git commit -m "chore: refresh Google rating [skip ci]"
+            git push
+          fi
