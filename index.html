@@ -26,19 +26,30 @@
   <meta name="twitter:image" content="https://teamlider.co.il/assets/og-cover.jpg" />
   <meta name="theme-color" content="#0A1929" />
 
-  <!-- Google Analytics 4 -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-67KSD0RPP4"></script>
+  <!-- Google Analytics 4 — loaded on first interaction (or after 3s) to keep initial paint fast -->
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){ dataLayer.push(arguments); }
     gtag('js', new Date());
     gtag('config', 'G-67KSD0RPP4');
+    (function () {
+      var loaded = false;
+      function loadGA() {
+        if (loaded) return; loaded = true;
+        var s = document.createElement('script');
+        s.async = true; s.src = 'https://www.googletagmanager.com/gtag/js?id=G-67KSD0RPP4';
+        document.head.appendChild(s);
+      }
+      ['pointerdown', 'touchstart', 'keydown', 'scroll'].forEach(function (e) {
+        window.addEventListener(e, loadGA, { once: true, passive: true, capture: true });
+      });
+      setTimeout(loadGA, 3000);
+    })();
   </script>
 
   <link rel="icon" type="image/png" href="assets/logo-square.png" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="preload" href="assets/fonts/heebo-wght-heblat.woff2" as="font" type="font/woff2" crossorigin />
+  <style>@font-face{font-family:'Heebo';src:url('assets/fonts/heebo-wght-heblat.woff2') format('woff2');font-weight:400 900;font-display:swap}</style>
 
   <style>
     :root {
