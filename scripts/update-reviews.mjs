@@ -23,7 +23,7 @@ const res = await fetch('https://places.googleapis.com/v1/places:searchText', {
   headers: {
     'Content-Type': 'application/json',
     'X-Goog-Api-Key': KEY,
-    'X-Goog-FieldMask': 'places.id,places.displayName,places.rating,places.userRatingCount,places.formattedAddress',
+    'X-Goog-FieldMask': 'places.id,places.displayName,places.rating,places.userRatingCount,places.formattedAddress,places.googleMapsUri',
   },
   body: JSON.stringify({
     textQuery: query,
@@ -54,7 +54,17 @@ const countStr = String(place.userRatingCount ?? 0);      // e.g. "84"
 let prev = {};
 try { prev = JSON.parse(readFileSync('reviews.json', 'utf8')); } catch {}
 
-writeFileSync('reviews.json', JSON.stringify({ rating: ratingStr, count: countStr, updated: new Date().toISOString().slice(0, 10) }, null, 2) + '\n');
+const out = { rating: ratingStr, count: countStr, updated: new Date().toISOString().slice(0, 10) };
+if (place.id) {
+  out.placeId = place.id;
+  // "write a review" deep link — used by the WhatsApp review-request template.
+  out.reviewsUrl = `https://search.google.com/local/writereview?placeid=${place.id}`;
+}
+// Public Maps profile link — the on-site rating badges link here to show real reviews.
+if (place.googleMapsUri) out.mapsUrl = place.googleMapsUri;
+
+writeFileSync('reviews.json', JSON.stringify(out, null, 2) + '\n');
 
 console.log(`Matched "${place.displayName && place.displayName.text || ''}" (${place.formattedAddress || ''}).`);
+console.log(`placeId ${place.id || '?'} · mapsUrl ${place.googleMapsUri || '?'}`);
 console.log(`reviews.json: rating ${prev.rating ?? '?'} -> ${ratingStr}, count ${prev.count ?? '?'} -> ${countStr}`);

@@ -449,6 +449,11 @@
         if (!d) return;
         if (d.rating) document.querySelectorAll('[data-tl-rating]').forEach(function (el) { el.textContent = d.rating; });
         if (d.count) document.querySelectorAll('[data-tl-reviews]').forEach(function (el) { el.textContent = d.count; });
+        var rurl = d.mapsUrl || d.reviewsUrl;
+        if (rurl) document.querySelectorAll('.g-badge').forEach(function (el) {
+          el.style.cursor = 'pointer'; el.setAttribute('role', 'link'); el.title = 'לצפייה בביקורות בגוגל';
+          el.addEventListener('click', function () { window.open(rurl, '_blank', 'noopener'); });
+        });
       })
       .catch(function () {});
   </script>
