@@ -510,7 +510,9 @@
       var qs = new URLSearchParams(location.search);
       var grp = (form.group && form.group.value) || '';
       var payload = new URLSearchParams({
-        name: name, phone: phone, group: grp,
+        // city is stated EXPLICITLY on every form (never derived from `page` or utm_*): the URL
+        // changes, and a derived city would break the branch attribution silently. pt.html sends 'pt'.
+        name: name, phone: phone, group: grp, city: 'rh',
         utm_source: qs.get('utm_source') || '', utm_medium: qs.get('utm_medium') || '',
         utm_campaign: qs.get('utm_campaign') || '', utm_content: qs.get('utm_content') || ('kids · קבוצה: ' + (grp || '')),
         referrer: document.referrer || '', page: location.href
