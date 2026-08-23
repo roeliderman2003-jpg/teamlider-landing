@@ -475,6 +475,24 @@
     .form-route { margin-top: 12px; font-size: 13.5px; color: var(--muted-2); }
     .form-route a { color: var(--gold); font-weight: 700; text-decoration: underline; }
 
+    /* ---------- Hero: the two cities, side by side and equal ---------- */
+    .hero-cities { display: flex; gap: 10px; margin: 18px 0 6px; flex-wrap: wrap; }
+    .hero-cities .hc {
+      flex: 1 1 0; min-width: 152px; display: flex; flex-direction: column; gap: 3px;
+      background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 12px 16px;
+      transition: border-color .18s ease, background .18s ease, transform .18s ease;
+    }
+    .hero-cities .hc:hover, .hero-cities .hc:focus-visible { border-color: rgba(41,181,232,.45); background: var(--card-hover); transform: translateY(-2px); }
+    .hero-cities .hc b { font-size: 16.5px; }
+    .hero-cities .st { font-size: 12px; font-weight: 800; letter-spacing: .2px; }
+    .hero-cities .st.on { color: #7BE0A6; }
+    .hero-cities .st.soon { color: var(--gold); }
+
+    /* City chooser inside the lead forms */
+    .grp.city-grp .chip.active { border-color: rgba(41,181,232,.65); }
+    .pt-only { font-size: 13px; color: var(--gold); margin-top: 9px; line-height: 1.55; }
+    .pt-only a { color: var(--gold); text-decoration: underline; font-weight: 700; }
+
     /* Google rating badge */
     .g-badge {
       display: inline-flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 700;
@@ -611,13 +629,23 @@
   <section class="hero" id="main" tabindex="-1">
     <div class="wrap hero-grid">
       <div class="hero-copy">
-        <span class="eyebrow">🏃 ראש העין · פתח תקווה · אימונים בפארק</span>
-        <h1>אימוני כושר קבוצתיים בפארק בראש העין ובפתח תקווה — <span class="cyan">ביטחון, כוח וחברים</span></h1>
+        <span class="eyebrow">🏃 אימונים בפארק · קבוצות קטנות · שתי ערים</span>
+        <h1>אימוני כושר קבוצתיים בפארק — <span class="cyan">ביטחון, כוח וחברים</span></h1>
+        <div class="hero-cities">
+          <a class="hc" href="#tracks"><b>ראש העין</b><span class="st on">● מתאמנים היום</span></a>
+          <a class="hc" href="pt.html"><b>פתח תקווה</b><span class="st soon">● נפתח ב-11 באוקטובר</span></a>
+        </div>
         <p class="lead">
-          קהילת הכושר הכי גדולה בראש העין — ומאוקטובר גם בפתח תקווה. אימונים קבוצתיים בפארק לילדים, לנערים, לאבות ולאמהות.
-          קבוצות קטנות לפי גיל ורמה, מאמן שמכיר כל אחד בשמו, ואווירה שגורמת לחזור.
+          אימונים קבוצתיים בפארק לילדים, לנערים, לאבות ולאמהות — קבוצות קטנות לפי גיל ורמה,
+          מאמן שמכיר כל אחד בשמו, ואווירה שגורמת לחזור. בראש העין מתאמנים כבר היום,
+          ובפתח תקווה הקבוצות הראשונות נפתחות ב-11 באוקטובר.
         </p>
         <form class="lead-form" id="leadform" onsubmit="return submitLead(this)">
+          <div class="grp city-grp" role="group" aria-label="באיזו עיר?">
+            <button type="button" class="chip active" data-city="rh" aria-pressed="true">ראש העין</button>
+            <button type="button" class="chip" data-city="pt" aria-pressed="false">פתח תקווה</button>
+          </div>
+          <input type="hidden" name="city" value="rh" />
           <div class="grp" role="group" aria-label="למי האימון?">
             <button type="button" class="chip active" data-grp="ילד" aria-pressed="true">לילד</button>
             <button type="button" class="chip" data-grp="אבא" aria-pressed="false">לאבא</button>
@@ -639,7 +667,7 @@
           <span class="stars">★★★★★</span> <b><span data-tl-rating>4.7</span></b> · <span data-tl-reviews>84</span> ביקורות בגוגל
         </div>
         <div class="form-privacy">הפרטים לתיאום בלבד — בלי ספאם ובלי רשימות תפוצה · <a href="privacy.html">מדיניות פרטיות</a></div>
-        <div class="form-route">הטופס הזה מיועד לקבוצות בראש העין. מפתח תקווה? <a href="pt.html">ההרשמה המוקדמת כאן ←</a></div>
+        <div class="pt-only" data-pt-only hidden>הקבוצות בפתח תקווה נפתחות ב-11 באוקטובר, וההרשמה עכשיו היא לפריסייל — <a href="pt.html">לכל התנאים ←</a></div>
         <div class="hero-cta" style="margin-top:18px">
           <a href="https://wa.me/972549747713?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A4%D7%A8%D7%98%D7%99%D7%9D%20%D7%A2%D7%9C%20%D7%90%D7%99%D7%9E%D7%95%D7%9F%20%D7%A0%D7%99%D7%A1%D7%99%D7%95%D7%9F" class="btn btn-wa" target="_blank" rel="noopener">
             עדיף בוואטסאפ? דברו איתנו
@@ -1104,8 +1132,13 @@
       <div class="final-card reveal">
         <h2>מוכנים להתחיל?</h2>
         <p>השאירו שם וטלפון ונחזור אליכם עוד היום לתאם אימון ניסיון, בלי התחייבות.</p>
-        <div class="form-route" style="text-align:center;margin-bottom:14px">הטופס מיועד לקבוצות בראש העין · מפתח תקווה? <a href="pt.html">להרשמה המוקדמת ←</a></div>
+
         <form class="lead-form" style="margin-inline:auto;justify-content:center" onsubmit="return submitLead(this)">
+          <div class="grp city-grp" role="group" aria-label="באיזו עיר?">
+            <button type="button" class="chip active" data-city="rh" aria-pressed="true">ראש העין</button>
+            <button type="button" class="chip" data-city="pt" aria-pressed="false">פתח תקווה</button>
+          </div>
+          <input type="hidden" name="city" value="rh" />
           <div class="grp" role="group" aria-label="למי האימון?">
             <button type="button" class="chip active" data-grp="ילד" aria-pressed="true">לילד</button>
             <button type="button" class="chip" data-grp="אבא" aria-pressed="false">לאבא</button>
@@ -1118,6 +1151,7 @@
           <button type="submit" class="btn btn-primary lead-btn">שריינו לי מקום</button>
         </form>
         <div class="lead-msg" aria-live="polite"></div>
+        <div class="pt-only" style="text-align:center" data-pt-only hidden>הקבוצות בפתח תקווה נפתחות ב-11 באוקטובר, וההרשמה עכשיו היא לפריסייל — <a href="pt.html">לכל התנאים ←</a></div>
         <div class="form-privacy" style="text-align:center">הפרטים לתיאום בלבד — בלי ספאם ובלי רשימות תפוצה · <a href="privacy.html">מדיניות פרטיות</a></div>
         <div class="subtle" style="margin-top:20px">או ישירות בוואטסאפ</div>
         <a href="https://wa.me/972549747713?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%AA%D7%90%D7%9D%20%D7%90%D7%99%D7%9E%D7%95%D7%9F%20%D7%A0%D7%99%D7%A1%D7%99%D7%95%D7%9F" class="btn btn-wa" target="_blank" rel="noopener" style="margin-top:12px">
@@ -1208,17 +1242,35 @@
     }, { threshold: 0.12 });
     document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 
-    // Group chips — one set per form
+    // Chips — a form now holds TWO groups (city, audience), so selection is scoped
+    // to the chip's own .grp. Clearing across the whole form would reset the other one.
     document.querySelectorAll('.grp .chip').forEach(function (c) {
       c.addEventListener('click', function () {
-        var f = c.closest('form');
-        if (!f) return;
-        f.querySelectorAll('.chip').forEach(function (o) { o.classList.remove('active'); o.setAttribute('aria-pressed', 'false'); });
+        var f = c.closest('form'), g = c.closest('.grp');
+        if (!f || !g) return;
+        g.querySelectorAll('.chip').forEach(function (o) { o.classList.remove('active'); o.setAttribute('aria-pressed', 'false'); });
         c.classList.add('active');
         c.setAttribute('aria-pressed', 'true');
-        if (f.group) f.group.value = c.dataset.grp;
+        if (c.dataset.grp && f.group) f.group.value = c.dataset.grp;
+        if (c.dataset.city && f.city) { f.city.value = c.dataset.city; applyCity(f); }
       });
     });
+
+    // Petah Tikva opens with adult groups only — the kids chip has nothing to book there yet.
+    function applyCity(form) {
+      var isPT = !!(form.city && form.city.value === 'pt');
+      var kid = form.querySelector('.chip[data-grp="ילד"]');
+      if (kid) {
+        kid.hidden = isPT;
+        if (isPT && kid.classList.contains('active')) {
+          var fallback = form.querySelector('.chip[data-grp="אבא"]');
+          if (fallback) fallback.click();
+        }
+      }
+      var box = form.closest('.hero-copy, .final-card, section') || document;
+      box.querySelectorAll('[data-pt-only]').forEach(function (el) { el.hidden = !isPT; });
+    }
+    document.querySelectorAll('form.lead-form').forEach(applyCity);
 
     // Track-card "או השאירו פרטים" + sticky button → jump to hero form (preselect group)
     function syncGroup(g) {
@@ -1268,12 +1320,14 @@
       if (msg) { msg.textContent = 'שולח…'; msg.className = 'lead-msg'; }
       var qs = new URLSearchParams(location.search);
       var grp = (form.group && form.group.value) || '';
+      var city = (form.city && form.city.value) || 'rh';
       var payload = new URLSearchParams({
         // city is stated EXPLICITLY on every form (never derived from `page` or utm_*): the URL
-        // changes, and a derived city would break the branch attribution silently. pt.html sends 'pt'.
-        name: name, phone: phone, group: grp, city: 'rh',
+        // changes, and a derived city would break the branch attribution silently. On this page it
+        // comes from the city chips and defaults to 'rh'; pt.html always sends 'pt'.
+        name: name, phone: phone, group: grp, city: city,
         utm_source: qs.get('utm_source') || '', utm_medium: qs.get('utm_medium') || '',
-        utm_campaign: qs.get('utm_campaign') || '', utm_content: qs.get('utm_content') || (grp ? 'קבוצה: ' + grp : ''),
+        utm_campaign: qs.get('utm_campaign') || '', utm_content: qs.get('utm_content') || ((city === 'pt' ? 'pt · ' : '') + (grp ? 'קבוצה: ' + grp : '')),
         referrer: document.referrer || '', page: location.href
       });
       fetch(LEAD_ENDPOINT, { method: 'POST', mode: 'no-cors', body: payload })
