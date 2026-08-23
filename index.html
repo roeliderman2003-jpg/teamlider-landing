@@ -434,6 +434,47 @@
     .nav-links a.nav-pt { color: var(--gold); }
     .nav-links a.nav-pt::after { background: var(--gold); }
 
+    /* ---------- Two-city bands + Petah Tikva variants ---------- */
+    .city-band {
+      display: flex; align-items: center; gap: 14px;
+      margin: 52px 0 22px; font-size: clamp(17px, 2.4vw, 21px); font-weight: 800;
+    }
+    .city-band::after { content: ''; flex: 1; height: 1px; background: var(--line); }
+    .city-band .st { font-size: 12.5px; font-weight: 800; letter-spacing: .3px; }
+    .city-band .st.on { color: #7BE0A6; }
+    .city-band .st.soon { color: var(--gold); }
+    .tracks-grid.two { grid-template-columns: repeat(2, 1fr); }
+    .tracks-grid > * { min-width: 0; }
+    .track.pt { border-color: rgba(240,192,92,.42); }
+    .track.pt:hover { border-color: rgba(240,192,92,.7); }
+    .track.pt .who { color: var(--gold); }
+    .track.pt .tag { background: rgba(240,192,92,.14); color: var(--gold); }
+    .track.pt .sched li b { color: var(--gold); }
+    .btn-gold { background: var(--gold); color: #241a05; }
+    .btn-gold:hover { box-shadow: 0 14px 34px -12px rgba(240,192,92,.6); }
+
+    /* Petah Tikva offer section */
+    .ptoffer { background: linear-gradient(180deg, var(--deep-2) 0%, var(--deep) 100%); border-block: 1px solid var(--line); }
+    .pt-grid { display: grid; grid-template-columns: 1.05fr .95fr; gap: 26px; align-items: start; margin-top: 40px; }
+    .pt-grid > * { min-width: 0; }
+    .pt-card .btn-block, .track.pt .btn-block { white-space: normal; }
+    .pt-card { background: rgba(240,192,92,.06); border: 1px solid rgba(240,192,92,.32); border-radius: var(--radius); padding: 28px; }
+    .pt-card h3 { font-size: 22px; margin-bottom: 14px; }
+    .pt-perks { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+    .pt-perks li { position: relative; padding-inline-start: 27px; color: var(--muted); font-size: 15.5px; line-height: 1.6; }
+    .pt-perks li b { color: var(--white); }
+    .pt-perks li::before {
+      content: ''; position: absolute; inset-inline-start: 0; top: 4px; width: 17px; height: 17px;
+      background: no-repeat center/contain url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="%23F0C05C" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>');
+    }
+    .pt-when { display: flex; flex-direction: column; gap: 12px; }
+    .pt-when .row { background: var(--card); border: 1px solid var(--line); border-radius: 15px; padding: 17px 20px; }
+    .pt-when .row b { display: block; font-size: 17px; margin-bottom: 2px; }
+    .pt-when .row span { color: var(--muted); font-size: 14.5px; }
+    .pt-note { color: var(--muted-2); font-size: 14px; margin-top: 14px; line-height: 1.6; }
+    .form-route { margin-top: 12px; font-size: 13.5px; color: var(--muted-2); }
+    .form-route a { color: var(--gold); font-weight: 700; text-decoration: underline; }
+
     /* Google rating badge */
     .g-badge {
       display: inline-flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 700;
@@ -458,6 +499,8 @@
       .why-grid { grid-template-columns: 1fr 1fr; }
       .tracks-grid { grid-template-columns: 1fr; max-width: 460px; margin-inline: auto; }
       .city-grid { grid-template-columns: 1fr; max-width: 460px; margin-inline: auto; }
+      .tracks-grid.two { grid-template-columns: 1fr; }
+      .pt-grid { grid-template-columns: 1fr; }
       .how-grid { grid-template-columns: 1fr; }
       .coach-grid { grid-template-columns: 1fr; }
       .tst-grid { grid-template-columns: 1fr; max-width: 460px; margin-inline: auto; }
@@ -528,6 +571,8 @@
       { "@type": "Question", "name": "איך נרשמים?", "acceptedAnswer": { "@type": "Answer", "text": "שולחים הודעת וואטסאפ למספר 054-974-7713 ואנחנו חוזרים אליכם עם כל הפרטים ותיאום אימון ניסיון." } },
       { "@type": "Question", "name": "כמה זה עולה?", "acceptedAnswer": { "@type": "Answer", "text": "מתחילים באימון ניסיון בלי התחייבות, וממשיכים במנוי חודשי גמיש — בלי דמי רישום ובלי חוזה. לפרטי המחיר המעודכן לכל קבוצה שולחים לנו הודעת וואטסאפ למספר 054-974-7713 ונשלח את כל הפרטים." } },
       { "@type": "Question", "name": "מה קורה בחורף או בימי גשם?", "acceptedAnswer": { "@type": "Answer", "text": "רוב השנה מתאמנים בפארק באוויר הפתוח. בימי גשם עוברים למתחם מקורה, כך שהאימון מתקיים כרגיל ולא מבוטל בגלל מזג האוויר." } },
+      { "@type": "Question", "name": "מה בדיוק נפתח בפתח תקווה, ומתי?", "acceptedAnswer": { "@type": "Answer", "text": "קבוצת אבות (גברים 18+) וקבוצת אמהות (נשים 18+), אימון פונקציונלי קבוצתי בפארק פעמיים בשבוע. האימון הראשון הוא ביום ראשון, 11 באוקטובר 2026. קבוצות ילדים ונוער בפתח תקווה ייפתחו בהמשך." } },
+      { "@type": "Question", "name": "אפשר להירשם לקבוצות בפתח תקווה כבר עכשיו?", "acceptedAnswer": { "@type": "Answer", "text": "כן. ההרשמה המוקדמת פתוחה: 10% הנחה על המחיר לשנה שלמה, יציאה חופשית ב-30 הימים הראשונים, ואין חיוב בעת ההרשמה — ההרשמה נסגרת בשיחה והחיוב מתחיל עם פתיחת הקבוצה ב-11 באוקטובר 2026." } },
       { "@type": "Question", "name": "יש אימונים גם בפתח תקווה?", "acceptedAnswer": { "@type": "Answer", "text": "כן. ב-11 באוקטובר 2026 נפתחות בפתח תקווה קבוצת אבות (גברים 18+) וקבוצת אמהות (נשים 18+) — אימון פונקציונלי קבוצתי בפארק, פעמיים בשבוע. ההרשמה המוקדמת פתוחה עכשיו בעמוד פתח תקווה. קבוצות ילדים ונוער בפתח תקווה ייפתחו בהמשך." } }
     ]
   }
@@ -594,6 +639,7 @@
           <span class="stars">★★★★★</span> <b><span data-tl-rating>4.7</span></b> · <span data-tl-reviews>84</span> ביקורות בגוגל
         </div>
         <div class="form-privacy">הפרטים לתיאום בלבד — בלי ספאם ובלי רשימות תפוצה · <a href="privacy.html">מדיניות פרטיות</a></div>
+        <div class="form-route">הטופס הזה מיועד לקבוצות בראש העין. מפתח תקווה? <a href="pt.html">ההרשמה המוקדמת כאן ←</a></div>
         <div class="hero-cta" style="margin-top:18px">
           <a href="https://wa.me/972549747713?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A4%D7%A8%D7%98%D7%99%D7%9D%20%D7%A2%D7%9C%20%D7%90%D7%99%D7%9E%D7%95%D7%9F%20%D7%A0%D7%99%D7%A1%D7%99%D7%95%D7%9F" class="btn btn-wa" target="_blank" rel="noopener">
             עדיף בוואטסאפ? דברו איתנו
@@ -630,7 +676,7 @@
       <div class="stat"><div class="num"><span>+500</span></div><div class="lab">ילדים, נערים ומבוגרים שהתאמנו איתנו</div></div>
       <div class="stat"><div class="num"><span data-tl-rating>4.7</span><span> ★</span></div><div class="lab"><span data-tl-reviews>84</span> ביקורות בגוגל</div></div>
       <div class="stat"><div class="num">8–15</div><div class="lab">גילאי הילדים והנערים</div></div>
-      <div class="stat"><div class="num" style="font-size:clamp(22px,3vw,30px)">כל יום</div><div class="lab">אימונים · אחה״צ וערב</div></div>
+      <div class="stat"><div class="num" style="font-size:clamp(19px,2.7vw,26px)">2 ערים</div><div class="lab">ראש העין · פתח תקווה</div></div>
     </div>
   </section>
 
@@ -685,7 +731,7 @@
       <div class="center reveal">
         <span class="eyebrow">למה טים לידר</span>
         <h2 class="section-title">לא עוד חוג. קהילה שמחזקת אותך.</h2>
-        <p class="section-sub">מה שמבדל אותנו מכל חדר כושר או חוג אחר באזור — וגורם למשפחות להישאר לאורך שנים.</p>
+        <p class="section-sub">מה שמבדל אותנו מכל חדר כושר או חוג אחר באזור — וגורם למשפחות להישאר לאורך שנים. זה נכון לקבוצות בראש העין, וזה בדיוק מה שנפתח בפתח תקווה.</p>
       </div>
       <div class="why-grid">
         <div class="feature reveal">
@@ -726,8 +772,10 @@
       <div class="center reveal">
         <span class="eyebrow">הקבוצות שלנו</span>
         <h2 class="section-title">בחרו את הקבוצה שלכם</h2>
-        <p class="section-sub">אותה שיטה, אותה אווירה — מותאמת לכל גיל ולכל שלב. לחצו על הקבוצה שמדברת אליכם.<br /><span style="font-size:15px;color:var(--muted-2)">הקבוצות שלמטה מתאמנות בראש העין. מפתח תקווה? <a href="pt.html" style="color:var(--gold);font-weight:700">לעמוד פתח תקווה ←</a></span></p>
+        <p class="section-sub">אותה שיטה, אותה אווירה — בשתי הערים. לחצו על הקבוצה שמדברת אליכם.</p>
       </div>
+
+      <h3 class="city-band">ראש העין <span class="st on">● מתאמנים היום</span></h3>
 
       <div class="tracks-grid">
 
@@ -773,7 +821,6 @@
             <a href="https://wa.me/972549747713?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A4%D7%A8%D7%98%D7%99%D7%9D%20%D7%A2%D7%9C%20%D7%A7%D7%91%D7%95%D7%A6%D7%AA%20%D7%94%D7%90%D7%91%D7%95%D7%AA" class="btn btn-primary btn-block" target="_blank" rel="noopener">שריון מקום בקבוצת האבות</a>
             <a class="lead-link" href="#leadform" data-grp="אבא">או השאירו פרטים ונחזור אליכם ←</a>
             <a class="lead-link" href="men.html" style="color:var(--cyan-bright)">לעמוד המלא — אימוני כושר לגברים בראש העין ←</a>
-            <a class="lead-link" href="pt.html" style="color:var(--gold)">קבוצת אבות בפתח תקווה — נפתחת 11.10 ←</a>
           </div>
         </div>
 
@@ -796,10 +843,94 @@
             <a href="https://wa.me/972549747713?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A4%D7%A8%D7%98%D7%99%D7%9D%20%D7%A2%D7%9C%20%D7%A7%D7%91%D7%95%D7%A6%D7%AA%20%D7%94%D7%90%D7%9E%D7%94%D7%95%D7%AA" class="btn btn-primary btn-block" target="_blank" rel="noopener">שריון מקום בקבוצת האמהות</a>
             <a class="lead-link" href="#leadform" data-grp="אמא">או השאירו פרטים ונחזור אליכם ←</a>
             <a class="lead-link" href="women.html" style="color:var(--cyan-bright)">לעמוד המלא — אימוני כושר לנשים בראש העין ←</a>
-            <a class="lead-link" href="pt.html" style="color:var(--gold)">קבוצת אמהות בפתח תקווה — נפתחת 11.10 ←</a>
           </div>
         </div>
 
+      </div>
+
+      <h3 class="city-band">פתח תקווה <span class="st soon">● נפתח ב-11 באוקטובר</span></h3>
+
+      <div class="tracks-grid two">
+
+        <!-- PT FATHERS -->
+        <div class="track pt reveal" id="pt-fathers">
+          <div class="track-top">
+            <span class="tag">פריסייל · חבר מייסד</span>
+            <div class="who">לאבות · גברים 18+</div>
+            <h3>קבוצת האבות בפתח תקווה</h3>
+            <p class="desc">חבורה של גברים שמגיעים אחרי יום עבודה, מזיעים ברצינות, וחוזרים הביתה. אימון פונקציונלי בפארק, בקבוצה קטנה, בלי מראות ובלי תורים למכשיר.</p>
+          </div>
+          <div class="track-body">
+            <ul class="sched">
+              <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#F0C05C" stroke-width="2"/><path d="M12 7v5l3 2" stroke="#F0C05C" stroke-width="2" stroke-linecap="round"/></svg><span><b>פעמיים בשבוע</b> · בשעות הערב</span></li>
+              <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#F0C05C" stroke-width="2"/><path d="M12 7v5l3 2" stroke="#F0C05C" stroke-width="2" stroke-linecap="round"/></svg><span>האימון הראשון — יום ראשון, 11 באוקטובר</span></li>
+              <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#F0C05C" stroke-width="2"/><path d="M12 7v5l3 2" stroke="#F0C05C" stroke-width="2" stroke-linecap="round"/></svg><span>לוח הזמנים המדויק נסגר לקראת הפתיחה</span></li>
+            </ul>
+            <div class="price-row">
+              <div class="alt">10% הנחה לשנה שלמה · יציאה חופשית ב-30 יום</div>
+            </div>
+            <a href="pt.html" class="btn btn-gold btn-block">לשריין מקום בקבוצת האבות</a>
+            <a class="lead-link" href="pt.html" style="color:var(--gold)">לעמוד המלא — Team Lider פתח תקווה ←</a>
+          </div>
+        </div>
+
+        <!-- PT MOTHERS -->
+        <div class="track pt reveal" id="pt-mothers">
+          <div class="track-top">
+            <span class="tag">פריסייל · חברת מייסדות</span>
+            <div class="who">לאמהות · נשים 18+</div>
+            <h3>קבוצת האמהות בפתח תקווה</h3>
+            <p class="desc">שעה שהיא רק שלך, עם קבוצה שמחכה לך ושמה לב כשלא הגעת. כל תרגיל ניתן בכמה רמות — גם אם לא התאמנת שנים.</p>
+          </div>
+          <div class="track-body">
+            <ul class="sched">
+              <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#F0C05C" stroke-width="2"/><path d="M12 7v5l3 2" stroke="#F0C05C" stroke-width="2" stroke-linecap="round"/></svg><span><b>פעמיים בשבוע</b> · באותם ימים, בשעה אחרת</span></li>
+              <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#F0C05C" stroke-width="2"/><path d="M12 7v5l3 2" stroke="#F0C05C" stroke-width="2" stroke-linecap="round"/></svg><span>האימון הראשון — יום ראשון, 11 באוקטובר</span></li>
+              <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#F0C05C" stroke-width="2"/><path d="M12 7v5l3 2" stroke="#F0C05C" stroke-width="2" stroke-linecap="round"/></svg><span>לוח הזמנים המדויק נסגר לקראת הפתיחה</span></li>
+            </ul>
+            <div class="price-row">
+              <div class="alt">10% הנחה לשנה שלמה · יציאה חופשית ב-30 יום</div>
+            </div>
+            <a href="pt.html" class="btn btn-gold btn-block">לשריין מקום בקבוצת האמהות</a>
+            <a class="lead-link" href="pt.html" style="color:var(--gold)">לעמוד המלא — Team Lider פתח תקווה ←</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== PETAH TIKVA ===================== -->
+  <section class="ptoffer section-pad" id="petah-tikva">
+    <div class="wrap">
+      <div class="center reveal">
+        <span class="eyebrow" style="color:var(--gold)">🏗️ פתח תקווה · פותחים ב-11 באוקטובר</span>
+        <h2 class="section-title">העיר השנייה — וההרשמה כבר פתוחה</h2>
+        <p class="section-sub" style="margin-inline:auto">אותה שיטה שרצה בראש העין, עם קבוצת אבות וקבוצת אמהות שנפתחות בפתח תקווה ביום ראשון, 11 באוקטובר. מי שנרשם לפני הפתיחה נכנס כחבר מייסד.</p>
+      </div>
+
+      <div class="pt-grid">
+        <div class="pt-card reveal">
+          <h3>מה מקבל מי שנרשם עכשיו</h3>
+          <ul class="pt-perks">
+            <li><b>10% הנחה על המחיר — לשנה שלמה.</b> לא לחודש הראשון, לשנה.</li>
+            <li><b>יציאה חופשית ב-30 הימים הראשונים.</b> לא מתאים — מפסיקים, בלי התחייבות לתקופה.</li>
+            <li><b>אין חיוב עכשיו.</b> ההרשמה נסגרת בשיחה, החיוב מתחיל עם פתיחת הקבוצה.</li>
+            <li><b>לוח הזמנים ונקודת המפגש — ראשונים.</b> נשלחים לנרשמים לפני הפתיחה.</li>
+          </ul>
+          <a href="pt.html" class="btn btn-gold btn-block" style="margin-top:22px">להרשמה המוקדמת בפתח תקווה</a>
+          <a href="https://wa.me/972549747713?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A4%D7%A8%D7%98%D7%99%D7%9D%20%D7%A2%D7%9C%20%D7%A7%D7%91%D7%95%D7%A6%D7%95%D7%AA%20%D7%94%D7%A4%D7%A8%D7%99%D7%A1%D7%99%D7%99%D7%9C%20%D7%91%D7%A4%D7%AA%D7%97%20%D7%AA%D7%A7%D7%95%D7%95%D7%94" class="btn btn-wa btn-block" style="margin-top:10px" target="_blank" rel="noopener">שאלה מהירה בוואטסאפ</a>
+        </div>
+
+        <div class="reveal">
+          <div class="pt-when">
+            <div class="row"><b>קבוצת האבות</b><span>גברים 18+ · פעמיים בשבוע, בשעות הערב</span></div>
+            <div class="row"><b>קבוצת האמהות</b><span>נשים 18+ · פעמיים בשבוע, באותם ימים בשעה אחרת</span></div>
+            <div class="row"><b>איפה</b><span>אימונים בפארק · נקודת המפגש נמסרת לנרשמים לפני האימון הראשון</span></div>
+            <div class="row"><b>ילדים ונוער</b><span>ייפתחו בפתח תקווה בהמשך — משאירים פרטים ומתעדכנים ראשונים</span></div>
+          </div>
+          <p class="pt-note">לוח הזמנים המדויק — ימים ושעות — נסגר לקראת הפתיחה ב-11 באוקטובר. תנאי הפריסייל והמחירים המלאים נמצאים ב<a href="pt.html" style="color:var(--gold);font-weight:700">עמוד פתח תקווה</a>.</p>
+        </div>
       </div>
     </div>
   </section>
@@ -810,7 +941,7 @@
       <div class="reveal">
         <span class="eyebrow">איך נראה אימון</span>
         <h2 class="section-title">45 דקות שמשנות את היום</h2>
-        <p class="section-sub" style="margin-bottom:26px">אנרגיה גבוהה, מבנה ברור, וכל אחד יוצא עם חיוך. ככה זה עובד:</p>
+        <p class="section-sub" style="margin-bottom:26px">אנרגיה גבוהה, מבנה ברור, וכל אחד יוצא עם חיוך. אותו מבנה אימון בראש העין ובפתח תקווה — ככה זה עובד:</p>
         <div class="steps">
           <div class="step"><div class="k">1</div><div><h4>מגיעים לפארק</h4><p>נפגשים בגינת הכושר בפסגות אפק (גולדה מאיר 20), לבושים בבגדי ספורט ועם בקבוק מים. יש הרבה מקום חניה.</p></div></div>
           <div class="step"><div class="k">2</div><div><h4>חימום קבוצתי</h4><p>המאמן פותח באנרגיה, משחרר את הגוף ומכניס את כולם למצב.</p></div></div>
@@ -836,7 +967,7 @@
       <div class="center reveal">
         <span class="eyebrow">מי מאמן אתכם</span>
         <h2 class="section-title">פנים, לא מכונה</h2>
-        <p class="section-sub">שני אנשים אמיתיים שיודעים את השם שלכם — ואכפת להם מהתוצאה שלכם.</p>
+        <p class="section-sub">שני אנשים אמיתיים שיודעים את השם שלכם — ואכפת להם מהתוצאה שלכם. המאמן של הקבוצות בפתח תקווה נבחר לפי אותם קריטריונים, ונכנס לתפקיד לקראת הפתיחה.</p>
       </div>
       <div class="coach-grid">
         <div class="coach reveal">
@@ -865,7 +996,7 @@
       <div class="center reveal">
         <span class="eyebrow">מה הורים מספרים</span>
         <h2 class="section-title">התוצאה האמיתית היא בבית</h2>
-        <p class="section-sub">ביקורות אמיתיות של הורים מגוגל — דירוג 4.7 מתוך 84 ביקורות.</p>
+        <p class="section-sub">ביקורות אמיתיות של הורים מגוגל — דירוג 4.7 מתוך 84 ביקורות. כולן על הקהילה בראש העין, שעליה נבנות גם הקבוצות בפתח תקווה.</p>
       </div>
       <div style="text-align:center;margin-top:22px">
         <span class="g-badge">
@@ -914,9 +1045,11 @@
       <div class="center reveal">
         <span class="eyebrow">רגעים מהמגרש</span>
         <h2 class="section-title">ככה זה נראה אצלנו</h2>
-        <p class="section-sub">לא בימוי ולא סטודיו — רגעים אמיתיים מהאימונים בפארק בראש העין.</p>
+        <p class="section-sub">לא בימוי ולא סטודיו — רגעים אמיתיים מהאימונים בפארק בראש העין, מקו הילדים ומקבוצות האבות והאמהות.</p>
       </div>
       <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(124px,1fr));gap:12px;margin-top:44px">
+        <img src="assets/adults-fathers-480.webp" alt="קבוצת האבות של טים לידר באימון ערב בפארק בראש העין" loading="lazy" decoding="async" style="width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:14px;border:1px solid var(--line)" />
+        <img src="assets/adults-mothers-480.webp" alt="אימון בקבוצת האמהות של טים לידר בפארק בראש העין" loading="lazy" decoding="async" style="width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:14px;border:1px solid var(--line)" />
         <img src="assets/training-1-480.webp" alt="נערים מתאמנים על הדשא בפארק" loading="lazy" decoding="async" style="width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:14px;border:1px solid var(--line)" />
         <img src="assets/gal-b5-480.webp" alt="המאמן תמיר עם ילדים מהקבוצה בפארק" loading="lazy" decoding="async" style="width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:14px;border:1px solid var(--line)" />
         <img src="assets/hero-group-480.webp" alt="קבוצת טים לידר עם המאמן בפארק" loading="lazy" decoding="async" style="width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:14px;border:1px solid var(--line)" />
@@ -925,6 +1058,7 @@
         <img src="assets/gal-b6-480.webp" alt="ילדים ונערים באימון קבוצתי על הדשא בפארק" loading="lazy" decoding="async" style="width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:14px;border:1px solid var(--line)" />
         <img src="assets/training-3-600.webp" alt="אימון קבוצתי בפארק" loading="lazy" decoding="async" style="width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:14px;border:1px solid var(--line)" />
       </div>
+      <p class="section-sub" style="margin:18px auto 0;text-align:center;font-size:14.5px;color:var(--muted-2)">כל התמונות מהאימונים בראש העין. בפתח תקווה מצלמים מהאימון הראשון, ב-11 באוקטובר.</p>
     </div>
   </section>
 
@@ -954,6 +1088,8 @@
         <div class="qa"><button>איך נרשמים?<span class="plus"></span></button><div class="ans"><p>הכי פשוט — שולחים לנו הודעת וואטסאפ למספר 054-974-7713 (או <a href="tel:+972549747713">מחייגים</a>), ואנחנו חוזרים אליכם עם כל הפרטים ותיאום אימון ניסיון.</p></div></div>
         <div class="qa"><button>כמה זה עולה?<span class="plus"></span></button><div class="ans"><p>מתחילים באימון ניסיון בלי התחייבות, וממשיכים במנוי חודשי גמיש — בלי דמי רישום ובלי חוזה. לפרטי המחיר המעודכן לכל קבוצה שלחו לנו הודעת וואטסאפ למספר <a href="https://wa.me/972549747713" target="_blank" rel="noopener">054-974-7713</a> ונשלח לכם את כל הפרטים.</p></div></div>
         <div class="qa"><button>יש אימונים גם בפתח תקווה?<span class="plus"></span></button><div class="ans"><p>כן. ב-11 באוקטובר נפתחות בפתח תקווה קבוצת אבות (גברים 18+) וקבוצת אמהות (נשים 18+) — אימון פונקציונלי קבוצתי בפארק, פעמיים בשבוע. ההרשמה המוקדמת פתוחה עכשיו, וכל הפרטים נמצאים ב<a href="pt.html" style="color:var(--gold);font-weight:700">עמוד פתח תקווה</a>. קבוצות ילדים ונוער בפתח תקווה ייפתחו בהמשך.</p></div></div>
+        <div class="qa"><button>מה בדיוק נפתח בפתח תקווה, ומתי?<span class="plus"></span></button><div class="ans"><p>קבוצת אבות (גברים 18+) וקבוצת אמהות (נשים 18+), אימון פונקציונלי קבוצתי בפארק פעמיים בשבוע. האימון הראשון הוא ביום ראשון, 11 באוקטובר 2026. קבוצות ילדים ונוער בפתח תקווה ייפתחו בהמשך.</p></div></div>
+        <div class="qa"><button>אפשר להירשם לפתח תקווה כבר עכשיו?<span class="plus"></span></button><div class="ans"><p>כן, וזה בדיוק מה שכדאי. ההרשמה המוקדמת פתוחה: 10% הנחה על המחיר לשנה שלמה, יציאה חופשית ב-30 הימים הראשונים, ואין חיוב עכשיו — ההרשמה נסגרת בשיחה והחיוב מתחיל עם פתיחת הקבוצה. כל הפרטים ב<a href="pt.html" style="color:var(--gold);font-weight:700">עמוד פתח תקווה</a>.</p></div></div>
         <div class="qa"><button>מה קורה בחורף או בימי גשם?<span class="plus"></span></button><div class="ans"><p>רוב השנה מתאמנים בפארק באוויר הפתוח. בימי גשם עוברים למתחם מקורה, כך שהאימון מתקיים כרגיל ולא מבוטל בגלל מזג האוויר.</p></div></div>
       </div>
       <p class="center" style="margin-top:28px;color:var(--muted);font-size:16px">
@@ -968,6 +1104,7 @@
       <div class="final-card reveal">
         <h2>מוכנים להתחיל?</h2>
         <p>השאירו שם וטלפון ונחזור אליכם עוד היום לתאם אימון ניסיון, בלי התחייבות.</p>
+        <div class="form-route" style="text-align:center;margin-bottom:14px">הטופס מיועד לקבוצות בראש העין · מפתח תקווה? <a href="pt.html">להרשמה המוקדמת ←</a></div>
         <form class="lead-form" style="margin-inline:auto;justify-content:center" onsubmit="return submitLead(this)">
           <div class="grp" role="group" aria-label="למי האימון?">
             <button type="button" class="chip active" data-grp="ילד" aria-pressed="true">לילד</button>
