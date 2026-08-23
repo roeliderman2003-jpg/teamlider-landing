@@ -173,7 +173,7 @@
     tr.tl-row td:first-child { font-weight: 800; color: var(--cyan-bright); }
 
     .photo { border-radius: 20px; overflow: hidden; border: 1px solid var(--line); margin: 28px 0; }
-    .photo img { width: 100%; aspect-ratio: 16/8; object-fit: cover; }
+    .photo img { width: 100%; height: auto; aspect-ratio: 16/8; object-fit: cover; }
 
     ul.checks { list-style: none; margin: 6px 0 14px; display: flex; flex-direction: column; gap: 9px; }
     ul.checks li { position: relative; padding-inline-start: 30px; color: var(--muted); font-size: 16px; }
@@ -220,7 +220,14 @@
     .city-switch a[aria-current="page"] { color: var(--white); background: rgba(255,255,255,.045); border-color: rgba(255,255,255,.10); }
     .city-switch .sep { width: 1px; height: 16px; background: rgba(255,255,255,.10); }
     @media (max-width: 620px) { .city-switch { font-size: 13px; gap: 5px; } .city-switch a { padding: 5px 9px; } }
-  </style>
+      /* touch targets: inline links sat at line-height only (16-23px) on phones */
+    @media (max-width: 760px) {
+      .lead-link, .city-band a, .pt-only a, .form-route a, .city-cta {
+        display: inline-block; padding-block: 9px;
+      }
+      .city-switch a { padding: 11px 12px; }
+    }
+</style>
 </head>
 <body>
 
