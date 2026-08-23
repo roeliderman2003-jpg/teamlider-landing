@@ -225,6 +225,18 @@
     @media (max-width: 560px) { .nav-cta .btn-ghost { display: none; } }
     @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .btn { transition: none; } }
     a:focus-visible, button:focus-visible { outline: 2px solid var(--cyan-bright); outline-offset: 3px; }
+
+    /* Both cities, always, in the same shape — neither is a sub-item of the other */
+    .city-switch { display: flex; align-items: center; gap: 8px; font-size: 14.5px; font-weight: 700; }
+    .city-switch a { color: var(--muted); padding: 6px 12px; border-radius: 100px; border: 1px solid transparent; }
+    .city-switch a:hover { color: var(--white); }
+    .city-switch a[aria-current="page"] { color: var(--white); background: rgba(255,255,255,.045); border-color: rgba(255,255,255,.10); }
+    .city-switch .sep { width: 1px; height: 16px; background: rgba(255,255,255,.10); }
+    @media (max-width: 620px) { .city-switch { font-size: 13px; gap: 5px; } .city-switch a { padding: 5px 9px; } }
+
+    :root { --gold: #F0C05C; }
+    .pt-only { font-size: 13px; color: var(--gold); margin-top: 10px; line-height: 1.55; }
+    .pt-only a { color: var(--gold); text-decoration: underline; font-weight: 700; }
   </style>
 </head>
 <body>
@@ -235,6 +247,11 @@
         <img src="assets/logo-square.png" alt="Team Lider" />
         <span style="font-weight:900">TEAM<b style="color:var(--cyan-bright)"> LIDER</b></span>
       </a>
+            <nav class="city-switch" aria-label="בחירת עיר">
+        <a href="rh.html">ראש העין</a>
+        <span class="sep" aria-hidden="true"></span>
+        <a href="pt.html">פתח תקווה</a>
+      </nav>
       <div class="nav-cta">
         <a href="/" class="btn btn-ghost">לדף הבית</a>
         <a href="https://wa.me/972549747713?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A4%D7%A8%D7%98%D7%99%D7%9D%20%D7%A2%D7%9C%20%D7%90%D7%99%D7%9E%D7%95%D7%9F%20%D7%9C%D7%9E%D7%91%D7%95%D7%92%D7%A8%D7%99%D7%9D" class="btn btn-primary" target="_blank" rel="noopener">לתיאום אימון ניסיון</a>
@@ -250,6 +267,11 @@
       <p class="lead">כן, גם אתם. מעבר לקבוצות הילדים, Team Lider מפעילה קבוצות כושר למבוגרים בפארק בראש העין — לאבות ולאמהות. חבורה קבועה, אימון פונקציונלי קהילתי, קרוב לבית — בדיוק מה ששומר על ההתמדה כשחדר כושר רגיל "נעלם" מהחיים.</p>
 
       <form class="lead-form" id="leadform" onsubmit="return submitLead(this)">
+        <div class="grp city-grp" role="group" aria-label="באיזו עיר?">
+          <button type="button" class="chip active" data-city="rh" aria-pressed="true">ראש העין</button>
+          <button type="button" class="chip" data-city="pt" aria-pressed="false">פתח תקווה</button>
+        </div>
+        <input type="hidden" name="city" value="rh" />
         <div class="grp" role="group" aria-label="למי האימון?">
           <button type="button" class="chip active" data-grp="אבא" aria-pressed="true">לאבא</button>
           <button type="button" class="chip" data-grp="אמא" aria-pressed="false">לאמא</button>
@@ -262,7 +284,7 @@
       </form>
       <div class="lead-msg" aria-live="polite"></div>
       <div class="form-privacy">הפרטים לתיאום בלבד — בלי ספאם ובלי רשימות תפוצה · <a href="privacy.html">מדיניות פרטיות</a></div>
-      <div class="form-privacy" style="margin-top:12px">מפתח תקווה? קבוצות אבות ואמהות נפתחות שם ב-11 באוקטובר — <a href="pt.html">לפרטים ולהרשמה המוקדמת ←</a></div>
+      <div class="pt-only" data-pt-only hidden>הקבוצות בפתח תקווה נפתחות ב-11 באוקטובר, וההרשמה עכשיו היא לפריסייל חברי מייסד — <a href="pt.html">לכל התנאים ←</a></div>
       <div class="hero-micro">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="#5CCBF0" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
         נחזור אליכם עוד היום
@@ -364,12 +386,29 @@
     // Group chips (father / mother)
     document.querySelectorAll('.grp .chip').forEach(function (c) {
       c.addEventListener('click', function () {
-        var f = c.closest('form'); if (!f) return;
-        f.querySelectorAll('.chip').forEach(function (o) { o.classList.remove('active'); o.setAttribute('aria-pressed', 'false'); });
+        var f = c.closest('form'), g = c.closest('.grp'); if (!f || !g) return;
+        g.querySelectorAll('.chip').forEach(function (o) { o.classList.remove('active'); o.setAttribute('aria-pressed', 'false'); });
         c.classList.add('active'); c.setAttribute('aria-pressed', 'true');
-        if (f.group) f.group.value = c.dataset.grp;
+        if (c.dataset.grp && f.group) f.group.value = c.dataset.grp;
+        if (c.dataset.city && f.city) { f.city.value = c.dataset.city; applyCity(f); }
       });
     });
+
+    // Chips — the forms hold TWO groups (city, audience), so a click clears only its own
+    // .grp. Petah Tikva opens with adult groups only; a kid chip there has nothing to book.
+    function applyCity(form) {
+      var isPT = !!(form.city && form.city.value === 'pt');
+      var kidChips = form.querySelectorAll('.chip[data-grp="ילד"], .chip[data-grp="נער"]');
+      kidChips.forEach(function (c) { c.hidden = isPT; });
+      if (isPT && form.querySelector('.chip.active[data-grp="ילד"], .chip.active[data-grp="נער"]')) {
+        var fb = form.querySelector('.chip[data-grp="אבא"]');
+        if (fb) fb.click();
+      }
+      var box = form.closest('section, .final-card, .ghero') || document;
+      box.querySelectorAll('[data-pt-only]').forEach(function (el) { el.hidden = !isPT; });
+    }
+    document.querySelectorAll('form.lead-form').forEach(applyCity);
+
 
     // Sticky mobile CTA — shows once the hero form scrolls out of view
     var leadForm = document.getElementById('leadform');
@@ -397,10 +436,12 @@
       if (msg) { msg.textContent = 'שולח…'; msg.className = 'lead-msg'; }
       var qs = new URLSearchParams(location.search);
       var grp = (form.group && form.group.value) || '';
+      var city = (form.city && form.city.value) || 'rh';
       var payload = new URLSearchParams({
         // city is stated EXPLICITLY on every form (never derived from `page` or utm_*): the URL
-        // changes, and a derived city would break the branch attribution silently. pt.html sends 'pt'.
-        name: name, phone: phone, group: grp, city: 'rh',
+        // changes, and a derived city would break the branch attribution silently. Here it comes
+        // from the city chips and defaults to 'rh'; pt.html always sends 'pt'.
+        name: name, phone: phone, group: grp, city: city,
         utm_source: qs.get('utm_source') || '', utm_medium: qs.get('utm_medium') || '',
         utm_campaign: qs.get('utm_campaign') || '', utm_content: qs.get('utm_content') || ('adults · קבוצה: ' + (grp || '')),
         referrer: document.referrer || '', page: location.href
@@ -412,7 +453,7 @@
             sessionStorage.setItem('tl_group', grp);
             sessionStorage.setItem('tl_name', name.split(' ')[0]);
           } catch (e) {}
-          location.href = 'thanks.html?g=' + encodeURIComponent(grp);
+          location.href = 'thanks.html?g=' + encodeURIComponent(grp) + '&c=' + encodeURIComponent(city);
         })
         .catch(function () {
           if (msg) { msg.textContent = 'קרתה תקלה — נסו שוב או שלחו לנו וואטסאפ'; msg.className = 'lead-msg err'; }

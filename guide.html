@@ -212,6 +212,14 @@
     }
     @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .btn { transition: none; } }
     a:focus-visible, button:focus-visible { outline: 2px solid var(--cyan-bright); outline-offset: 3px; }
+
+    /* Both cities, always, in the same shape — neither is a sub-item of the other */
+    .city-switch { display: flex; align-items: center; gap: 8px; font-size: 14.5px; font-weight: 700; }
+    .city-switch a { color: var(--muted); padding: 6px 12px; border-radius: 100px; border: 1px solid transparent; }
+    .city-switch a:hover { color: var(--white); }
+    .city-switch a[aria-current="page"] { color: var(--white); background: rgba(255,255,255,.045); border-color: rgba(255,255,255,.10); }
+    .city-switch .sep { width: 1px; height: 16px; background: rgba(255,255,255,.10); }
+    @media (max-width: 620px) { .city-switch { font-size: 13px; gap: 5px; } .city-switch a { padding: 5px 9px; } }
   </style>
 </head>
 <body>
@@ -222,6 +230,11 @@
         <img src="assets/logo-square.png" alt="Team Lider" />
         <span style="font-weight:900">TEAM<b style="color:var(--cyan-bright)"> LIDER</b></span>
       </a>
+            <nav class="city-switch" aria-label="בחירת עיר">
+        <a href="rh.html">ראש העין</a>
+        <span class="sep" aria-hidden="true"></span>
+        <a href="pt.html">פתח תקווה</a>
+      </nav>
       <div class="nav-cta">
         <a href="/" class="btn btn-ghost">לדף הבית</a>
         <a href="https://wa.me/972549747713?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A4%D7%A8%D7%98%D7%99%D7%9D%20%D7%A2%D7%9C%20%D7%90%D7%99%D7%9E%D7%95%D7%9F%20%D7%A0%D7%99%D7%A1%D7%99%D7%95%D7%9F" class="btn btn-primary" target="_blank" rel="noopener">אימון ניסיון</a>
@@ -235,6 +248,7 @@
       <nav class="crumb" aria-label="breadcrumb"><a href="/">בית</a> · מדריך כושר בראש העין</nav>
       <span class="eyebrow">🏃 מדריך להורים · ראש העין 2026</span>
       <h1>אימוני כושר וספורט בראש העין — <span class="cyan">מדריך למשפחה</span></h1>
+      <p style="color:var(--muted-2);font-size:15px;margin-top:10px">המדריך סוקר את ראש העין. מפתח תקווה? <a href="pt.html" style="color:#F0C05C;font-weight:700">קבוצות האבות והאמהות נפתחות שם ב-11 באוקטובר ←</a></p>
       <p class="lead">רוצים להוציא את הילד מהמסכים, או סוף סוף לחזור לעצמכם? ריכזנו את כל אפשרויות הכושר בראש העין — לילדים ולנוער וגם למבוגרים (אבות ואמהות) — עם השוואה הוגנת ואיך בוחרים את מה שמתאים למשפחה שלכם.</p>
     </div>
   </section>

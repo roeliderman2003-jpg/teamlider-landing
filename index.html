@@ -435,8 +435,6 @@
     .city-list li { color: var(--muted); font-size: 15px; padding-inline-start: 21px; position: relative; }
     .city-list li::before { content: '\2713'; position: absolute; inset-inline-start: 0; color: var(--cyan-bright); font-weight: 800; }
     .city-cta { margin-top: 20px; color: var(--cyan-bright); font-weight: 800; font-size: 15px; }
-    .nav-links a.nav-pt { color: var(--gold); }
-    .nav-links a.nav-pt::after { background: var(--gold); }
     .nav-sep { width: 1px; height: 17px; background: var(--line); flex: none; }
 
     /* ---------- Two-city bands + Petah Tikva variants ---------- */
@@ -444,7 +442,9 @@
       display: flex; align-items: center; gap: 14px;
       margin: 52px 0 22px; font-size: clamp(17px, 2.4vw, 21px); font-weight: 800;
     }
-    .city-band::after { content: ''; flex: 1; height: 1px; background: var(--line); }
+    .city-band .st { order: 1; }
+    .city-band::after { content: ''; flex: 1; height: 1px; background: var(--line); order: 2; }
+    .city-band a { order: 3; }
     .city-band .st { font-size: 12.5px; font-weight: 800; letter-spacing: .3px; }
     .city-band .st.on { color: #7BE0A6; }
     .city-band .st.soon { color: var(--gold); }
@@ -619,7 +619,8 @@
         <a href="#how">איך זה עובד</a>
         <a href="#faq">שאלות</a>
         <span class="nav-sep" aria-hidden="true"></span>
-        <a href="pt.html" class="nav-pt">סניף פתח תקווה</a>
+        <a href="rh.html">ראש העין</a>
+        <a href="pt.html">פתח תקווה</a>
       </nav>
       <div class="nav-cta">
         <a href="#tracks" class="btn btn-ghost">הקבוצות</a>
@@ -638,7 +639,7 @@
         <span class="eyebrow">🏃 אימונים בפארק · קבוצות קטנות · שתי ערים</span>
         <h1>אימוני כושר קבוצתיים בפארק — <span class="cyan">ביטחון, כוח וחברים</span></h1>
         <div class="hero-cities">
-          <a class="hc" href="#tracks"><b>ראש העין</b><span class="st on">● מתאמנים היום</span></a>
+          <a class="hc" href="rh.html"><b>ראש העין</b><span class="st on">● מתאמנים היום</span></a>
           <a class="hc" href="pt.html"><b>פתח תקווה</b><span class="st soon">● נפתח ב-11 באוקטובר</span></a>
         </div>
         <p class="lead">
@@ -736,7 +737,7 @@
 
       <div class="city-grid">
 
-        <a class="city reveal" href="#tracks">
+        <a class="city reveal" href="rh.html">
           <div class="city-top">
             <span class="city-state on">● מתאמנים היום</span>
             <h3>ראש העין</h3>
@@ -748,7 +749,7 @@
             <li>אימונים כל יום — אחר הצהריים וערב</li>
             <li>מעל 500 מתאמנים · 4.7 מ-84 ביקורות בגוגל</li>
           </ul>
-          <span class="city-cta">לקבוצות בראש העין ←</span>
+          <span class="city-cta">לעמוד ראש העין ולכל הקבוצות ←</span>
         </a>
 
         <a class="city reveal" href="pt.html">
@@ -820,7 +821,7 @@
         <p class="section-sub">אותה שיטה, אותה אווירה — בשתי הערים. לחצו על הקבוצה שמדברת אליכם.</p>
       </div>
 
-      <h3 class="city-band">ראש העין <span class="st on">● מתאמנים היום</span></h3>
+      <h3 class="city-band">ראש העין <span class="st on">● מתאמנים היום</span><a href="rh.html" style="font-size:14px;font-weight:700;color:var(--cyan-bright);white-space:nowrap">לעמוד ראש העין ←</a></h3>
 
       <div class="tracks-grid">
 
@@ -893,7 +894,7 @@
 
       </div>
 
-      <h3 class="city-band">פתח תקווה <span class="st soon">● נפתח ב-11 באוקטובר</span></h3>
+      <h3 class="city-band">פתח תקווה <span class="st soon">● נפתח ב-11 באוקטובר</span><a href="pt.html" style="font-size:14px;font-weight:700;color:var(--gold);white-space:nowrap">לעמוד פתח תקווה ←</a></h3>
 
       <div class="tracks-grid two">
 
@@ -1198,14 +1199,15 @@
           <a href="kids.html">ילדים ונערים · בנים 8–15</a>
           <a href="adults.html">אימוני כושר למבוגרים</a>
           <a href="guide.html">מדריך כושר למשפחה</a>
-          <a href="pt.html" style="color:var(--gold)">פתח תקווה — אבות ואמהות · נפתח 11.10</a>
+          <a href="rh.html">ראש העין — אבות, אמהות וילדים</a>
+          <a href="pt.html">פתח תקווה — אבות ואמהות · נפתח 11.10</a>
         </div>
         <div class="foot-col">
           <h5>יצירת קשר</h5>
           <a href="https://wa.me/972549747713" target="_blank" rel="noopener">וואטסאפ · 054-974-7713</a>
           <a href="tel:+972549747713">חייגו · 054-974-7713</a>
-          <p>ראש העין · גינת הכושר, גולדה מאיר 20, פסגות אפק</p>
-          <p>פתח תקווה · נפתח ב-11 באוקטובר — <a href="pt.html" style="color:var(--gold)">לפרטים</a></p>
+          <p>ראש העין · גינת הכושר, גולדה מאיר 20, פסגות אפק — <a href="rh.html" style="color:var(--cyan-bright)">לפרטים</a></p>
+          <p>פתח תקווה · נפתח ב-11 באוקטובר — <a href="pt.html" style="color:var(--cyan-bright)">לפרטים</a></p>
           <div class="foot-social" style="margin-top:6px">
             <a href="https://www.instagram.com/team_lider01" target="_blank" rel="noopener" aria-label="Instagram" title="Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><rect x="2" y="2" width="20" height="20" rx="5.5" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4.2" stroke="currentColor" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.3" fill="currentColor"/></svg></a>
             <a href="https://www.tiktok.com/@team_lider_1" target="_blank" rel="noopener" aria-label="TikTok" title="TikTok"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M16.5 3c.3 2.1 1.6 3.7 3.5 4v2.6c-1.3.1-2.6-.3-3.7-1v6.3c0 3.2-2.6 5.6-5.7 5.3-2.7-.2-4.8-2.5-4.7-5.2.1-2.7 2.4-4.9 5.1-4.8.3 0 .5 0 .8.1v2.7c-.3-.1-.5-.1-.8-.1-1.2 0-2.2 1-2.2 2.2s1 2.2 2.2 2.2 2.2-1 2.2-2.2V3h3z"/></svg></a>
@@ -1356,7 +1358,7 @@
             sessionStorage.setItem('tl_group', grp);
             sessionStorage.setItem('tl_name', name.split(' ')[0]);
           } catch (e) {}
-          location.href = 'thanks.html?g=' + encodeURIComponent(grp);
+          location.href = 'thanks.html?g=' + encodeURIComponent(grp) + '&c=' + encodeURIComponent(city);
         })
         .catch(function () {
           if (msg) { msg.textContent = 'קרתה תקלה — נסו שוב או שלחו לנו וואטסאפ'; msg.className = 'lead-msg err'; }

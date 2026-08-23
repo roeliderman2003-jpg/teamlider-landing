@@ -196,7 +196,8 @@
 
       <!-- 3. Kids testimonials video -->
       <section class="video-sec">
-        <h2>אל תאמינו לנו — תשמעו את זה מהילדים</h2>
+        <h2 data-rh-only>אל תאמינו לנו — תשמעו את זה מהילדים</h2>
+        <h2 data-pt-only hidden>ככה זה נראה אצלנו בראש העין</h2>
         <p class="vsub">רגע קטן מהמגרש, במילים שלהם.</p>
         <div class="video-shell">
           <div class="video-embed">
@@ -235,15 +236,18 @@
             <div class="by"><b>מיטל שקיטל</b> · ביקורת בגוגל</div>
           </div>
         </div>
-        <p class="sum">יותר מ-500 ילדים כבר התאמנו איתנו בפארק בראש העין. אתם בחברה טובה. 💙</p>
+        <p class="sum" data-rh-only>יותר מ-500 מבוגרים, נערים וילדים כבר התאמנו איתנו בפארק בראש העין. אתם בחברה טובה. 💙</p>
+        <p class="sum" data-pt-only hidden>יותר מ-500 מבוגרים, נערים וילדים כבר התאמנו איתנו בראש העין — ופתח תקווה היא העיר השנייה. אתם בחברה טובה. 💙</p>
       </section>
 
       <!-- 6. First-training tips -->
       <section class="card">
-        <div class="card-title">לקראת האימון הראשון</div>
+        <div class="card-title" data-rh-only>לקראת האימון הראשון</div>
+        <div class="card-title" data-pt-only hidden>לקראת הפתיחה ב-11 באוקטובר</div>
         <ul class="steps">
           <li><span class="n">👟</span><div class="txt">בגדי ספורט נוחים, נעליים ובקבוק מים<small>את כל שאר הציוד — משקולות, גומיות, TRX — אנחנו מביאים</small></div></li>
-          <li><span class="n">📍</span><div class="txt">מגיעים כמה דקות לפני<small>את המיקום המדויק בפארק תקבלו כשנתאם איתכם</small></div></li>
+          <li><span class="n">📍</span><div class="txt" data-rh-only>מגיעים כמה דקות לפני<small>את המיקום המדויק בפארק תקבלו כשנתאם איתכם</small></div>
+            <div class="txt" data-pt-only hidden>נקודת המפגש והלו״ז<small>נשלחים לנרשמים לפני האימון הראשון בפתח תקווה</small></div></li>
         </ul>
       </section>
 
@@ -269,6 +273,8 @@
 
       var grp = getParam('g') || ss('tl_group') || '';
       var name = ss('tl_name') || '';
+      // Petah Tikva has not opened yet — a presale lead must not be told to show up at a park.
+      var isPT = (getParam('c') || '') === 'pt';
 
       var conf = {
         'ילד': {
@@ -303,6 +309,15 @@
         wa: 'היי, השארתי עכשיו פרטים באתר — אשמח לתאם 🙂'
       };
 
+      if (isPT) {
+        d = {
+          title: 'שריינו לך מקום בפריסייל 💪',
+          sub: 'נחזור אליך עוד היום עם כל הפרטים על הקבוצות בפתח תקווה — ותנאי חבר מייסד נשמרים לך. אין חיוב עכשיו.',
+          step3: 'נפגשים באימון הראשון — יום ראשון, 11 באוקטובר',
+          wa: 'היי, השארתי עכשיו פרטים באתר לגבי קבוצות הפריסייל בפתח תקווה — אשמח לפרטים 🙂'
+        };
+      }
+
       var greeting = name ? ('תודה, ' + name + '! ') : 'מעולה! ';
       var t = document.getElementById('conf-title');
       var s = document.getElementById('conf-sub');
@@ -310,6 +325,13 @@
       if (t) t.textContent = greeting + d.title;
       if (s) s.textContent = d.sub;
       if (s3) s3.textContent = d.step3;
+
+      // The trial-session prep block and the Rosh HaAyin proof line only make sense
+      // for a city that is already running.
+      if (isPT) {
+        document.querySelectorAll('[data-rh-only]').forEach(function (el) { el.hidden = true; });
+        document.querySelectorAll('[data-pt-only]').forEach(function (el) { el.hidden = false; });
+      }
 
       document.querySelectorAll('a.wa-cta').forEach(function (a) {
         a.href = 'https://wa.me/972549747713?text=' + encodeURIComponent(d.wa);
