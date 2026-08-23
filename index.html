@@ -398,7 +398,12 @@
     .reveal.in { opacity: 1; transform: none; }
 
     /* Honeypot (spam trap) — hidden from users, visible to bots */
-    .hp-field { position: absolute; left: -9999px; top: auto; width: 1px; height: 1px; overflow: hidden; opacity: 0; pointer-events: none; }
+    /* visually-hidden, not off-canvas: `.lead-form input` beat `.hp-field`'s width,
+       so the -9999px honeypot stretched the document 10,000px wide. */
+    .hp-field, .lead-form input.hp-field {
+      position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; border: 0;
+      overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; opacity: 0; pointer-events: none;
+    }
 
     /* Keyboard focus ring */
     a:focus-visible, button:focus-visible, input:focus-visible {

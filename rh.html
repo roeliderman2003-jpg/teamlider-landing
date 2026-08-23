@@ -231,7 +231,12 @@
     .chip { flex: 1; font-family: inherit; font-size: 15px; font-weight: 700; cursor: pointer; padding: 12px 6px; min-height: 44px; border-radius: 100px; border: 1.5px solid var(--line); background: rgba(255,255,255,.05); color: var(--muted); transition: border-color .15s, background .15s, color .15s; }
     .chip:hover { border-color: var(--cyan); color: var(--white); }
     .chip.active { background: rgba(41,181,232,.16); border-color: var(--cyan); color: var(--cyan-bright); }
-    .hp-field { position: absolute; left: -9999px; top: auto; width: 1px; height: 1px; overflow: hidden; opacity: 0; pointer-events: none; }
+    /* visually-hidden, not off-canvas: `.lead-form input` beat `.hp-field`'s width,
+       so the -9999px honeypot stretched the document 10,000px wide. */
+    .hp-field, .lead-form input.hp-field {
+      position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; border: 0;
+      overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; opacity: 0; pointer-events: none;
+    }
     .form-privacy { margin-top: 9px; font-size: 12.5px; color: var(--muted-2); line-height: 1.5; }
     .form-privacy a { color: var(--muted); text-decoration: underline; }
     .hero-micro { margin-top: 14px; font-size: 14px; color: var(--muted-2); display: flex; align-items: center; gap: 8px; }
