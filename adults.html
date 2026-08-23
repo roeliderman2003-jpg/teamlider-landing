@@ -443,7 +443,7 @@
         // from the city chips and defaults to 'rh'; pt.html always sends 'pt'.
         name: name, phone: phone, group: grp, city: city,
         utm_source: qs.get('utm_source') || '', utm_medium: qs.get('utm_medium') || '',
-        utm_campaign: qs.get('utm_campaign') || '', utm_content: qs.get('utm_content') || ('adults · קבוצה: ' + (grp || '')),
+        utm_campaign: qs.get('utm_campaign') || '', utm_content: qs.get('utm_content') || (city + ' · adults · קבוצה: ' + (grp || '')),
         referrer: document.referrer || '', page: location.href
       });
       fetch(LEAD_ENDPOINT, { method: 'POST', mode: 'no-cors', body: payload })

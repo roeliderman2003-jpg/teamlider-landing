@@ -532,7 +532,7 @@
         // changes, and a derived city would break the branch attribution silently. pt.html sends 'pt'.
         name: name, phone: phone, group: grp, city: 'rh',
         utm_source: qs.get('utm_source') || '', utm_medium: qs.get('utm_medium') || '',
-        utm_campaign: qs.get('utm_campaign') || '', utm_content: qs.get('utm_content') || ('kids · קבוצה: ' + (grp || '')),
+        utm_campaign: qs.get('utm_campaign') || '', utm_content: qs.get('utm_content') || ('rh · kids · קבוצה: ' + (grp || '')),
         referrer: document.referrer || '', page: location.href
       });
       fetch(LEAD_ENDPOINT, { method: 'POST', mode: 'no-cors', body: payload })
