@@ -258,6 +258,10 @@
         display: inline-block; padding-block: 9px;
       }
       .city-switch a { padding: 11px 12px; }
+      /* the header row is brand + city switch + CTA; on phones the three together
+         exceed the content box and squeeze the brand (355px wanted in 331px).
+         The logo mark alone still links home. */
+      .brand span { display: none; }
     }
 
     /* Silent training reel — loops on its own, no sound to unmute */
