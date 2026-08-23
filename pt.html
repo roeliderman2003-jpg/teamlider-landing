@@ -316,6 +316,15 @@
       }
       .city-switch a { padding: 11px 12px; }
     }
+
+    /* Silent training reel — loops on its own, no sound to unmute */
+    .reel { margin: 0 0 32px; }
+    .reel-wrap {
+      max-width: 400px; margin: 18px auto 0; border-radius: 20px; overflow: hidden;
+      border: 1px solid var(--line); background: #000; box-shadow: var(--shadow);
+    }
+    .reel-wrap video { width: 100%; height: auto; aspect-ratio: 4/5; display: block; object-fit: cover; }
+    .reel .cap { text-align: center; font-size: 13px; color: var(--muted-2); margin-top: 10px; }
 </style>
 </head>
 <body>
@@ -439,6 +448,18 @@
       <li><b>מאמן שמכיר אותך.</b> מתקן טכניקה, מוריד עומס כשצריך, ומעלה כשאפשר.</li>
       <li><b>בלי מסלולי התחייבות.</b> ממשיכים כי זה עובד, לא כי חתמתם.</li>
     </ul>
+
+    <section class="reel">
+      <h2>ככה נראה אימון אצלנו</h2>
+      <p class="sub">קבוצות האבות והאמהות בראש העין — אותו מודל שנפתח בפתח תקווה.</p>
+      <div class="reel-wrap">
+        <video playsinline autoplay muted loop preload="metadata" poster="assets/proof-fathers-poster.webp"
+               aria-label="קטעים מאימוני קבוצות המבוגרים של טים לידר בראש העין">
+          <source src="assets/proof-fathers.mp4" type="video/mp4" />
+        </video>
+      </div>
+      <p class="cap">צולם באימוני קבוצות המבוגרים בראש העין.</p>
+    </section>
 
     <h2>לא מתחילים מאפס</h2>
     <p>Team Lider היא לא קבוצה חדשה שנפתחת בפתח תקווה. זו קהילה שפועלת בראש העין משנת 2019, עם קבוצת אבות וקבוצת אמהות שמתאמנות שם היום בדיוק באותו מודל — אותו אימון פונקציונלי, אותו גודל קבוצה, אותה שיטה של התאמת עומס לכל אחד. מעל 500 ילדים, נערים ומבוגרים כבר עברו אצלנו, ו-84 מהם טרחו לכתוב על זה ביקורת בגוגל בשם מלא. פתח תקווה היא העיר השנייה, לא הניסיון הראשון.</p>
