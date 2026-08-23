@@ -177,7 +177,7 @@
 
     .photo { border-radius: 20px; overflow: hidden; border: 1px solid var(--line); margin: 28px 0; }
     /* the clips are vertical, so a 4/3 window keeps the people instead of a thin band */
-    .photo img { width: 100%; aspect-ratio: 4/3; object-fit: cover; }
+    .photo img { width: 100%; height: auto; aspect-ratio: 4/3; object-fit: cover; }
 
     .qa { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 18px 20px; margin-bottom: 10px; }
     .qa h3 { margin: 0 0 6px; color: var(--white); font-size: 17px; }
@@ -252,7 +252,13 @@
     .btn-gold { background: var(--gold); color: #241a05; }
     .btn-gold:hover { box-shadow: 0 14px 34px -12px rgba(240,192,92,.6); }
     .city-h2 .tag-city { font-size: .62em; font-weight: 800; color: var(--muted-2); }
-  </style>
+      /* touch targets: inline links sat at line-height only (16–23px) on phones */
+    @media (max-width: 760px) {
+      .lead-link, .city-band a, .pt-only a, .form-route a, .city-cta {
+        display: inline-block; padding-block: 9px;
+      }
+    }
+</style>
 </head>
 <body>
 

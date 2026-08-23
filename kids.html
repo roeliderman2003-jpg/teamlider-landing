@@ -261,7 +261,13 @@
     :root { --gold: #F0C05C; }
     .pt-only { font-size: 13px; color: var(--gold); margin-top: 10px; line-height: 1.55; }
     .pt-only a { color: var(--gold); text-decoration: underline; font-weight: 700; }
-  </style>
+      /* touch targets: inline links sat at line-height only (16–23px) on phones */
+    @media (max-width: 760px) {
+      .lead-link, .city-band a, .pt-only a, .form-route a, .city-cta {
+        display: inline-block; padding-block: 9px;
+      }
+    }
+</style>
 </head>
 <body>
 

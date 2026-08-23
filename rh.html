@@ -311,7 +311,13 @@
     .person h3 { font-size: 19px; margin: 3px 0 6px; }
     .person p { font-size: 14.5px; color: var(--muted); margin: 0; }
     @media (max-width: 760px) { .people { grid-template-columns: 1fr; } }
-  </style>
+      /* touch targets: inline links sat at line-height only (16–23px) on phones */
+    @media (max-width: 760px) {
+      .lead-link, .city-band a, .pt-only a, .form-route a, .city-cta {
+        display: inline-block; padding-block: 9px;
+      }
+    }
+</style>
 </head>
 <body>
 

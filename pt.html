@@ -309,7 +309,13 @@
     .city-switch a[aria-current="page"] { color: var(--white); background: rgba(255,255,255,.045); border-color: rgba(255,255,255,.10); }
     .city-switch .sep { width: 1px; height: 16px; background: rgba(255,255,255,.10); }
     @media (max-width: 620px) { .city-switch { font-size: 13px; gap: 5px; } .city-switch a { padding: 5px 9px; } }
-  </style>
+      /* touch targets: inline links sat at line-height only (16–23px) on phones */
+    @media (max-width: 760px) {
+      .lead-link, .city-band a, .pt-only a, .form-route a, .city-cta {
+        display: inline-block; padding-block: 9px;
+      }
+    }
+</style>
 </head>
 <body>
 

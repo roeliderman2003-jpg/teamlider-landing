@@ -449,7 +449,7 @@
     }
     .city-band .st { order: 1; }
     .city-band::after { content: ''; flex: 1; height: 1px; background: var(--line); order: 2; }
-    .city-band a { order: 3; }
+    .city-band a { order: 3; padding: 9px 4px; }
     .city-band .st { font-size: 12.5px; font-weight: 800; letter-spacing: .3px; }
     .city-band .st.on { color: #7BE0A6; }
     .city-band .st.soon { color: var(--gold); }
@@ -550,7 +550,13 @@
       .hero-cta .btn { width: 100%; }
       .float-badge { display: none; }
     }
-  </style>
+      /* touch targets: inline links sat at line-height only (16–23px) on phones */
+    @media (max-width: 760px) {
+      .lead-link, .city-band a, .pt-only a, .form-route a, .city-cta {
+        display: inline-block; padding-block: 9px;
+      }
+    }
+</style>
 
   <!-- Structured data: business entity (address/hours/socials enriched on confirmation) -->
   <script type="application/ld+json">
