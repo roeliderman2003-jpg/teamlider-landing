@@ -9,3 +9,6 @@ GA4-SETUP-PROMPT.md
 
 # Local editor/preview config
 .claude/
+
+# raw WhatsApp screenshots — staging only, never served
+incoming-testimonials/
