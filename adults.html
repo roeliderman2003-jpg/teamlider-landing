@@ -176,7 +176,8 @@
     ul.checks li b { color: var(--white); }
 
     .photo { border-radius: 20px; overflow: hidden; border: 1px solid var(--line); margin: 28px 0; }
-    .photo img { width: 100%; aspect-ratio: 16/8; object-fit: cover; }
+    /* the clips are vertical, so a 4/3 window keeps the people instead of a thin band */
+    .photo img { width: 100%; aspect-ratio: 4/3; object-fit: cover; }
 
     .qa { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 18px 20px; margin-bottom: 10px; }
     .qa h3 { margin: 0 0 6px; color: var(--white); font-size: 17px; }
@@ -324,6 +325,12 @@
     </div>
 
     <h2>קבוצת האמהות — נשים 18+</h2>
+    <div class="photo">
+      <img src="assets/adults-mothers-wide-1200.webp"
+             srcset="assets/adults-mothers-wide-800.webp 800w, assets/adults-mothers-wide-1200.webp 1200w"
+             sizes="(max-width: 900px) 92vw, 820px"
+             alt="אימון בקבוצת האמהות של טים לידר בפארק בראש העין" loading="lazy" decoding="async" width="1200" height="900" />
+    </div>
     <div class="opt feat">
       <div class="who">מרחב נשים בלבד · בכל רמה</div>
       <h3>סוף סוף שעתיים בשבוע שהן רק שלך</h3>
@@ -358,7 +365,10 @@
     </ul>
 
     <div class="photo">
-      <img src="assets/hero-group-960.webp" alt="אימון קבוצתי של טים לידר בפארק בראש העין" loading="lazy" decoding="async" width="960" height="480" />
+      <img src="assets/adults-fathers-wide-1200.webp"
+             srcset="assets/adults-fathers-wide-800.webp 800w, assets/adults-fathers-wide-1200.webp 1200w"
+             sizes="(max-width: 900px) 92vw, 820px"
+             alt="קבוצת האבות של טים לידר מתאמנת בפארק בראש העין" loading="lazy" decoding="async" width="1200" height="900" />
     </div>
 
     <h2>למי הקבוצות מתאימות?</h2>

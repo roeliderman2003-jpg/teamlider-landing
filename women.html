@@ -175,7 +175,8 @@
     ul.checks li b { color: var(--white); }
 
     .photo { border-radius: 20px; overflow: hidden; border: 1px solid var(--line); margin: 28px 0; }
-    .photo img { width: 100%; aspect-ratio: 16/8; object-fit: cover; }
+    /* the clips are vertical, so a 4/3 window keeps the people instead of a thin band */
+    .photo img { width: 100%; aspect-ratio: 4/3; object-fit: cover; }
 
     .qa { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 18px 20px; margin-bottom: 10px; }
     .qa h3 { margin: 0 0 6px; color: var(--white); font-size: 17px; }
@@ -258,6 +259,13 @@
     .btn-gold { background: var(--gold); color: #241a05; }
     .btn-gold:hover { box-shadow: 0 14px 34px -12px rgba(240,192,92,.6); }
     .city-h2 .tag-city { font-size: .62em; font-weight: 800; color: var(--muted-2); }
+
+    .photo-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 28px 0; }
+    .photo-pair figure { margin: 0; }
+    .photo-pair img { width: 100%; height: auto; aspect-ratio: 4/5; object-fit: cover;
+      border-radius: 16px; border: 1px solid var(--line); }
+    .photo-pair figcaption { font-size: 12.5px; color: var(--muted-2); margin-top: 7px; }
+    @media (max-width: 620px) { .photo-pair { gap: 9px; } }
   </style>
 </head>
 <body>
@@ -377,9 +385,17 @@
     <h2>האימון בגינת הכושר בפסגות אפק</h2>
     <p class="sub">מתאמנות בגינת הכושר הכתומה מעל כיכר צוות — גולדה מאיר 20, ראש העין: דשא, מתקנים, תאורה נעימה בשעות הערב והרבה מקום חניה בסביבה. רוב השנה האימון באוויר הפתוח; בימי גשם עוברים למתחם מקורה, כך שהשגרה לא נשברת. זה אותו פארק שבו מתאמנות קבוצות הילדים של טים לידר.</p>
     <div class="photo">
-      <img src="assets/training-2-600.webp" alt="אימון ערב בגינת הכושר בפסגות אפק, ראש העין" loading="lazy" decoding="async" />
+      <img src="assets/adults-mothers-wide-1200.webp"
+             srcset="assets/adults-mothers-wide-800.webp 800w, assets/adults-mothers-wide-1200.webp 1200w"
+             sizes="(max-width: 900px) 92vw, 820px"
+             alt="אימון בקבוצת האמהות של טים לידר בגינת הכושר בפסגות אפק, ראש העין" loading="lazy" decoding="async" width="1200" height="900" />
     </div>
     <p><a href="https://www.google.com/maps/search/?api=1&query=%D7%92%D7%95%D7%9C%D7%93%D7%94+%D7%9E%D7%90%D7%99%D7%A8+20+%D7%A8%D7%90%D7%A9+%D7%94%D7%A2%D7%99%D7%9F" target="_blank" rel="noopener" style="color:var(--cyan-bright);font-weight:700;border-bottom:1px solid rgba(92,203,240,.45)">גולדה מאיר 20, ראש העין — פתחי בניווט ←</a></p>
+
+    <div class="photo-pair">
+      <figure><img src="assets/adults-mothers-2-800.webp" srcset="assets/adults-mothers-2-480.webp 480w, assets/adults-mothers-2-800.webp 800w" sizes="(max-width: 620px) 45vw, 400px" alt="מתאמנת מקבוצת האמהות בתרגיל מדרגה, עם המאמן לצידה" loading="lazy" decoding="async" width="800" height="1000" /><figcaption>אימון ערב — קבוצת האמהות בראש העין.</figcaption></figure>
+      <figure><img src="assets/adults-mothers-480.webp" srcset="assets/adults-mothers-480.webp 480w, assets/adults-mothers-800.webp 800w" sizes="(max-width: 620px) 45vw, 400px" alt="תרגיל בטן בקבוצת האמהות, המאמן מייצב את הרגליים" loading="lazy" decoding="async" width="800" height="1000" /><figcaption>המאמן מלווה כל תרגיל.</figcaption></figure>
+    </div>
 
     <h2>הקבוצה יצאה לדרך ביולי 2026 — המצטרפות עכשיו הן המייסדות</h2>
     <p class="sub">קבוצת האמהות היא הקבוצה הצעירה בקהילת טים לידר. אין לנו עדיין ערימת עדויות של מתאמנות להראות לך — ואנחנו לא ממציאים כאלה. מה שכן יש: מי שמצטרפת עכשיו היא חברה מייסדת, מאלה שקובעות את האופי, את האווירה ואת הקצב של הקבוצה מהאימון הראשון.</p>

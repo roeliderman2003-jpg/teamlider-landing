@@ -291,6 +291,12 @@
     @media (max-width: 560px) { .nav-cta .btn-ghost { display: none; } }
     @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .btn { transition: none; } }
     a:focus-visible, button:focus-visible { outline: 2px solid var(--cyan-bright); outline-offset: 3px; }
+    .shots { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin: 22px 0 6px; }
+    .shots figure { margin: 0; }
+    .shots img { width: 100%; height: auto; aspect-ratio: 4/5; object-fit: cover; border-radius: 16px; border: 1px solid var(--line); }
+    .shots figcaption { font-size: 12.5px; color: var(--muted-2); margin-top: 7px; }
+    @media (max-width: 700px) { .shots { grid-template-columns: 1fr 1fr; } .shots figure:last-child { grid-column: 1 / -1; } }
+
     /* rh-only: the city switch that sits in every header */
     .city-switch { display: flex; align-items: center; gap: 10px; font-size: 14.5px; font-weight: 700; }
     .city-switch a { color: var(--muted); padding: 6px 12px; border-radius: 100px; border: 1px solid transparent; }
@@ -387,6 +393,12 @@
       <h3>קבוצות הילדים והנערים</h3>
       <p>להוציא את הילד מהמסך, לחזק אותו בגוף ובביטחון, ולתת לו חבר'ה אמיתיים. שתי קבוצות גיל — 8–11 ו-12–15 — כל אחת מחולקת לקבוצות לפי רמה ומטרה. אין ספסל: כל ילד פעיל לאורך כל האימון.</p>
       <p class="meta">כל יום · אחר הצהריים וערב · 45 דקות · עד 12 בקבוצה — <a href="kids.html" style="color:var(--cyan-bright);font-weight:700">לעמוד המלא ←</a></p>
+    </div>
+
+<div class="shots">
+      <figure><img src="assets/adults-fathers-800.webp" srcset="assets/adults-fathers-480.webp 480w, assets/adults-fathers-800.webp 800w" sizes="(max-width: 700px) 45vw, 310px" alt="קבוצת האבות של טים לידר באימון ערב בפארק בראש העין" loading="lazy" decoding="async" width="800" height="1000" /><figcaption>קבוצת האבות</figcaption></figure>
+      <figure><img src="assets/adults-mothers-800.webp" srcset="assets/adults-mothers-480.webp 480w, assets/adults-mothers-800.webp 800w" sizes="(max-width: 700px) 45vw, 310px" alt="אימון בקבוצת האמהות של טים לידר בפארק בראש העין" loading="lazy" decoding="async" width="800" height="1000" /><figcaption>קבוצת האמהות</figcaption></figure>
+      <figure><img src="assets/hero-group-480.webp" srcset="assets/hero-group-480.webp 480w, assets/hero-group-600.webp 600w" sizes="(max-width: 700px) 92vw, 310px" alt="קבוצת הילדים והנערים של טים לידר עם המאמן בפארק בראש העין" loading="lazy" decoding="async" width="600" height="450" /><figcaption>ילדים ונערים</figcaption></figure>
     </div>
 
     <h2>מתי מתאמנים</h2>
