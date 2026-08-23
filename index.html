@@ -4,14 +4,14 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <script>if (location.protocol === 'http:' && location.hostname.indexOf('teamlider.co.il') !== -1) location.replace('https://teamlider.co.il' + location.pathname + location.search + location.hash);</script>
-  <title>אימוני כושר בראש העין ובפתח תקווה — קבוצות קטנות בפארק | Team Lider</title>
-  <meta name="description" content="אימוני כושר קבוצתיים בפארק בראש העין ובפתח תקווה — קבוצות לילדים ונערים (8–15), לאבות ולאמהות. קבוצות קטנות לפי גיל ורמה, עם מאמן שמכיר כל אחד בשמו. דירוג 4.7 מ-84 ביקורות בגוגל. בפתח תקווה נפתחות קבוצות אבות ואמהות ב-11 באוקטובר." />
+  <title>אימוני כושר בראש העין ובפתח תקווה — קבוצות אבות, אמהות וילדים | Team Lider</title>
+  <meta name="description" content="אימוני כושר קבוצתיים בפארק בראש העין ובפתח תקווה — קבוצת אבות, קבוצת אמהות, וקבוצות לילדים ונערים (8–15). קבוצות קטנות עם מאמן שמכיר כל אחד בשמו. דירוג 4.7 מ-84 ביקורות בגוגל. בפתח תקווה נפתחות קבוצות אבות ואמהות ב-11 באוקטובר." />
 
   <link rel="canonical" href="https://teamlider.co.il/" />
 
   <!-- Open Graph -->
   <meta property="og:title" content="אימוני כושר בראש העין ובפתח תקווה — Team Lider" />
-  <meta property="og:description" content="אימוני כושר קבוצתיים בפארק בראש העין ובפתח תקווה — לילדים, לנערים, לאבות ולאמהות. קבוצות קטנות עם מאמן שמכיר כל אחד בשמו. בפתח תקווה — קבוצות אבות ואמהות, פתיחה 11 באוקטובר." />
+  <meta property="og:description" content="אימוני כושר קבוצתיים בפארק בראש העין ובפתח תקווה — לאבות, לאמהות, ולילדים ונערים. קבוצות קטנות עם מאמן שמכיר כל אחד בשמו. בפתח תקווה — קבוצות אבות ואמהות, פתיחה 11 באוקטובר." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://teamlider.co.il/" />
   <meta property="og:site_name" content="Team Lider" />
@@ -22,7 +22,7 @@
   <meta property="og:image:alt" content="קבוצת Team Lider מתאמנת בפארק בראש העין" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="אימוני כושר בראש העין ובפתח תקווה — Team Lider" />
-  <meta name="twitter:description" content="אימונים קבוצתיים בפארק בראש העין ובפתח תקווה — לילדים, נערים, אבות ואמהות. פתח תקווה נפתחת ב-11 באוקטובר." />
+  <meta name="twitter:description" content="אימונים קבוצתיים בפארק בראש העין ובפתח תקווה — אבות, אמהות, ילדים ונערים. פתח תקווה נפתחת ב-11 באוקטובר." />
   <meta name="twitter:image" content="https://teamlider.co.il/assets/og-cover.jpg" />
   <meta name="theme-color" content="#0A1929" />
 
@@ -186,6 +186,10 @@
       text-align: center; padding: 28px;
     }
     .hero-card img { width: min(74%, 300px); filter: drop-shadow(0 18px 30px rgba(0,0,0,.45)); }
+    /* Fathers lead, then mothers, then kids — the page's order of importance. */
+    .hero-mosaic { position: absolute; inset: 0; display: grid; grid-template-columns: 1.45fr 1fr; grid-template-rows: 1fr 1fr; gap: 4px; }
+    .hero-mosaic img { width: 100%; height: 100%; object-fit: cover; display: block; filter: none; border-radius: 0; }
+    .hero-mosaic .m1 { grid-row: 1 / span 2; }
     .hero-card .ph-tag {
       position: absolute; bottom: 16px; inset-inline: 16px;
       font-size: 12.5px; color: var(--muted-2); background: rgba(4,12,20,.5);
@@ -433,6 +437,7 @@
     .city-cta { margin-top: 20px; color: var(--cyan-bright); font-weight: 800; font-size: 15px; }
     .nav-links a.nav-pt { color: var(--gold); }
     .nav-links a.nav-pt::after { background: var(--gold); }
+    .nav-sep { width: 1px; height: 17px; background: var(--line); flex: none; }
 
     /* ---------- Two-city bands + Petah Tikva variants ---------- */
     .city-band {
@@ -551,7 +556,7 @@
     "name": "Team Lider",
     "alternateName": "טים לידר",
     "slogan": "ילדים חזקים, הורים גאים",
-    "description": "אימוני כושר קבוצתיים בפארק בראש העין (פסגות אפק, גולדה מאיר 20): קבוצות ילדים ונערים (בנים 8–15) בשתי קבוצות גיל שכל אחת מחולקת לקבוצות לפי רמה ומטרה, לצד קבוצת אבות וקבוצת אמהות. קבוצות קטנות באוויר הפתוח עם ציוד מקצועי. מעל 500 ילדים, נערים ומבוגרים התאמנו בקהילה — קהילת הכושר הגדולה בראש העין. באוקטובר 2026 נפתחות קבוצות אבות ואמהות גם בפתח תקווה.",
+    "description": "אימוני כושר קבוצתיים בפארק בראש העין (פסגות אפק, גולדה מאיר 20): קבוצת אבות וקבוצת אמהות למבוגרים 18+, לצד קבוצות ילדים ונערים (בנים 8–15) בשתי קבוצות גיל שכל אחת מחולקת לקבוצות לפי רמה ומטרה. קבוצות קטנות באוויר הפתוח עם ציוד מקצועי. מעל 500 ילדים, נערים ומבוגרים התאמנו בקהילה — קהילת הכושר הגדולה בראש העין. באוקטובר 2026 נפתחות קבוצות אבות ואמהות גם בפתח תקווה.",
     "url": "https://teamlider.co.il/",
     "telephone": "+972549747713",
     "image": "https://teamlider.co.il/assets/og-cover.jpg",
@@ -608,12 +613,13 @@
         <span style="font-weight:900">TEAM<b style="color:var(--cyan-bright)"> LIDER</b></span>
       </a>
       <nav class="nav-links" id="navLinks">
-        <a href="kids.html">ילדים</a>
         <a href="men.html">אבות</a>
         <a href="women.html">אמהות</a>
-        <a href="pt.html" class="nav-pt">פתח תקווה</a>
+        <a href="kids.html">ילדים</a>
         <a href="#how">איך זה עובד</a>
         <a href="#faq">שאלות</a>
+        <span class="nav-sep" aria-hidden="true"></span>
+        <a href="pt.html" class="nav-pt">סניף פתח תקווה</a>
       </nav>
       <div class="nav-cta">
         <a href="#tracks" class="btn btn-ghost">הקבוצות</a>
@@ -636,7 +642,7 @@
           <a class="hc" href="pt.html"><b>פתח תקווה</b><span class="st soon">● נפתח ב-11 באוקטובר</span></a>
         </div>
         <p class="lead">
-          אימונים קבוצתיים בפארק לילדים, לנערים, לאבות ולאמהות — קבוצות קטנות לפי גיל ורמה,
+          אימונים קבוצתיים בפארק לאבות, לאמהות, ולילדים ונערים — קבוצות קטנות לפי גיל ורמה,
           מאמן שמכיר כל אחד בשמו, ואווירה שגורמת לחזור. בראש העין מתאמנים כבר היום,
           ובפתח תקווה הקבוצות הראשונות נפתחות ב-11 באוקטובר.
         </p>
@@ -647,11 +653,11 @@
           </div>
           <input type="hidden" name="city" value="rh" />
           <div class="grp" role="group" aria-label="למי האימון?">
-            <button type="button" class="chip active" data-grp="ילד" aria-pressed="true">לילד</button>
-            <button type="button" class="chip" data-grp="אבא" aria-pressed="false">לאבא</button>
+            <button type="button" class="chip active" data-grp="אבא" aria-pressed="true">לאבא</button>
             <button type="button" class="chip" data-grp="אמא" aria-pressed="false">לאמא</button>
+            <button type="button" class="chip" data-grp="ילד" aria-pressed="false">לילד</button>
           </div>
-          <input type="hidden" name="group" value="ילד" />
+          <input type="hidden" name="group" value="אבא" />
           <input name="name" type="text" required placeholder="שם מלא" autocomplete="name" aria-label="שם מלא" />
           <input name="phone" type="tel" required placeholder="טלפון" autocomplete="tel" inputmode="tel" aria-label="מספר טלפון" />
           <input type="text" name="company" class="hp-field" tabindex="-1" autocomplete="off" aria-hidden="true" />
@@ -678,13 +684,24 @@
 
       <div class="hero-visual">
         <div class="hero-card">
-          <img src="assets/hero-group-960.webp"
-               srcset="assets/hero-group-480.webp 480w, assets/hero-group-600.webp 600w, assets/hero-group-960.webp 960w"
-               sizes="(max-width: 940px) 90vw, 470px"
-               alt="קבוצת טים לידר עם המאמן מתאמנת בפארק בראש העין"
-               fetchpriority="high" decoding="async"
-               style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover" />
-          <div style="position:absolute;inset:0;background:linear-gradient(180deg,transparent 52%,rgba(4,12,20,.55))"></div>
+          <div class="hero-mosaic">
+            <img class="m1" src="assets/adults-fathers-800.webp"
+                 srcset="assets/adults-fathers-480.webp 480w, assets/adults-fathers-800.webp 800w"
+                 sizes="(max-width: 940px) 54vw, 280px"
+                 alt="קבוצת האבות של טים לידר באימון ערב בפארק בראש העין"
+                 fetchpriority="high" decoding="async" />
+            <img class="m2" src="assets/adults-mothers-320.webp"
+                 srcset="assets/adults-mothers-320.webp 320w, assets/adults-mothers-480.webp 480w"
+                 sizes="(max-width: 940px) 36vw, 190px"
+                 alt="אימון בקבוצת האמהות של טים לידר בפארק בראש העין"
+                 loading="lazy" decoding="async" />
+            <img class="m3" src="assets/hero-group-480.webp"
+                 srcset="assets/hero-group-480.webp 480w, assets/hero-group-600.webp 600w"
+                 sizes="(max-width: 940px) 36vw, 190px"
+                 alt="קבוצת הילדים והנערים של טים לידר עם המאמן בפארק בראש העין"
+                 loading="lazy" decoding="async" />
+          </div>
+          <div style="position:absolute;inset:0;background:linear-gradient(180deg,transparent 52%,rgba(4,12,20,.55));pointer-events:none"></div>
         </div>
         <div class="float-badge fb-1">
           <div class="n"><span data-tl-rating>4.7</span></div>
@@ -692,7 +709,7 @@
         </div>
         <div class="float-badge fb-2">
           <div class="n">+500</div>
-          <div class="t">ילדים, נערים<br>ומבוגרים שהתאמנו</div>
+          <div class="t">מבוגרים, נערים<br>וילדים שהתאמנו</div>
         </div>
       </div>
     </div>
@@ -701,7 +718,7 @@
   <!-- ===================== STATS ===================== -->
   <section class="stats">
     <div class="wrap stats-grid">
-      <div class="stat"><div class="num"><span>+500</span></div><div class="lab">ילדים, נערים ומבוגרים שהתאמנו איתנו</div></div>
+      <div class="stat"><div class="num"><span>+500</span></div><div class="lab">מבוגרים, נערים וילדים שהתאמנו איתנו</div></div>
       <div class="stat"><div class="num"><span data-tl-rating>4.7</span><span> ★</span></div><div class="lab"><span data-tl-reviews>84</span> ביקורות בגוגל</div></div>
       <div class="stat"><div class="num">8–15</div><div class="lab">גילאי הילדים והנערים</div></div>
       <div class="stat"><div class="num" style="font-size:clamp(19px,2.7vw,26px)">2 ערים</div><div class="lab">ראש העין · פתח תקווה</div></div>
@@ -807,32 +824,10 @@
 
       <div class="tracks-grid">
 
-        <!-- KIDS -->
-        <div class="track featured reveal" id="kids">
-          <div class="track-top">
-            <span class="tag">הליבה שלנו</span>
-            <div class="who">לילדים ונערים · בנים 8–15</div>
-            <h3>הקבוצה של הילדים</h3>
-            <p class="desc">להוציא את הילד מהמסך, לחזק אותו בגוף ובביטחון, ולתת לו חבר'ה אמיתיים. שתי קבוצות גיל, כל אחת מחולקת לפי רמה ומטרה — מתאים לכל ילד ונער, בכל רמה.</p>
-          </div>
-          <div class="track-body">
-            <ul class="sched">
-              <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#5CCBF0" stroke-width="2"/><path d="M12 7v5l3 2" stroke="#5CCBF0" stroke-width="2" stroke-linecap="round"/></svg><span><b>ילדים 8–11:</b> קבוצות לפי רמה ומטרה</span></li>
-              <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#5CCBF0" stroke-width="2"/><path d="M12 7v5l3 2" stroke="#5CCBF0" stroke-width="2" stroke-linecap="round"/></svg><span><b>נערים 12–15:</b> קבוצות לפי רמה ומטרה</span></li>
-              <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#5CCBF0" stroke-width="2"/><path d="M12 7v5l3 2" stroke="#5CCBF0" stroke-width="2" stroke-linecap="round"/></svg><span>אימונים בכל יום — אחר הצהריים וערב</span></li>
-            </ul>
-            <div class="price-row">
-              <div class="alt">מנוי חודשי גמיש · פעם או פעמיים בשבוע</div>
-            </div>
-            <a href="https://wa.me/972549747713?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A4%D7%A8%D7%98%D7%99%D7%9D%20%D7%A2%D7%9C%20%D7%90%D7%99%D7%9E%D7%95%D7%9F%20%D7%A0%D7%99%D7%A1%D7%99%D7%95%D7%9F%20%D7%9C%D7%99%D7%9C%D7%93" class="btn btn-primary btn-block" target="_blank" rel="noopener">לתיאום אימון ניסיון לילד</a>
-            <a class="lead-link" href="#leadform" data-grp="ילד">או השאירו פרטים ונחזור אליכם ←</a>
-            <a class="lead-link" href="kids.html" style="color:var(--cyan-bright)">לעמוד המלא — אימוני כושר לילדים בראש העין ←</a>
-          </div>
-        </div>
-
         <!-- FATHERS -->
-        <div class="track reveal" id="fathers">
+        <div class="track featured reveal" id="fathers">
           <div class="track-top">
+            <span class="tag">הקבוצה הגדולה שלנו</span>
             <div class="who">לאבות · גברים 18+</div>
             <h3>קבוצת הגברים</h3>
             <p class="desc">לא חדר כושר אנונימי ולא לבד מול מכונה. חבורה קבועה שמתאמנת בפארק פעמיים בשבוע — ומשתנה ביחד.</p>
@@ -871,6 +866,28 @@
             <a href="https://wa.me/972549747713?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A4%D7%A8%D7%98%D7%99%D7%9D%20%D7%A2%D7%9C%20%D7%A7%D7%91%D7%95%D7%A6%D7%AA%20%D7%94%D7%90%D7%9E%D7%94%D7%95%D7%AA" class="btn btn-primary btn-block" target="_blank" rel="noopener">שריון מקום בקבוצת האמהות</a>
             <a class="lead-link" href="#leadform" data-grp="אמא">או השאירו פרטים ונחזור אליכם ←</a>
             <a class="lead-link" href="women.html" style="color:var(--cyan-bright)">לעמוד המלא — אימוני כושר לנשים בראש העין ←</a>
+          </div>
+        </div>
+
+        <!-- KIDS -->
+        <div class="track reveal" id="kids">
+          <div class="track-top">
+            <div class="who">לילדים ונערים · בנים 8–15</div>
+            <h3>הקבוצה של הילדים</h3>
+            <p class="desc">להוציא את הילד מהמסך, לחזק אותו בגוף ובביטחון, ולתת לו חבר'ה אמיתיים. שתי קבוצות גיל, כל אחת מחולקת לפי רמה ומטרה — מתאים לכל ילד ונער, בכל רמה.</p>
+          </div>
+          <div class="track-body">
+            <ul class="sched">
+              <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#5CCBF0" stroke-width="2"/><path d="M12 7v5l3 2" stroke="#5CCBF0" stroke-width="2" stroke-linecap="round"/></svg><span><b>ילדים 8–11:</b> קבוצות לפי רמה ומטרה</span></li>
+              <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#5CCBF0" stroke-width="2"/><path d="M12 7v5l3 2" stroke="#5CCBF0" stroke-width="2" stroke-linecap="round"/></svg><span><b>נערים 12–15:</b> קבוצות לפי רמה ומטרה</span></li>
+              <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#5CCBF0" stroke-width="2"/><path d="M12 7v5l3 2" stroke="#5CCBF0" stroke-width="2" stroke-linecap="round"/></svg><span>אימונים בכל יום — אחר הצהריים וערב</span></li>
+            </ul>
+            <div class="price-row">
+              <div class="alt">מנוי חודשי גמיש · פעם או פעמיים בשבוע</div>
+            </div>
+            <a href="https://wa.me/972549747713?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A4%D7%A8%D7%98%D7%99%D7%9D%20%D7%A2%D7%9C%20%D7%90%D7%99%D7%9E%D7%95%D7%9F%20%D7%A0%D7%99%D7%A1%D7%99%D7%95%D7%9F%20%D7%9C%D7%99%D7%9C%D7%93" class="btn btn-primary btn-block" target="_blank" rel="noopener">לתיאום אימון ניסיון לילד</a>
+            <a class="lead-link" href="#leadform" data-grp="ילד">או השאירו פרטים ונחזור אליכם ←</a>
+            <a class="lead-link" href="kids.html" style="color:var(--cyan-bright)">לעמוד המלא — אימוני כושר לילדים בראש העין ←</a>
           </div>
         </div>
 
@@ -1096,7 +1113,7 @@
       <div class="center reveal" style="max-width:780px;margin-inline:auto">
         <span class="eyebrow">בקצרה</span>
         <h2 class="section-title">אימוני כושר בראש העין ובפתח תקווה — בקצרה</h2>
-        <p class="section-sub" style="margin-inline:auto">Team Lider (טים לידר) מפעילה אימוני כושר קבוצתיים בפארק בראש העין — בגינת הכושר בפסגות אפק (הגינה הכתומה מעל כיכר צוות, גולדה מאיר 20). מתאמנים בה ילדים ונערים בגילאי 8–15 בשתי קבוצות גיל, שכל אחת מחולקת לקבוצות לפי רמה ומטרה, לצד קבוצת אבות וקבוצת אמהות. הקבוצות קטנות ובהובלת מאמן מוסמך, באוויר הפתוח, עם הרבה מקום חניה בסביבה. מעל 500 ילדים, נערים ומבוגרים כבר התאמנו בקהילה — קהילת הכושר הגדולה בראש העין — עם דירוג 4.7 מ-84 ביקורות של הורים בגוגל. ב-11 באוקטובר 2026 נפתחות קבוצות גם בפתח תקווה: קבוצת אבות (גברים 18+) וקבוצת אמהות (נשים 18+), אימון פונקציונלי קבוצתי בפארק פעמיים בשבוע, בהרשמה מוקדמת לפני הפתיחה.</p>
+        <p class="section-sub" style="margin-inline:auto">Team Lider (טים לידר) מפעילה אימוני כושר קבוצתיים בפארק בראש העין — בגינת הכושר בפסגות אפק (הגינה הכתומה מעל כיכר צוות, גולדה מאיר 20). מתאמנים בה קבוצת אבות וקבוצת אמהות למבוגרים 18+, לצד ילדים ונערים בגילאי 8–15 בשתי קבוצות גיל שכל אחת מחולקת לקבוצות לפי רמה ומטרה. הקבוצות קטנות ובהובלת מאמן מוסמך, באוויר הפתוח, עם הרבה מקום חניה בסביבה. מעל 500 ילדים, נערים ומבוגרים כבר התאמנו בקהילה — קהילת הכושר הגדולה בראש העין — עם דירוג 4.7 מ-84 ביקורות של הורים בגוגל. ב-11 באוקטובר 2026 נפתחות קבוצות גם בפתח תקווה: קבוצת אבות (גברים 18+) וקבוצת אמהות (נשים 18+), אימון פונקציונלי קבוצתי בפארק פעמיים בשבוע, בהרשמה מוקדמת לפני הפתיחה.</p>
       </div>
     </div>
   </section>
@@ -1140,11 +1157,11 @@
           </div>
           <input type="hidden" name="city" value="rh" />
           <div class="grp" role="group" aria-label="למי האימון?">
-            <button type="button" class="chip active" data-grp="ילד" aria-pressed="true">לילד</button>
-            <button type="button" class="chip" data-grp="אבא" aria-pressed="false">לאבא</button>
+            <button type="button" class="chip active" data-grp="אבא" aria-pressed="true">לאבא</button>
             <button type="button" class="chip" data-grp="אמא" aria-pressed="false">לאמא</button>
+            <button type="button" class="chip" data-grp="ילד" aria-pressed="false">לילד</button>
           </div>
-          <input type="hidden" name="group" value="ילד" />
+          <input type="hidden" name="group" value="אבא" />
           <input name="name" type="text" required placeholder="שם מלא" autocomplete="name" aria-label="שם מלא" />
           <input name="phone" type="tel" required placeholder="טלפון" autocomplete="tel" inputmode="tel" aria-label="מספר טלפון" />
           <input type="text" name="company" class="hp-field" tabindex="-1" autocomplete="off" aria-hidden="true" />
@@ -1172,14 +1189,14 @@
             <img src="assets/logo-square.png" alt="Team Lider" />
             <b>TEAM <span style="color:var(--cyan-bright)">LIDER</span></b>
           </div>
-          <p style="max-width:320px">קהילת הכושר הכי גדולה בראש העין — ומאוקטובר גם בפתח תקווה. אימונים קבוצתיים בפארק לילדים, לנערים, לאבות ולאמהות — כושר שבונה ביטחון, כוח וחברים.</p>
+          <p style="max-width:320px">קהילת הכושר הכי גדולה בראש העין — ומאוקטובר גם בפתח תקווה. אימונים קבוצתיים בפארק לאבות, לאמהות, ולילדים ונערים — כושר שבונה ביטחון, כוח וחברים.</p>
         </div>
         <div class="foot-col">
           <h5>הקבוצות</h5>
-          <a href="kids.html">ילדים ונערים · בנים 8–15</a>
-          <a href="adults.html">אימוני כושר למבוגרים</a>
           <a href="men.html">קבוצת האבות — אימוני כושר לגברים</a>
           <a href="women.html">קבוצת האמהות — אימוני כושר לנשים</a>
+          <a href="kids.html">ילדים ונערים · בנים 8–15</a>
+          <a href="adults.html">אימוני כושר למבוגרים</a>
           <a href="guide.html">מדריך כושר למשפחה</a>
           <a href="pt.html" style="color:var(--gold)">פתח תקווה — אבות ואמהות · נפתח 11.10</a>
         </div>
