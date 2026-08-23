@@ -29,6 +29,7 @@ jobs:
                 "https://teamlider.co.il/women.html",
                 "https://teamlider.co.il/men.html",
                 "https://teamlider.co.il/adults.html",
+                "https://teamlider.co.il/pt.html",
                 "https://teamlider.co.il/guide.html"
               ]
             }' -w '\nIndexNow HTTP %{http_code}\n'
