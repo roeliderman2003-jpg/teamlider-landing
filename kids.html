@@ -10,7 +10,7 @@
   <link rel="canonical" href="https://teamlider.co.il/kids.html" />
 
   <!-- Open Graph -->
-  <meta property="og:title" content="אימוני כושר לילדים בראש העין — מ״לא אוהב ספורט״ לילד שמחכה לאימון | Team Lider" />
+  <meta property="og:title" content="אימוני כושר לילדים בראש העין — הוא לא צריך עוד חוג. הוא צריך מסגרת | Team Lider" />
   <meta property="og:description" content="קבוצות בנים 8–11 ו-12–15 בפארק בפסגות אפק: כיף, חברים וכוח אמיתי — בלי ספסל ובלי השוואות, עם מאמן שמכיר כל ילד בשם. מעל 500 ילדים כבר התאמנו אצלנו." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://teamlider.co.il/kids.html" />
@@ -338,6 +338,18 @@
     .city-switch a:hover { color: var(--white); }
     .city-switch a[aria-current="page"] { color: var(--white); background: rgba(255,255,255,.045); border-color: rgba(255,255,255,.10); }
     .city-switch .sep { width: 1px; height: 16px; background: rgba(255,255,255,.10); }
+    /* §2.3: ב-375px הכותרת, תת-הכותרת והכפתור חייבים להיראות בלי גלילה.
+       מהדקים את המרווחים במקום לקצר קופי לפי ספירת תווים — זה מחזיק גם
+       כשאורך הקופי משתנה, וספירת תווים לא. */
+    @media (max-width: 560px) {
+      /* מהדקים כרום ולא תוכן: פירורי לחם, eyebrow ומרווחי טופס. הקופי עצמו
+         מגובה בראיות ולא נגזר כדי להרוויח פיקסלים. */
+      .ghero .crumb { margin-bottom: 8px; }
+      .ghero .eyebrow { margin-bottom: 10px; }
+      .ghero h1 { margin-bottom: 10px; }
+      .ghero .lead { margin-bottom: 12px; }
+      .ghero .lead-form { gap: 9px; margin-top: 14px; }
+    }
     @media (max-width: 620px) { .city-switch { font-size: 13px; gap: 5px; } .city-switch a { padding: 5px 9px; } }
 
     :root { --gold: #F0C05C; }
@@ -397,9 +409,9 @@
   <section class="ghero">
     <div class="wrap">
       <nav class="crumb" aria-label="breadcrumb"><a href="/">בית</a> · אימוני כושר לילדים</nav>
-      <span class="eyebrow">🏃 ראש העין · פסגות אפק · בנים 8–15</span>
-      <h1>אימוני כושר לילדים בראש העין — <span class="cyan">מ״לא אוהב ספורט״ לילד שמחכה לאימון</span></h1>
-      <p class="lead">רוב הילדים שמגיעים אלינו כבר עזבו חוג אחד או שניים — ולא כי הם לא ספורטיביים, אלא כי בכל חוג תחרותי יש הרכב וספסל, וילד שלא בהרכב לומד תוך שבועות שהוא ״לא בשביל זה״. אצלנו אין הרכב ואין ספסל: בנים 8–15 בקבוצות קטנות בפארק בפסגות אפק, מאמן שמכיר כל ילד בשם, וכל ילד פעיל לאורך כל האימון ונמדד רק מול עצמו.</p>
+      <span class="eyebrow">הורים מראש העין? · פסגות אפק · בנים 8–15</span>
+      <h1>אימוני כושר לילדים בראש העין — <span class="cyan">הוא לא צריך עוד חוג. הוא צריך מסגרת</span></h1>
+      <p class="lead">אצל רוב ההורים שמתקשרים אלינו הסיפור זהה: החוג נגמר, או שהוא עזב אחרי חודשיים — ונשאר חלל שאף אחד לא ממלא. וזה כמעט אף פעם לא בגלל הילד, אלא בגלל שבכל חוג תחרותי יש הרכב וספסל. אצלנו אין — בנים 8–15 בקבוצות קטנות בפארק בפסגות אפק, מאמן שמכיר כל ילד בשם, וכל ילד פעיל לאורך כל האימון.</p>
 
       <form class="lead-form" id="leadform" onsubmit="return submitLead(this)">
         <div class="grp" role="group" aria-label="למי האימון?">
