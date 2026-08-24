@@ -334,7 +334,9 @@
        one starts silent with a tap-for-sound control. */
     .reel-wrap { position: relative; }
     .sndbtn {
-      position: absolute; inset-inline: 10px; bottom: 12px; z-index: 2;
+      /* 46px ולא 12px: מאז שיש controls, סרגל הפקדים יושב בתחתית
+         והכפתור היה מכסה אותו. אותו מספר כמו .unmute ב-kids.html. */
+      position: absolute; inset-inline: 10px; bottom: 46px; z-index: 2;
       display: flex; align-items: center; justify-content: center; gap: 9px;
       font-family: inherit; font-size: 15px; font-weight: 800; cursor: pointer;
       padding: 12px 16px; border-radius: 100px; border: 1px solid rgba(255,255,255,.22);
@@ -470,7 +472,7 @@
       <h2>אחרי חודש וחצי הוא צילם את עצמו ושלח לנו</h2>
       <p class="sub">מקבוצת האבות בראש העין — אותו מודל שנפתח בפתח תקווה. הקישו להפעלת הקול.</p>
       <div class="reel-wrap">
-        <video playsinline autoplay muted preload="metadata" poster="assets/testimonial-father-poster.webp"
+        <video playsinline autoplay muted preload="metadata" controls poster="assets/testimonial-father-poster.webp"
                aria-label="מתאמן מקבוצת האבות בראש העין מספר על האימונים">
           <source src="assets/testimonial-father.mp4" type="video/mp4" />
         </video>
