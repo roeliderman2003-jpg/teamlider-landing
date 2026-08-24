@@ -10,7 +10,7 @@
   <link rel="canonical" href="https://teamlider.co.il/" />
 
   <!-- Open Graph -->
-  <meta property="og:title" content="אימוני כושר בראש העין ובפתח תקווה — Team Lider" />
+  <meta property="og:title" content="אימוני כושר בראש העין ובפתח תקווה — אבא, אמא וילד באותה גינה | Team Lider" />
   <meta property="og:description" content="אימוני כושר קבוצתיים בפארק בראש העין ובפתח תקווה — לאבות, לאמהות, ולילדים ונערים. קבוצות קטנות עם מאמן שמכיר כל אחד בשמו. בפתח תקווה — קבוצות אבות ואמהות, פתיחה 11 באוקטובר." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://teamlider.co.il/" />
@@ -21,7 +21,7 @@
   <meta property="og:image:height" content="630" />
   <meta property="og:image:alt" content="קבוצת Team Lider מתאמנת בפארק בראש העין" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="אימוני כושר בראש העין ובפתח תקווה — Team Lider" />
+  <meta name="twitter:title" content="אימוני כושר בראש העין ובפתח תקווה — אבא, אמא וילד באותה גינה | Team Lider" />
   <meta name="twitter:description" content="אימונים קבוצתיים בפארק בראש העין ובפתח תקווה — אבות, אמהות, ילדים ונערים. פתח תקווה נפתחת ב-11 באוקטובר." />
   <meta name="twitter:image" content="https://teamlider.co.il/assets/og-cover.jpg" />
   <meta name="theme-color" content="#0A1929" />
@@ -549,6 +549,16 @@
       .nav-cta .btn-ghost { display: none; }
       .hero-cta .btn { width: 100%; }
       .float-badge { display: none; }
+
+      /* Playbook §2.3: at 375px the H1, the sub-headline and the button have to be
+         visible without scrolling. The homepage hero also carries the two-city block
+         and a five-control form, so it was the one page that missed the mark — by
+         1px. Tightening the vertical rhythm here buys real margin, and it keeps
+         holding when the copy changes length; counting characters does not. */
+      .hero h1 { margin-bottom: 12px; }
+      .hero-cities { margin: 12px 0 4px; }
+      .hero .lead { margin-bottom: 14px; }
+      .hero-copy .lead-form { gap: 9px; }
     }
       /* touch targets: inline links sat at line-height only (16–23px) on phones */
     @media (max-width: 760px) {
@@ -648,15 +658,14 @@
     <div class="wrap hero-grid">
       <div class="hero-copy">
         <span class="eyebrow">🏃 אימונים בפארק · קבוצות קטנות · שתי ערים</span>
-        <h1>אימוני כושר קבוצתיים בפארק — <span class="cyan">ביטחון, כוח וחברים</span></h1>
+        <h1>אימוני כושר בראש העין ובפתח תקווה — <span class="cyan">אבא, אמא וילד באותה גינה</span></h1>
         <div class="hero-cities">
           <a class="hc" href="rh.html"><b>ראש העין</b><span class="st on">● מתאמנים היום</span></a>
           <a class="hc" href="pt.html"><b>פתח תקווה</b><span class="st soon">● נפתח ב-11 באוקטובר</span></a>
         </div>
         <p class="lead">
           אימונים קבוצתיים בפארק לאבות, לאמהות, ולילדים ונערים — קבוצות קטנות לפי גיל ורמה,
-          מאמן שמכיר כל אחד בשמו, ואווירה שגורמת לחזור. בראש העין מתאמנים כבר היום,
-          ובפתח תקווה הקבוצות הראשונות נפתחות ב-11 באוקטובר.
+          מאמן שמכיר כל אחד בשמו, ואווירה שגורמת לחזור.
         </p>
         <form class="lead-form" id="leadform" onsubmit="return submitLead(this)">
           <div class="grp city-grp" role="group" aria-label="באיזו עיר?">
@@ -828,7 +837,7 @@
     <div class="wrap">
       <div class="center reveal">
         <span class="eyebrow">הקבוצות שלנו</span>
-        <h2 class="section-title">בחרו את הקבוצה שלכם</h2>
+        <h2 class="section-title">שלוש קבוצות, גינה אחת — תבחרו מי מתחיל</h2>
         <p class="section-sub">אותה שיטה, אותה אווירה — בשתי הערים. לחצו על הקבוצה שמדברת אליכם.</p>
       </div>
 
@@ -962,7 +971,7 @@
     <div class="wrap">
       <div class="center reveal">
         <span class="eyebrow" style="color:var(--gold)">🏗️ פתח תקווה · פותחים ב-11 באוקטובר</span>
-        <h2 class="section-title">העיר השנייה — וההרשמה כבר פתוחה</h2>
+        <h2 class="section-title">פתח תקווה נפתחת ב-11 באוקטובר — וההרשמה כבר רצה</h2>
         <p class="section-sub" style="margin-inline:auto">אותה שיטה שרצה בראש העין, עם קבוצת אבות וקבוצת אמהות שנפתחות בפתח תקווה ביום ראשון, 11 באוקטובר. מי שנרשם לפני הפתיחה נכנס כחבר מייסד.</p>
       </div>
 
@@ -1101,7 +1110,7 @@
     <div class="wrap">
       <div class="center reveal">
         <span class="eyebrow">רגעים מהמגרש</span>
-        <h2 class="section-title">ככה זה נראה אצלנו</h2>
+        <h2 class="section-title">בלי קירות, בלי מראות, בלי תור למכשיר</h2>
         <p class="section-sub">לא בימוי ולא סטודיו — רגעים אמיתיים מהאימונים בפארק בראש העין, מקו הילדים ומקבוצות האבות והאמהות.</p>
       </div>
       <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(124px,1fr));gap:12px;margin-top:44px">
@@ -1124,7 +1133,7 @@
     <div class="wrap">
       <div class="center reveal" style="max-width:780px;margin-inline:auto">
         <span class="eyebrow">בקצרה</span>
-        <h2 class="section-title">אימוני כושר בראש העין ובפתח תקווה — בקצרה</h2>
+        <h2 class="section-title">אימוני כושר בראש העין ובפתח תקווה — קבוצה קבועה מנצחת מנוי שלא מנוצל</h2>
         <p class="section-sub" style="margin-inline:auto">Team Lider (טים לידר) מפעילה אימוני כושר קבוצתיים בפארק בראש העין — בגינת הכושר בפסגות אפק (הגינה הכתומה מעל כיכר צוות, גולדה מאיר 20). מתאמנים בה קבוצת אבות וקבוצת אמהות למבוגרים 18+, לצד ילדים ונערים בגילאי 8–15 בשתי קבוצות גיל שכל אחת מחולקת לקבוצות לפי רמה ומטרה. הקבוצות קטנות ובהובלת מאמן מוסמך, באוויר הפתוח, עם הרבה מקום חניה בסביבה. מעל 500 ילדים, נערים ומבוגרים כבר התאמנו בקהילה — קהילת הכושר הגדולה בראש העין — עם דירוג 4.7 מ-84 ביקורות של הורים בגוגל. ב-11 באוקטובר 2026 נפתחות קבוצות גם בפתח תקווה: קבוצת אבות (גברים 18+) וקבוצת אמהות (נשים 18+), אימון פונקציונלי קבוצתי בפארק פעמיים בשבוע, בהרשמה מוקדמת לפני הפתיחה.</p>
       </div>
     </div>
@@ -1135,7 +1144,7 @@
     <div class="wrap">
       <div class="center reveal">
         <span class="eyebrow">שאלות נפוצות</span>
-        <h2 class="section-title">כל מה שרציתם לדעת</h2>
+        <h2 class="section-title">השאלות שעוצרות אנשים רגע לפני האימון הראשון</h2>
       </div>
       <div class="faq-list">
         <div class="qa"><button>באיזה גיל אפשר להתחיל?<span class="plus"></span></button><div class="ans"><p>קבוצות הילדים והנערים מתחילות מגיל 8 ועד 15, בשתי קבוצות גיל — ילדים 8–11 ונערים 12–15 — שכל אחת מחולקת לקבוצות משנה לפי רמה ומטרה, כך שמתאים לכל ילד ונער בכל רמה. יש גם קבוצות מבוגרים לאבות ולאמהות מגיל 18.</p></div></div>
@@ -1159,7 +1168,7 @@
   <section class="section-pad final">
     <div class="wrap">
       <div class="final-card reveal">
-        <h2>מוכנים להתחיל?</h2>
+        <h2>האימון הראשון הוא ניסיון — בלי התחייבות ובלי דמי רישום</h2>
         <p>השאירו שם וטלפון ונחזור אליכם עוד היום לתאם אימון ניסיון, בלי התחייבות.</p>
 
         <form class="lead-form" style="margin-inline:auto;justify-content:center" onsubmit="return submitLead(this)">
