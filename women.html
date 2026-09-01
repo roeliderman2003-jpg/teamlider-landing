@@ -262,6 +262,13 @@
     .wa-float:hover { transform: scale(1.08); }
 
     /* Lead form */
+/* בורר העיר בטופס. הכללים האלה היו קיימים בכל הדפים חוץ מ-women,
+       כך שכאן שני הכפתורים רונדרו כברירת המחדל של הדפדפן (53x19 פיקסלים). */
+    .grp { display: flex; gap: 8px; flex: 1 1 100%; }
+    .chip { flex: 1; font-family: inherit; font-size: 15px; font-weight: 700; cursor: pointer; padding: 12px 6px; min-height: 44px; border-radius: 100px; border: 1.5px solid var(--line); background: rgba(255,255,255,.05); color: var(--muted); transition: border-color .15s, background .15s, color .15s; }
+    .chip:hover { border-color: var(--cyan); color: var(--white); }
+    .chip.active { background: rgba(41,181,232,.16); border-color: var(--cyan); color: var(--cyan-bright); }
+
     .lead-form { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 24px; max-width: 520px; }
     .lead-form input { flex: 1 1 155px; min-width: 130px; padding: 14px 16px; border-radius: 12px; border: 1px solid var(--line); background: rgba(255,255,255,.06); color: #fff; font-family: inherit; font-size: 16px; text-align: right; direction: rtl; transition: border-color .15s, background .15s; }
     .lead-form input::placeholder { color: var(--muted-2); }
@@ -356,6 +363,11 @@
     .reel-wrap video { width: 100%; height: auto; aspect-ratio: 4/5; display: block; object-fit: cover; }
     .reel-wrap.talk video { aspect-ratio: 4/5; object-fit: cover; }
     .reel .cap { text-align: center; font-size: 13px; color: var(--muted-2); margin-top: 10px; }
+    /* שני סרטוני המלצה זה לצד זה בדסקטופ, אחד מתחת לשני בטלפון. */
+    .reel-pair { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; max-width: 840px; margin: 18px auto 0; }
+    .reel-pair figure { margin: 0; }
+    .reel-pair .reel-wrap { margin: 0; max-width: none; }
+    @media (max-width: 760px) { .reel-pair { grid-template-columns: 1fr; max-width: 400px; gap: 26px; } }
 
     /* Every reel now carries audio, and browsers only autoplay muted - so each
        one starts silent with a tap-for-sound control. */
@@ -371,7 +383,45 @@
     }
     .sndbtn:hover { background: rgba(10,25,41,.95); }
     .sndbtn[hidden] { display: none; }
-</style>
+
+    /* ── אזורי נגיעה בטלפון (נמדד ב-375px על כל הדפים, ספטמבר 2026) ──
+       קישורי הפוטר, הפירורים והקישורים בתוך טקסט עמדו על 18-25px גובה
+       ובגופן 12.5-13.5px. אצבע צריכה 44px, ועין צריכה 14px. הקישורים
+       שבתוך פסקה מקבלים padding אנכי בלי inline-block, כדי שהמשפט
+       ימשיך להישבר לשורות; הקו התחתון עובר ל-text-decoration כדי
+       שלא יתרחק מהמילה ב-11 פיקסלים. */
+    @media (max-width: 760px) {
+      .crumb { font-size: 14px; }
+      .crumb a { display: inline-block; padding: 12px 8px; margin-inline-start: -8px; }
+
+      .foot-bottom { font-size: 14px; }
+      .foot-bottom a { display: inline-block; padding: 12px 6px; }
+      .foot-nap { font-size: 15px; }
+      .foot-nap a { padding-block: 11px; }
+      .foot-col p, .foot-col a { font-size: 15px; }
+      .foot-col a { padding-block: 10px; margin-bottom: 0; }
+      .foot-social a { width: 44px; height: 44px; }
+
+      .form-privacy { font-size: 14px; }
+      .form-privacy a { display: inline-block; padding-block: 12px; }
+
+      .lead-link, .city-band a, .pt-only a, .form-route a, .city-cta { padding-block: 14px; }
+      .burger { min-width: 44px; min-height: 44px; font-size: 14px; }
+      .city-band a, .city-switch a { font-size: 14px; }
+
+      article p a, article li a, .ans a, .qa a, .answer a, .meta a,
+      .sub a, .section-sub a, .desc a, footer p a, .cap a,
+      .pt-note a, .cta-card p a, .city-note a {
+        padding-block: 12px;
+        border-bottom: 0 !important;
+        text-decoration: underline;
+        text-underline-offset: 4px;
+        text-decoration-thickness: 1px;
+      }
+
+      .brand { min-height: 44px; min-width: 44px; }
+    }
+  </style>
 </head>
 <body>
 
@@ -432,19 +482,36 @@
   <article class="wrap">
 
     <section class="reel">
-      <h2>היא שלחה לנו את זה מהאוטו, בדרך הביתה</h2>
-      <p class="sub">לא אנחנו, היא. הקישו להפעלת הקול.</p>
-      <div class="reel-wrap">
-        <video playsinline autoplay muted preload="metadata" controls
-               poster="assets/testimonial-mother-poster.webp"
-               aria-label="מתאמנת מקבוצת האמהות מספרת על האימונים">
-          <source src="assets/testimonial-mother.mp4" type="video/mp4" />
-        </video>
-        <button class="sndbtn" type="button" data-snd><svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3a4.5 4.5 0 0 0-2.5-4.03v8.05A4.47 4.47 0 0 0 16.5 12zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg>
+      <h2>שתי מתאמנות, בלי תסריט</h2>
+      <p class="sub">לאחת נכנסנו לרגע בסוף אימון בפארק, השנייה צילמה את עצמה בדרך הביתה. הקישו להפעלת הקול.</p>
+      <div class="reel-pair">
+        <figure>
+          <div class="reel-wrap">
+            <video playsinline autoplay muted preload="metadata" controls
+                   poster="assets/testimonial-mother-2-poster.webp"
+                   aria-label="מתאמנת מקבוצת האמהות מספרת על חודש וחצי של אימונים">
+              <source src="assets/testimonial-mother-2.mp4" type="video/mp4" />
+            </video>
+            <button class="sndbtn" type="button" data-snd><svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3a4.5 4.5 0 0 0-2.5-4.03v8.05A4.47 4.47 0 0 0 16.5 12zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg>
           הקישו להפעלת הקול
         </button>
+          </div>
+          <figcaption class="cap">חודש וחצי בקבוצה. מצולם בסוף אימון בגינה.</figcaption>
+        </figure>
+        <figure>
+          <div class="reel-wrap">
+            <video playsinline autoplay muted preload="metadata" controls
+                   poster="assets/testimonial-mother-poster.webp"
+                   aria-label="מתאמנת מקבוצת האמהות מספרת על האימונים">
+              <source src="assets/testimonial-mother.mp4" type="video/mp4" />
+            </video>
+            <button class="sndbtn" type="button" data-snd><svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3a4.5 4.5 0 0 0-2.5-4.03v8.05A4.47 4.47 0 0 0 16.5 12zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg>
+          הקישו להפעלת הקול
+        </button>
+          </div>
+          <figcaption class="cap">מתאמנת בקבוצת האמהות, בדרך הביתה.</figcaption>
+        </figure>
       </div>
-      <p class="cap">מתאמנת בקבוצת האמהות בראש העין.</p>
     </section>
 
     <div class="answer">
@@ -469,6 +536,10 @@
       <h3>שני וחמישי, 20:00, בגינת הכושר בפסגות אפק, ראש העין</h3>
       <p>אימון כושר פונקציונלי של 60 דקות: כוח, שרירי ליבה, ניידות ותנועה, בעבודה בתחנות עם קטלבלים, משקולות יד, גומיות ו-TRX. את כל הציוד אנחנו מביאים; את מגיעה עם בגדי ספורט, נעליים ובקבוק מים. העצימות מותאמת אישית לכל אחת, כולל התאמות אחרי לידה.</p>
       <div class="meta">שני + חמישי, 20:00 · 60 דקות · קבוצות עד 12 · מנוי חודשי גמיש, בלי התחייבות</div>
+    </div>
+    <div class="photo-pair">
+      <figure><img src="assets/mothers-trx-800.webp" srcset="assets/mothers-trx-480.webp 480w, assets/mothers-trx-800.webp 800w" sizes="(max-width: 620px) 45vw, 400px" alt="מתאמנת מקבוצת האמהות בתרגיל TRX בגינת הכושר בפסגות אפק, בשעת ערב" loading="lazy" decoding="async" width="800" height="1000" /><figcaption>TRX בתחנות, כל אחת בעומס שלה.</figcaption></figure>
+      <figure><img src="assets/mothers-coach-800.webp" srcset="assets/mothers-coach-480.webp 480w, assets/mothers-coach-800.webp 800w" sizes="(max-width: 620px) 45vw, 400px" alt="המאמן מלווה מתאמנת מקבוצת האמהות בתרגיל כדור כוח על סולם זריזות בפארק" loading="lazy" decoding="async" width="800" height="1000" /><figcaption>המאמן צמוד, מתקן ומתאים את העומס.</figcaption></figure>
     </div>
     <a href="https://wa.me/972549747713?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A4%D7%A8%D7%98%D7%99%D7%9D%20%D7%A2%D7%9C%20%D7%A7%D7%91%D7%95%D7%A6%D7%AA%20%D7%94%D7%90%D7%9E%D7%94%D7%95%D7%AA" class="btn btn-primary btn-block" target="_blank" rel="noopener">לשריון מקום בקבוצת האמהות</a>
 
@@ -692,6 +763,17 @@
         if (window.gtag) gtag('event', 'reel_unmute', { page: location.pathname });
       }
       b.addEventListener('click', sound);
+      // כשמפעילים קול בסרטון אחד, השני חוזר להיות מושתק - לא שני קולות במקביל.
+      v.addEventListener('volumechange', function () {
+        if (v.muted) return;
+        document.querySelectorAll('.reel-wrap video').forEach(function (other) {
+          if (other !== v && !other.muted) {
+            other.muted = true;
+            var ob = other.closest('.reel-wrap').querySelector('[data-snd]');
+            if (ob) ob.hidden = false;
+          }
+        });
+      });
       v.addEventListener('click', function () { if (v.muted) sound(); });
       v.addEventListener('volumechange', function () { if (!v.muted) b.hidden = true; });
     });

@@ -566,7 +566,45 @@
         display: inline-block; padding-block: 9px;
       }
     }
-</style>
+
+    /* ── אזורי נגיעה בטלפון (נמדד ב-375px על כל הדפים, ספטמבר 2026) ──
+       קישורי הפוטר, הפירורים והקישורים בתוך טקסט עמדו על 18-25px גובה
+       ובגופן 12.5-13.5px. אצבע צריכה 44px, ועין צריכה 14px. הקישורים
+       שבתוך פסקה מקבלים padding אנכי בלי inline-block, כדי שהמשפט
+       ימשיך להישבר לשורות; הקו התחתון עובר ל-text-decoration כדי
+       שלא יתרחק מהמילה ב-11 פיקסלים. */
+    @media (max-width: 760px) {
+      .crumb { font-size: 14px; }
+      .crumb a { display: inline-block; padding: 12px 8px; margin-inline-start: -8px; }
+
+      .foot-bottom { font-size: 14px; }
+      .foot-bottom a { display: inline-block; padding: 12px 6px; }
+      .foot-nap { font-size: 15px; }
+      .foot-nap a { padding-block: 11px; }
+      .foot-col p, .foot-col a { font-size: 15px; }
+      .foot-col a { padding-block: 10px; margin-bottom: 0; }
+      .foot-social a { width: 44px; height: 44px; }
+
+      .form-privacy { font-size: 14px; }
+      .form-privacy a { display: inline-block; padding-block: 12px; }
+
+      .lead-link, .city-band a, .pt-only a, .form-route a, .city-cta { padding-block: 14px; }
+      .burger { min-width: 44px; min-height: 44px; font-size: 14px; }
+      .city-band a, .city-switch a { font-size: 14px; }
+
+      article p a, article li a, .ans a, .qa a, .answer a, .meta a,
+      .sub a, .section-sub a, .desc a, footer p a, .cap a,
+      .pt-note a, .cta-card p a, .city-note a {
+        padding-block: 12px;
+        border-bottom: 0 !important;
+        text-decoration: underline;
+        text-underline-offset: 4px;
+        text-decoration-thickness: 1px;
+      }
+
+      .brand { min-height: 44px; min-width: 44px; }
+    }
+  </style>
 
   <!-- Structured data: business entity (address/hours/socials enriched on confirmation) -->
   <script type="application/ld+json">
