@@ -25,6 +25,12 @@
     ul { padding-inline-start:22px; }
     a { color:var(--cyan-bright); }
     .back { display:inline-block; margin-top:40px; padding:12px 24px; border-radius:100px; background:linear-gradient(135deg,var(--cyan),#1E93C4); color:#04121d; font-weight:800; }
+  
+    /* אזורי נגיעה בטלפון: הלוגו וקישורי הקשר עמדו על 21-38 פיקסלים. */
+    @media (max-width: 760px) {
+      .brand, header a { min-height: 44px; display: inline-flex; align-items: center; }
+      p a, li a { padding-block: 12px; }
+    }
   </style>
 </head>
 <body>
