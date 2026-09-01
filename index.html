@@ -189,7 +189,10 @@
     /* Fathers lead, then mothers, then kids - the page's order of importance. */
     .hero-mosaic { position: absolute; inset: 0; display: grid; grid-template-columns: 1.45fr 1fr; grid-template-rows: 1fr 1fr; gap: 4px; }
     .hero-mosaic img { width: 100%; height: 100%; object-fit: cover; display: block; filter: none; border-radius: 0; }
-    .hero-mosaic .m1 { grid-row: 1 / span 2; }
+    /* העמודה הגבוהה היא ביחס 0.47 בעוד התמונה היא 4:5, כך ש-cover חותך
+       41% מהרוחב. מרכוז חתך את האיש הקדמי מימין; יישור לימין שומר
+       ארבעה מתאמנים בפריים במקום שלושה, ומוריד רחבת ריצוף ריקה. */
+    .hero-mosaic .m1 { grid-row: 1 / span 2; object-position: 100% 50%; }
     .hero-card .ph-tag {
       position: absolute; bottom: 16px; inset-inline: 16px;
       font-size: 12.5px; color: var(--muted-2); background: rgba(4,12,20,.5);
@@ -390,7 +393,9 @@
     .sticky-cta .btn { flex: 1; padding: 13px 10px; font-size: 15.5px; white-space: nowrap; }
     @media (max-width: 940px) {
       .sticky-cta.show { display: flex; }
-      body.has-sticky .wa-float { bottom: 88px; }
+      /* כשסרגל ה-CTA התחתון עולה הוא כבר מכיל כפתור וואטסאפ,
+         כך שהבועה הצפה הייתה כפתור שלישי לאותו יעד. */
+      body.has-sticky .wa-float { display: none; }
     }
 
     /* ---------- Reveal animation ---------- */
@@ -603,6 +608,15 @@
       }
 
       .brand { min-height: 44px; min-width: 44px; }
+
+      /* ⭐ ההירו במובייל: הכרטיס הוא 4:5 בדיוק כמו תמונת המקור, אבל
+         הפסיפס חילק אותו לעמודה צרה של 0.467 - כלומר object-fit: cover
+         חתך 41% מרוחב תמונת קבוצת האבות, ואיתם חלק מהאנשים בפריים.
+         בטלפון מציגים תמונה אחת שממלאת את הכרטיס ביחס הטבעי שלה.
+         שתי התמונות הקטנות ממילא חוזרות בגלריה שבהמשך העמוד. */
+      .hero-mosaic { grid-template-columns: 1fr; grid-template-rows: 1fr; gap: 0; }
+      .hero-mosaic .m1 { grid-row: 1; }
+      .hero-mosaic .m2, .hero-mosaic .m3 { display: none; }
     }
   </style>
 
@@ -720,7 +734,7 @@
           <input name="name" type="text" required placeholder="שם מלא" autocomplete="name" aria-label="שם מלא" />
           <input name="phone" type="tel" required placeholder="טלפון" autocomplete="tel" inputmode="tel" aria-label="מספר טלפון" />
           <input type="text" name="company" class="hp-field" tabindex="-1" autocomplete="off" aria-hidden="true" />
-          <button type="submit" class="btn btn-primary lead-btn">שריינו לי אימון ניסיון</button>
+          <button type="submit" class="btn btn-primary lead-btn" data-cta-rh="שריינו לי אימון ניסיון" data-cta-pt="שריינו לי מקום בהרשמה המוקדמת">שריינו לי אימון ניסיון</button>
         </form>
         <div class="lead-msg" aria-live="polite"></div>
         <div class="hero-micro">
@@ -1224,7 +1238,7 @@
           <input name="name" type="text" required placeholder="שם מלא" autocomplete="name" aria-label="שם מלא" />
           <input name="phone" type="tel" required placeholder="טלפון" autocomplete="tel" inputmode="tel" aria-label="מספר טלפון" />
           <input type="text" name="company" class="hp-field" tabindex="-1" autocomplete="off" aria-hidden="true" />
-          <button type="submit" class="btn btn-primary lead-btn">שריינו לי מקום</button>
+          <button type="submit" class="btn btn-primary lead-btn" data-cta-rh="שריינו לי אימון ניסיון" data-cta-pt="שריינו לי מקום בהרשמה המוקדמת">שריינו לי אימון ניסיון</button>
         </form>
         <div class="lead-msg" aria-live="polite"></div>
         <div class="pt-only" style="text-align:center" data-pt-only hidden>הקבוצות בפתח תקווה נפתחות ב-11 באוקטובר, וההרשמה עכשיו היא לפריסייל. <a href="pt.html">לכל התנאים ←</a></div>
@@ -1346,6 +1360,10 @@
       }
       var box = form.closest('.hero-copy, .final-card, section') || document;
       box.querySelectorAll('[data-pt-only]').forEach(function (el) { el.hidden = !isPT; });
+      // בפתח תקווה אין עדיין אימון ניסיון לשריין, יש הרשמה מוקדמת.
+      // הכפתור חייב להבטיח את מה שקורה בפועל בעיר שנבחרה.
+      var cta = form.querySelector('[data-cta-rh]');
+      if (cta) cta.textContent = isPT ? cta.dataset.ctaPt : cta.dataset.ctaRh;
     }
     document.querySelectorAll('form.lead-form').forEach(applyCity);
 

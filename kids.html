@@ -300,7 +300,9 @@
     .lead-link:hover { color: var(--cyan-bright); }
     .sticky-cta { position: fixed; bottom: 0; inset-inline: 0; z-index: 95; display: none; gap: 10px; padding: 10px 14px calc(10px + env(safe-area-inset-bottom)); background: rgba(10,25,41,.92); backdrop-filter: blur(12px); border-top: 1px solid var(--line); }
     .sticky-cta .btn { flex: 1; padding: 13px 10px; font-size: 15.5px; white-space: nowrap; }
-    @media (max-width: 640px) { .sticky-cta.show { display: flex; } body.has-sticky .wa-float { bottom: 88px; } }
+    @media (max-width: 640px) { .sticky-cta.show { display: flex; } /* כשסרגל ה-CTA התחתון עולה הוא כבר מכיל כפתור וואטסאפ,
+         כך שהבועה הצפה הייתה כפתור שלישי לאותו יעד. */
+      body.has-sticky .wa-float { display: none; } }
 
     /* Google rating badge */
     .g-badge { display: inline-flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 700; color: var(--white); background: rgba(255,255,255,.05); border: 1px solid var(--line); padding: 8px 15px; border-radius: 100px; }

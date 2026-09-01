@@ -286,7 +286,9 @@
       .pstat + .pstat { border-inline-start: none; border-top: 1px solid var(--line); }
     }
 
-    @media (max-width: 640px) { .sticky-cta.show { display: flex; } body.has-sticky .wa-float { bottom: 88px; } }
+    @media (max-width: 640px) { .sticky-cta.show { display: flex; } /* כשסרגל ה-CTA התחתון עולה הוא כבר מכיל כפתור וואטסאפ,
+         כך שהבועה הצפה הייתה כפתור שלישי לאותו יעד. */
+      body.has-sticky .wa-float { display: none; } }
 
     @media (max-width: 560px) { .nav-cta .btn-ghost { display: none; } }
     @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .btn { transition: none; } }

@@ -226,7 +226,9 @@
     .hero-micro { margin-top: 14px; font-size: 14px; color: var(--muted-2); display: flex; align-items: center; gap: 8px; }
     .sticky-cta { position: fixed; bottom: 0; inset-inline: 0; z-index: 95; display: none; gap: 10px; padding: 10px 14px calc(10px + env(safe-area-inset-bottom)); background: rgba(10,25,41,.92); backdrop-filter: blur(12px); border-top: 1px solid var(--line); }
     .sticky-cta .btn { flex: 1; padding: 13px 10px; font-size: 15.5px; white-space: nowrap; }
-    @media (max-width: 640px) { .sticky-cta.show { display: flex; } body.has-sticky .wa-float { bottom: 88px; } }
+    @media (max-width: 640px) { .sticky-cta.show { display: flex; } /* כשסרגל ה-CTA התחתון עולה הוא כבר מכיל כפתור וואטסאפ,
+         כך שהבועה הצפה הייתה כפתור שלישי לאותו יעד. */
+      body.has-sticky .wa-float { display: none; } }
 
     @media (max-width: 560px) { .nav-cta .btn-ghost { display: none; } }
     @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .btn { transition: none; } }
@@ -368,7 +370,7 @@
         <input name="name" type="text" required placeholder="שם מלא" autocomplete="name" aria-label="שם מלא" />
         <input name="phone" type="tel" required placeholder="טלפון" autocomplete="tel" inputmode="tel" aria-label="מספר טלפון" />
         <input type="text" name="company" class="hp-field" tabindex="-1" autocomplete="off" aria-hidden="true" />
-        <button type="submit" class="btn btn-primary lead-btn">שריינו לי אימון ניסיון</button>
+        <button type="submit" class="btn btn-primary lead-btn" data-cta-rh="שריינו לי אימון ניסיון" data-cta-pt="שריינו לי מקום בהרשמה המוקדמת">שריינו לי אימון ניסיון</button>
       </form>
       <div class="lead-msg" aria-live="polite"></div>
       <div class="form-privacy">הפרטים לתיאום בלבד, בלי ספאם ובלי רשימות תפוצה · <a href="privacy.html">מדיניות פרטיות</a></div>
@@ -553,6 +555,10 @@
       }
       var box = form.closest('section, .final-card, .ghero') || document;
       box.querySelectorAll('[data-pt-only]').forEach(function (el) { el.hidden = !isPT; });
+      // בפתח תקווה אין עדיין אימון ניסיון לשריין, יש הרשמה מוקדמת.
+      // הכפתור חייב להבטיח את מה שקורה בפועל בעיר שנבחרה.
+      var cta = form.querySelector('[data-cta-rh]');
+      if (cta) cta.textContent = isPT ? cta.dataset.ctaPt : cta.dataset.ctaRh;
     }
     document.querySelectorAll('form.lead-form').forEach(applyCity);
 
