@@ -741,7 +741,8 @@
       a.addEventListener('click', function () { if (window.gtag) gtag('event', 'whatsapp_click', { location: (a.closest('section, header, footer, article') || {}).id || 'float' }); });
     });
 
-    // Live Google rating - reviews.json refreshed weekly; static 4.7/84 is the no-JS fallback.
+    // Live Google rating - reviews.json refreshed weekly, and the same script rewrites
+    // the numbers baked into the markup (the no-JS/SEO fallback).
     fetch('reviews.json?_=' + Date.now())
       .then(function (r) { return r.ok ? r.json() : null; })
       .then(function (d) {

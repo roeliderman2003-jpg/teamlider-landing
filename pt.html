@@ -699,7 +699,8 @@
     }
 
     // Live Google rating - reviews.json is refreshed weekly by a GitHub Action.
-    // The static 4.7 / 84 in the markup are the SEO/no-JS fallback; this keeps the badges current.
+    // The numbers baked into the markup are the SEO/no-JS fallback, kept current by
+    // scripts/update-reviews.mjs; this keeps the badges live for JS visitors.
     fetch('reviews.json?_=' + Date.now())
       .then(function (r) { return r.ok ? r.json() : null; })
       .then(function (d) {
