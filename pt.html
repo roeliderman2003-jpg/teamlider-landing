@@ -26,26 +26,8 @@
   <meta name="twitter:image" content="https://teamlider.co.il/assets/og-cover.jpg" />
   <meta name="theme-color" content="#0A1929" />
 
-  <!-- Google Analytics 4 - loaded on first interaction (or after 3s) to keep initial paint fast -->
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){ dataLayer.push(arguments); }
-    gtag('js', new Date());
-    gtag('config', 'G-67KSD0RPP4');
-    (function () {
-      var loaded = false;
-      function loadGA() {
-        if (loaded) return; loaded = true;
-        var s = document.createElement('script');
-        s.async = true; s.src = 'https://www.googletagmanager.com/gtag/js?id=G-67KSD0RPP4';
-        document.head.appendChild(s);
-      }
-      ['pointerdown', 'touchstart', 'keydown', 'scroll'].forEach(function (e) {
-        window.addEventListener(e, loadGA, { once: true, passive: true, capture: true });
-      });
-      setTimeout(loadGA, 3000);
-    })();
-  </script>
+  <!-- Analytics: GA4 is loaded by assets/consent.js only after the visitor consents -->
+  <script src="assets/consent.js"></script>
 
   <link rel="icon" type="image/png" href="assets/logo-square.png" />
   <link rel="preload" href="assets/fonts/heebo-wght-heblat.woff2" as="font" type="font/woff2" crossorigin />
@@ -194,6 +176,15 @@
     .founder h3 { font-size: 22px; margin: 0 0 10px; }
     .founder ul.checks li::before { background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="%23F0C05C" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>'); }
     .founder .until { font-size: 14.5px; color: var(--muted-2); margin: 4px 0 0; }
+    .pricing-legal { font-size: 14.5px; color: var(--muted-2); margin: 12px 0 0; text-align: center; }
+    .cancel-terms {
+      margin-top: 22px; padding: 20px 22px; border-radius: 16px;
+      background: rgba(255,255,255,.035); border: 1px solid var(--line);
+    }
+    .cancel-terms h3 { font-size: 18px; font-weight: 800; margin-bottom: 10px; }
+    .cancel-terms ul { padding-inline-start: 20px; margin-bottom: 10px; }
+    .cancel-terms li { font-size: 15px; color: var(--muted); margin-bottom: 8px; }
+    .cancel-terms p { font-size: 14.5px; color: var(--muted-2); margin: 0; }
 
     .prices { display: flex; gap: 12px; flex-wrap: wrap; margin: 18px 0 6px; }
     .price { flex: 1 1 220px; background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 20px 22px; }
@@ -384,9 +375,19 @@
 
       .brand { min-height: 44px; min-width: 44px; }
     }
+  
+    /* Skip to content */
+    .skip-link {
+      position: absolute; inset-inline-start: 12px; top: -60px; z-index: 200;
+      background: var(--cyan-bright); color: #04121d; font-weight: 800; font-size: 15px;
+      padding: 10px 18px; border-radius: 0 0 12px 12px; transition: top .18s ease;
+    }
+    .skip-link:focus { top: 0; outline: none; }
   </style>
 </head>
 <body>
+  <a href="#main" class="skip-link">דלג לתוכן</a>
+
 
   <header>
     <div class="wrap nav">
@@ -405,7 +406,7 @@
     </div>
   </header>
 
-  <section class="ghero">
+  <section class="ghero" id="main" tabindex="-1">
     <div class="wrap">
       <nav class="crumb" aria-label="breadcrumb"><a href="/">בית</a> · פתח תקווה</nav>
       <span class="eyebrow">🏗️ פתח תקווה · פותחים 11 באוקטובר · אבות ואמהות</span>
@@ -488,6 +489,7 @@
         <div class="note">להתחלה, או למי שהשבוע שלו צפוף</div>
       </div>
     </div>
+    <p class="pricing-legal">המחירים הם הסכום שמשלמים בפועל: אין דמי רישום, אין דמי הצטרפות ואין תוספות.</p>
 
     <div class="founder">
       <span class="tag">⭐ פריסייל · חבר מייסד</span>
@@ -498,6 +500,16 @@
         <li><b>אין חיוב עכשיו.</b> ההרשמה נסגרת בשיחה, החיוב מתחיל עם פתיחת הקבוצה.</li>
       </ul>
       <p class="until">תנאי הפריסייל תקפים עד <strong>10 בספטמבר</strong>. הקבוצה נפתחת ב-11 באוקטובר.</p>
+    </div>
+
+    <div class="cancel-terms">
+      <h3>איך מפסיקים, אם בא לכם להפסיק</h3>
+      <ul>
+        <li><b>בכל עת, בלי קנס.</b> שולחים הודעה בכתב למייל <a href="mailto:roe.liderman2003@gmail.com">roe.liderman2003@gmail.com</a> או בוואטסאפ, ואין צורך לנמק. החיוב נפסק לא יאוחר משלושה ימי עסקים מקבלת ההודעה.</li>
+        <li><b>14 ימים לביטול על פי חוק.</b> בעסקה שנסגרת בשיחת טלפון עומדת לכם זכות ביטול בתוך 14 ימים ממועד העסקה, לפי חוק הגנת הצרכן, בנוסף לכל מה שכתוב כאן.</li>
+        <li><b>שולם מראש?</b> מחזירים את החלק היחסי שלא נוצל.</li>
+      </ul>
+      <p>התנאים המלאים, כולל הצהרת הבריאות שממלאים לפני האימון הראשון, נמצאים ב<a href="terms.html">תנאי השימוש</a>.</p>
     </div>
 
     <h2>מנוי לחדר כושר לא יודע שהפסקת. קבוצה כן</h2>
@@ -515,6 +527,7 @@
         <video playsinline autoplay muted preload="metadata" controls poster="assets/testimonial-father-poster.webp"
                aria-label="מתאמן מקבוצת האבות בראש העין מספר על האימונים">
           <source src="assets/testimonial-father.mp4" type="video/mp4" />
+          <track kind="captions" src="assets/testimonial-father.he.vtt" srclang="he" label="עברית" default />
         </video>
         <button class="sndbtn" type="button" data-snd><svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3a4.5 4.5 0 0 0-2.5-4.03v8.05A4.47 4.47 0 0 0 16.5 12zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg>
           הקישו להפעלת הקול
@@ -601,6 +614,7 @@
     <div class="qa"><h3>אני ממש לא בכושר. אני אהיה האחרון?</h3><p>לא. כל תרגיל ניתן בכמה רמות, והמאמן מתאים את העומס לכל אחד בקבוצה. רוב המצטרפים מגיעים אחרי שנים בלי פעילות מסודרת, זו בדיוק נקודת ההתחלה הרגילה כאן.</p></div>
     <div class="qa"><h3>אפשר לבוא לאימון ניסיון לפני שמחליטים?</h3><p>כן. משאירים פרטים ואנחנו מתאמים אתכם אימון היכרות בקבוצה.</p></div>
     <div class="qa"><h3>יש קבוצות לילדים בפתח תקווה?</h3><p>בשלב הראשון נפתחות קבוצות המבוגרים בלבד. קבוצות הילדים והנוער יגיעו בהמשך. משאירים פרטים ונעדכן אתכם ראשונים.</p></div>
+    <div class="qa"><h3>צריך למלא משהו לפני האימון הראשון?</h3><p>כן: הצהרת בריאות קצרה, גם לפני אימון הניסיון. אם יש מצב רפואי, פציעה או תרופות קבועות, זה המקום לספר, ואם צריך נבקש גם אישור רופא. זה מה שמאפשר למאמן להתאים לכם את העומס נכון מהאימון הראשון. התנאים המלאים ב<a href="terms.html" style="color:var(--cyan-bright);font-weight:700">תנאי השימוש</a>.</p></div>
 
     <div class="cta-card">
       <h2>המקומות הראשונים נסגרים לפני הפתיחה</h2>
@@ -622,7 +636,7 @@
       <p style="color:var(--muted);max-width:520px">אימונים קבוצתיים בפארק לילדים, לנערים, לאבות ולאמהות. כושר שבונה ביטחון, כוח וחברים. פועלים בראש העין משנת 2019, ומ-11 באוקטובר 2026 גם בפתח תקווה.</p>
       <div class="foot-bottom">
         <div>© Team Lider · אימוני כושר קבוצתיים · ראש העין ופתח תקווה</div>
-        <div><a href="/">דף הבית</a> · <a href="adults.html">מבוגרים</a> · <a href="kids.html">ילדים</a> · <a href="guide.html">מדריך</a> · <a href="accessibility.html">נגישות</a> · <a href="privacy.html">פרטיות</a></div>
+        <div><a href="/">דף הבית</a> · <a href="adults.html">מבוגרים</a> · <a href="kids.html">ילדים</a> · <a href="guide.html">מדריך</a> · <a href="accessibility.html">נגישות</a> · <a href="privacy.html">פרטיות</a> · <a href="terms.html">תנאי שימוש</a></div>
       </div>
     </div>
   </footer>

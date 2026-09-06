@@ -4,14 +4,14 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>הצהרת נגישות · Team Lider</title>
-  <meta name="description" content="הצהרת הנגישות של אתר Team Lider: רמת הנגישות, ההתאמות שבוצעו ודרכי פנייה לרכז הנגישות." />
+  <meta name="description" content="הצהרת הנגישות של אתר Team Lider: רמת הנגישות, ההתאמות שבוצעו, מה עדיין לא נגיש ודרכי פנייה לרכז הנגישות." />
   <meta name="robots" content="noindex, follow" />
   <link rel="icon" type="image/png" href="assets/logo-square.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700;800;900&display=swap" rel="stylesheet" />
   <style>
-    :root { --deep:#0A1929; --cyan:#29B5E8; --cyan-bright:#5CCBF0; --muted:rgba(255,255,255,.72); --line:rgba(255,255,255,.10); }
+    :root { --deep:#0A1929; --deep-2:#0d2135; --cyan:#29B5E8; --cyan-bright:#5CCBF0; --muted:rgba(255,255,255,.72); --line:rgba(255,255,255,.10); --amber:#F0B429; }
     * { margin:0; padding:0; box-sizing:border-box; }
     body { font-family:'Heebo',system-ui,sans-serif; background:var(--deep); color:#fff; line-height:1.75; -webkit-font-smoothing:antialiased; }
     .wrap { max-width:760px; margin:0 auto; padding:48px 22px 80px; }
@@ -24,45 +24,92 @@
     p, li { color:var(--muted); font-size:16px; margin-bottom:12px; }
     ul { padding-inline-start:22px; }
     a { color:var(--cyan-bright); }
+    b { color:#fff; }
     .back { display:inline-block; margin-top:40px; padding:12px 24px; border-radius:100px; background:linear-gradient(135deg,var(--cyan),#1E93C4); color:#04121d; font-weight:800; }
-  
+    .box { background:var(--deep-2); border:1px solid var(--line); border-radius:14px; padding:18px 20px; margin:16px 0; }
+    .box p:last-child, .box li:last-child { margin-bottom:0; }
+    .box.gap { border-color:rgba(240,180,41,.45); background:rgba(240,180,41,.08); }
+    .box.gap h3 { color:var(--amber); font-size:17px; font-weight:800; margin-bottom:8px; }
+    .contact { background:var(--deep-2); border:1px solid rgba(92,203,240,.32); border-radius:14px; padding:18px 20px; margin:16px 0; }
+    .contact li { margin-bottom:8px; }
+    .contact li:last-child { margin-bottom:0; }
+
     /* אזורי נגיעה בטלפון: הלוגו וקישורי הקשר עמדו על 21-38 פיקסלים. */
     @media (max-width: 760px) {
       .brand, header a { min-height: 44px; display: inline-flex; align-items: center; }
       p a, li a { padding-block: 12px; }
     }
+
+    /* Skip to content */
+    .skip-link {
+      position: absolute; inset-inline-start: 12px; top: -60px; z-index: 200;
+      background: var(--cyan-bright); color: #04121d; font-weight: 800; font-size: 15px;
+      padding: 10px 18px; border-radius: 0 0 12px 12px; transition: top .18s ease;
+    }
+    .skip-link:focus { top: 0; outline: none; }
   </style>
 </head>
 <body>
-  <div class="wrap">
+  <a href="#main" class="skip-link">דלג לתוכן</a>
+
+  <div class="wrap" id="main" tabindex="-1">
     <a href="index.html" class="brand"><img src="assets/logo-square.png" alt="Team Lider" /><span>TEAM LIDER</span></a>
     <h1>הצהרת נגישות</h1>
-    <div class="updated">עודכן: יולי 2026</div>
+    <div class="updated">עודכן: 7 בספטמבר 2026</div>
 
     <p>ב-Team Lider אנחנו רואים חשיבות רבה במתן שירות שוויוני לכלל הגולשים, כולל אנשים עם מוגבלות. אנחנו פועלים כדי שאתר האינטרנט שלנו יהיה נגיש וידידותי לשימוש עבור כמה שיותר אנשים.</p>
 
-    <h2>רמת הנגישות באתר</h2>
-    <p>האתר נבנה בשאיפה לעמוד בהנחיות התקן הישראלי ת"י 5568 המבוסס על הנחיות WCAG 2.0 ברמה AA. אנחנו ממשיכים לשפר את הנגישות באופן שוטף.</p>
+    <h2>התקן שאנחנו פועלים לפיו</h2>
+    <p>האתר נבנה לפי התקן הישראלי <b>ת"י 5568</b>, המבוסס על הנחיות <b>WCAG 2.0 ברמה AA</b>, ובהתאם לתקנות שוויון זכויות לאנשים עם מוגבלות (התאמות נגישות לשירות), התשע"ג-2013.</p>
+
+    <h2>מצב הנגישות באתר</h2>
+    <p>האתר עומד בדרישות התקן <b>באופן חלקי</b>. רוב האתר נגיש, ויש רכיב אחד שטרם הונגש במלואו — הוא מפורט במפורש בהמשך. אנחנו לא מצהירים על התאמה מלאה כל עוד הפער הזה קיים.</p>
+
+    <h2>מתי בוצעה עבודת ההנגשה</h2>
+    <ul>
+      <li><b>יולי 2026</b> — הנגשה ראשונית עם עליית האתר: מבנה סמנטי, ניגודיות, ניווט מקלדת, תיאורי תמונות.</li>
+      <li><b>7 בספטמבר 2026</b> — סבב שיפור: הוספת כתוביות בעברית לסרטוני ההמלצות, והוספת קישור "דלג לתוכן" לכל עמודי האתר.</li>
+    </ul>
+
+    <h2>בדיקת נגישות</h2>
+    <p><b>טרם בוצעה בדיקת נגישות על ידי מורשה נגישות חיצוני.</b> ההנגשה עד כה בוצעה על ידינו, על בסיס דרישות התקן ובדיקות פנימיות בקורא מסך ובניווט מקלדת. בדיקה חיצונית מתוכננת, וההצהרה הזו תעודכן עם ממצאיה ועם שם הבודק.</p>
 
     <h2>ההתאמות שבוצעו באתר</h2>
     <ul>
       <li>מבנה כותרות היררכי וסמנטי לתמיכה בקוראי מסך.</li>
+      <li>קישור "דלג לתוכן" בראש כל עמוד, לדילוג על תפריט הניווט.</li>
       <li>תיאורי טקסט חלופי (alt) לתמונות.</li>
       <li>תוויות (labels) לשדות טופס יצירת הקשר.</li>
+      <li>כתוביות בעברית לסרטוני ההמלצות שבאתר (למעט אחד, ראו להלן).</li>
       <li>ניגודיות צבעים גבוהה בין טקסט לרקע.</li>
       <li>ניווט וגלישה מלאים באמצעות מקלדת, עם סימון פוקוס ברור.</li>
+      <li>אזורי נגיעה מוגדלים בטלפון (44 פיקסלים לפחות).</li>
       <li>כיבוד העדפת המשתמש להפחתת אנימציות (prefers-reduced-motion).</li>
       <li>תמיכה בהגדלת טקסט ובתצוגה במגוון גדלי מסך.</li>
+      <li>סרטונים אינם מופעלים עם קול; הפעלת הקול היא ביוזמת הגולש בלבד.</li>
     </ul>
+
+    <div class="box gap">
+      <h3>מה עדיין לא נגיש</h3>
+      <p><b>סרטון ההמלצות בעמוד הילדים</b> (סרטון באורך כשתי דקות וחצי) עדיין ללא כתוביות. הסרטון צולם בחוץ עם כמה דוברים ורעש רקע, והתמלול האוטומטי לא הגיע לרמת דיוק שראינו כראויה לפרסום. אנחנו מכינים תמלול מדויק והוא יעלה בהקדם.</p>
+      <p>בינתיים, אם תוכן הסרטון חשוב לכם ואינו נגיש — פנו אלינו ונמסור אותו בכתב או בשיחה. הפרטים למטה.</p>
+    </div>
 
     <h2>פנייה בנושא נגישות</h2>
     <p>נתקלתם בבעיית נגישות באתר, או שיש לכם הצעה לשיפור? נשמח לשמוע ולתקן. אפשר לפנות לרכז הנגישות שלנו:</p>
-    <ul>
-      <li><b>רועי לידרמן</b> · Team Lider</li>
-      <li>וואטסאפ / טלפון: <a href="https://wa.me/972549747713" target="_blank" rel="noopener">054-974-7713</a></li>
-      <li>דוא"ל: <a href="mailto:roe.liderman2003@gmail.com">roe.liderman2003@gmail.com</a></li>
-    </ul>
-    <p>נעשה כמיטב יכולתנו לטפל בפנייה בהקדם.</p>
+    <div class="contact">
+      <ul>
+        <li><b>רועי לידרמן</b> · רכז נגישות, Team Lider</li>
+        <li>וואטסאפ / טלפון: <a href="https://wa.me/972549747713" target="_blank" rel="noopener">054-974-7713</a></li>
+        <li>דוא"ל: <a href="mailto:roe.liderman2003@gmail.com">roe.liderman2003@gmail.com</a></li>
+      </ul>
+    </div>
+    <p>נשיב לפנייה בהקדם האפשרי, ובכל מקרה בתוך 30 יום. אם הפנייה דורשת תיקון טכני שלוקח זמן, נעדכן אתכם בלוח הזמנים.</p>
+
+    <h2>נגישות במקום האימון</h2>
+    <p>האימונים מתקיימים בשטח פתוח בגינת הכושר בפסגות אפק, ראש העין (גולדה מאיר 20). מדובר בשטח ציבורי עירוני שאינו בבעלותנו ואינו בניהולנו. מי שיש לו צורך נגישות ספציפי מוזמן לפנות אלינו לפני ההגעה, ונשמח לבדוק יחד מה אפשר להתאים.</p>
+
+    <p style="margin-top:26px">ראו גם: <a href="privacy.html">מדיניות פרטיות</a> · <a href="terms.html">תנאי שימוש</a></p>
 
     <a href="index.html" class="back">← חזרה לדף הבית</a>
   </div>

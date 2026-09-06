@@ -23,26 +23,8 @@
   <meta name="twitter:image" content="https://teamlider.co.il/assets/og-cover.jpg" />
   <meta name="theme-color" content="#0A1929" />
 
-  <!-- Google Analytics 4 - loaded on first interaction (or after 3s) to keep initial paint fast -->
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){ dataLayer.push(arguments); }
-    gtag('js', new Date());
-    gtag('config', 'G-67KSD0RPP4');
-    (function () {
-      var loaded = false;
-      function loadGA() {
-        if (loaded) return; loaded = true;
-        var s = document.createElement('script');
-        s.async = true; s.src = 'https://www.googletagmanager.com/gtag/js?id=G-67KSD0RPP4';
-        document.head.appendChild(s);
-      }
-      ['pointerdown', 'touchstart', 'keydown', 'scroll'].forEach(function (e) {
-        window.addEventListener(e, loadGA, { once: true, passive: true, capture: true });
-      });
-      setTimeout(loadGA, 3000);
-    })();
-  </script>
+  <!-- Analytics: GA4 is loaded by assets/consent.js only after the visitor consents -->
+  <script src="assets/consent.js"></script>
 
   <link rel="icon" type="image/png" href="assets/logo-square.png" />
   <link rel="preload" href="assets/fonts/heebo-wght-heblat.woff2" as="font" type="font/woff2" crossorigin />
@@ -327,9 +309,19 @@
 
       .brand { min-height: 44px; min-width: 44px; }
     }
+  
+    /* Skip to content */
+    .skip-link {
+      position: absolute; inset-inline-start: 12px; top: -60px; z-index: 200;
+      background: var(--cyan-bright); color: #04121d; font-weight: 800; font-size: 15px;
+      padding: 10px 18px; border-radius: 0 0 12px 12px; transition: top .18s ease;
+    }
+    .skip-link:focus { top: 0; outline: none; }
   </style>
 </head>
 <body>
+  <a href="#main" class="skip-link">דלג לתוכן</a>
+
 
   <header>
     <div class="wrap nav">
@@ -349,7 +341,7 @@
     </div>
   </header>
 
-  <section class="ghero">
+  <section class="ghero" id="main" tabindex="-1">
     <div class="wrap">
       <nav class="crumb" aria-label="breadcrumb"><a href="/">בית</a> · אימוני כושר למבוגרים</nav>
       <span class="eyebrow">אמא או אבא מראש העין? · פסגות אפק</span>
@@ -392,6 +384,7 @@
                poster="assets/testimonial-father-poster.webp"
                aria-label="מתאמן מקבוצת האבות מספר על האימונים">
           <source src="assets/testimonial-father.mp4" type="video/mp4" />
+          <track kind="captions" src="assets/testimonial-father.he.vtt" srclang="he" label="עברית" default />
         </video>
         <button class="sndbtn" type="button" data-snd><svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3a4.5 4.5 0 0 0-2.5-4.03v8.05A4.47 4.47 0 0 0 16.5 12zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg>
           הקישו להפעלת הקול
@@ -424,6 +417,7 @@
                poster="assets/testimonial-mother-2-poster.webp"
                aria-label="מתאמנת מקבוצת האמהות מספרת על חודש וחצי של אימונים">
           <source src="assets/testimonial-mother-2.mp4" type="video/mp4" />
+          <track kind="captions" src="assets/testimonial-mother-2.he.vtt" srclang="he" label="עברית" default />
         </video>
         <button class="sndbtn" type="button" data-snd><svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3a4.5 4.5 0 0 0-2.5-4.03v8.05A4.47 4.47 0 0 0 16.5 12zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg>
           הקישו להפעלת הקול
@@ -501,6 +495,7 @@
     <div class="qa"><h3>יש בטים לידר אימונים למבוגרים, לא רק לילדים?</h3><p>כן. יש קבוצת אבות (גברים 18+) וקבוצת אמהות (נשים 18+), שמתאמנות בפארק בראש העין פעמיים בשבוע.</p></div>
     <div class="qa"><h3>לא התאמנתי הרבה זמן, זה מתאים לי?</h3><p>בהחלט. העומס והתרגילים מותאמים אישית לכל אחד, כך שמתחילים בקצב שלך ומתקדמים משם.</p></div>
     <div class="qa"><h3>יש התחייבות לתקופה?</h3><p>אין התחייבות לתקופה. מתחילים באימון ניסיון להיכרות וממשיכים במנוי חודשי גמיש. לפרטי המחיר המעודכן, הכי פשוט לשלוח לנו וואטסאפ ונחזור אליכם.</p></div>
+    <div class="qa"><h3>צריך למלא משהו לפני האימון הראשון?</h3><p>כן: הצהרת בריאות קצרה, גם לפני אימון הניסיון. אם יש מצב רפואי, פציעה או תרופות קבועות, זה המקום לספר, ואם צריך נבקש גם אישור רופא. זה מה שמאפשר למאמן להתאים לכם את העומס נכון מהאימון הראשון. התנאים המלאים ב<a href="terms.html" style="color:var(--cyan-bright);font-weight:700">תנאי השימוש</a>.</p></div>
 
     <div class="cta-card">
       <h2>האימון הראשון הוא ניסיון, בלי התחייבות</h2>
@@ -526,7 +521,7 @@
       <p style="color:var(--muted);font-size:14.5px;margin-top:6px"><b style="color:#fff">Team Lider · טים לידר</b> · <a href="tel:+972549747713" style="color:inherit">054-974-7713</a> · גינת הכושר, גולדה מאיר 20, פסגות אפק, ראש העין</p>
       <div class="foot-bottom">
         <div>© Team Lider · אימוני כושר קבוצתיים · ראש העין</div>
-        <div><a href="/">דף הבית</a> · <a href="kids.html">ילדים</a> · <a href="men.html">גברים</a> · <a href="women.html">נשים</a> · <a href="pt.html">פתח תקווה</a> · <a href="guide.html">מדריך</a> · <a href="accessibility.html">נגישות</a> · <a href="privacy.html">פרטיות</a></div>
+        <div><a href="/">דף הבית</a> · <a href="kids.html">ילדים</a> · <a href="men.html">גברים</a> · <a href="women.html">נשים</a> · <a href="pt.html">פתח תקווה</a> · <a href="guide.html">מדריך</a> · <a href="accessibility.html">נגישות</a> · <a href="privacy.html">פרטיות</a> · <a href="terms.html">תנאי שימוש</a></div>
       </div>
     </div>
   </footer>

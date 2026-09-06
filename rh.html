@@ -22,25 +22,8 @@
   <meta name="twitter:image" content="https://teamlider.co.il/assets/og-cover.jpg" />
   <meta name="theme-color" content="#0A1929" />
 
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){ dataLayer.push(arguments); }
-    gtag('js', new Date());
-    gtag('config', 'G-67KSD0RPP4');
-    (function () {
-      var loaded = false;
-      function loadGA() {
-        if (loaded) return; loaded = true;
-        var s = document.createElement('script');
-        s.async = true; s.src = 'https://www.googletagmanager.com/gtag/js?id=G-67KSD0RPP4';
-        document.head.appendChild(s);
-      }
-      ['pointerdown', 'touchstart', 'keydown', 'scroll'].forEach(function (e) {
-        window.addEventListener(e, loadGA, { once: true, passive: true, capture: true });
-      });
-      setTimeout(loadGA, 3000);
-    })();
-  </script>
+  <!-- Analytics: GA4 is loaded by assets/consent.js only after the visitor consents -->
+  <script src="assets/consent.js"></script>
 
   <link rel="icon" type="image/png" href="assets/logo-square.png" />
   <link rel="preload" href="assets/fonts/heebo-wght-heblat.woff2" as="font" type="font/woff2" crossorigin />
@@ -362,9 +345,19 @@
 
       .brand { min-height: 44px; min-width: 44px; }
     }
+  
+    /* Skip to content */
+    .skip-link {
+      position: absolute; inset-inline-start: 12px; top: -60px; z-index: 200;
+      background: var(--cyan-bright); color: #04121d; font-weight: 800; font-size: 15px;
+      padding: 10px 18px; border-radius: 0 0 12px 12px; transition: top .18s ease;
+    }
+    .skip-link:focus { top: 0; outline: none; }
   </style>
 </head>
 <body>
+  <a href="#main" class="skip-link">דלג לתוכן</a>
+
 
   <header>
     <div class="wrap nav">
@@ -383,7 +376,7 @@
     </div>
   </header>
 
-  <section class="ghero">
+  <section class="ghero" id="main" tabindex="-1">
     <div class="wrap">
       <nav class="crumb" aria-label="breadcrumb"><a href="/">בית</a> · ראש העין</nav>
       <span class="eyebrow">📍 ראש העין · פסגות אפק · מתאמנים כל יום</span>
@@ -534,6 +527,7 @@
     <div class="qa"><h3>אפשר לבוא לאימון ניסיון לפני שמחליטים?</h3><p>כן, וזו הדרך הרגילה להתחיל. משאירים פרטים ואנחנו מתאמים אימון ניסיון בקבוצה המתאימה, בלי התחייבות ובלי דמי רישום.</p></div>
     <div class="qa"><h3>אני ממש לא בכושר. זה מתאים לי?</h3><p>כן. כל תרגיל ניתן בכמה רמות והמאמן מתאים את העומס לכל אחד בקבוצה. רוב המצטרפים מגיעים אחרי שנים בלי פעילות מסודרת.</p></div>
     <div class="qa"><h3>יש לכם קבוצות גם בפתח תקווה?</h3><p>כן. ב-11 באוקטובר 2026 נפתחות בפתח תקווה קבוצת אבות וקבוצת אמהות, וההרשמה המוקדמת פתוחה כבר עכשיו. <a href="pt.html" style="color:var(--cyan-bright);font-weight:700">לעמוד פתח תקווה ←</a></p></div>
+    <div class="qa"><h3>צריך למלא משהו לפני האימון הראשון?</h3><p>כן: הצהרת בריאות קצרה, גם לפני אימון הניסיון. אם יש מצב רפואי, פציעה או תרופות קבועות, זה המקום לספר, ואם צריך נבקש גם אישור רופא. זה מה שמאפשר למאמן להתאים לכם את העומס נכון מהאימון הראשון. התנאים המלאים ב<a href="terms.html" style="color:var(--cyan-bright);font-weight:700">תנאי השימוש</a>.</p></div>
 
     <div class="cta-card">
       <h2>האימון הראשון הוא ניסיון, בלי התחייבות ובלי דמי רישום</h2>
@@ -555,7 +549,7 @@
       <p style="color:var(--muted);max-width:520px">גינת הכושר · גולדה מאיר 20, פסגות אפק, ראש העין. אימונים קבוצתיים בפארק לאבות, לאמהות, ולילדים ונערים.</p>
       <div class="foot-bottom">
         <div>© Team Lider · אימוני כושר קבוצתיים · ראש העין ופתח תקווה</div>
-        <div><a href="/">דף הבית</a> · <a href="men.html">אבות</a> · <a href="women.html">אמהות</a> · <a href="kids.html">ילדים</a> · <a href="pt.html">פתח תקווה</a> · <a href="guide.html">מדריך</a> · <a href="accessibility.html">נגישות</a> · <a href="privacy.html">פרטיות</a></div>
+        <div><a href="/">דף הבית</a> · <a href="men.html">אבות</a> · <a href="women.html">אמהות</a> · <a href="kids.html">ילדים</a> · <a href="pt.html">פתח תקווה</a> · <a href="guide.html">מדריך</a> · <a href="accessibility.html">נגישות</a> · <a href="privacy.html">פרטיות</a> · <a href="terms.html">תנאי שימוש</a></div>
       </div>
     </div>
   </footer>

@@ -4,8 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>מדיניות פרטיות · Team Lider</title>
-  <meta name="description" content="מדיניות הפרטיות של Team Lider: איזה מידע נאסף בטופס יצירת הקשר, למה, ואיך לבקש מחיקה." />
+  <meta name="description" content="מדיניות הפרטיות של Team Lider: איזה מידע נאסף בטופס ובאתר, למי הוא מועבר, כמה זמן הוא נשמר ואיך לבקש מחיקה." />
   <meta name="robots" content="noindex, follow" />
+  <!-- Analytics: GA4 is loaded by assets/consent.js only after the visitor consents -->
+  <script src="assets/consent.js"></script>
   <link rel="icon" type="image/png" href="assets/logo-square.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -24,45 +26,99 @@
     p, li { color:var(--muted); font-size:16px; margin-bottom:12px; }
     ul { padding-inline-start:22px; }
     a { color:var(--cyan-bright); }
+    b { color:#fff; }
     .back { display:inline-block; margin-top:40px; padding:12px 24px; border-radius:100px; background:linear-gradient(135deg,var(--cyan),#1E93C4); color:#04121d; font-weight:800; }
-  
+    .box { background:var(--deep-2); border:1px solid var(--line); border-radius:14px; padding:18px 20px; margin:16px 0; }
+    .box p:last-child, .box ul:last-child, .box li:last-child { margin-bottom:0; }
+    .cookie-btn { font-family:inherit; font-size:15px; font-weight:800; cursor:pointer; margin-top:6px;
+      background:transparent; color:var(--cyan-bright); border:1px solid rgba(92,203,240,.5);
+      border-radius:100px; padding:11px 22px; min-height:44px; }
+    .cookie-btn:hover { background:rgba(92,203,240,.1); }
+    .cookie-btn:focus-visible { outline:3px solid var(--cyan-bright); outline-offset:2px; }
+
     /* אזורי נגיעה בטלפון: הלוגו וקישורי הקשר עמדו על 21-38 פיקסלים. */
     @media (max-width: 760px) {
       .brand, header a { min-height: 44px; display: inline-flex; align-items: center; }
       p a, li a { padding-block: 12px; }
     }
+
+    /* Skip to content */
+    .skip-link {
+      position: absolute; inset-inline-start: 12px; top: -60px; z-index: 200;
+      background: var(--cyan-bright); color: #04121d; font-weight: 800; font-size: 15px;
+      padding: 10px 18px; border-radius: 0 0 12px 12px; transition: top .18s ease;
+    }
+    .skip-link:focus { top: 0; outline: none; }
   </style>
 </head>
 <body>
-  <div class="wrap">
+  <a href="#main" class="skip-link">דלג לתוכן</a>
+
+  <div class="wrap" id="main" tabindex="-1">
     <a href="index.html" class="brand"><img src="assets/logo-square.png" alt="Team Lider" /><span>TEAM LIDER</span></a>
     <h1>מדיניות פרטיות</h1>
-    <div class="updated">עודכן: יולי 2026</div>
+    <div class="updated">עודכן: ספטמבר 2026</div>
 
-    <p>אנחנו ב-Team Lider מכבדים את הפרטיות שלכם. הדף הזה מסביר בשקיפות איזה מידע אנחנו אוספים דרך האתר, למה, ומה אתם יכולים לעשות בנוגע אליו.</p>
+    <p>אנחנו ב-Team Lider מכבדים את הפרטיות שלכם. הדף הזה מסביר במדויק איזה מידע נאסף דרך האתר, מי מקבל אותו, כמה זמן הוא נשמר ומה אתם יכולים לדרוש בנוגע אליו.</p>
 
-    <h2>איזה מידע נאסף</h2>
-    <p>כשאתם ממלאים את טופס יצירת הקשר באתר, אנחנו אוספים רק שני פרטים: <b>שם מלא</b> ו<b>מספר טלפון</b>. איננו אוספים כתובת, מספר תעודת זהות, פרטי תשלום או כל מידע רגיש אחר דרך האתר.</p>
+    <h2>מי אחראי למידע</h2>
+    <!-- TODO רועי: להוסיף כאן מספר עוסק / ח.פ. כשיהיה -->
+    <p>Team Lider · רועי לידרמן · ראש העין. פרטי יצירת קשר מופיעים בתחתית הדף.</p>
+
+    <h2>איזה מידע נאסף כשממלאים את הטופס</h2>
+    <p>כשאתם משאירים פרטים בטופס יצירת הקשר, נשמרים אצלנו הפרטים הבאים:</p>
+    <ul>
+      <li><b>שם מלא</b> ו<b>מספר טלפון</b> — מה שאתם מקלידים.</li>
+      <li><b>הקבוצה שסימנתם</b> (אבות / אמהות / ילדים) והעיר הרלוונטית.</li>
+      <li><b>מועד השליחה</b>.</li>
+      <li><b>מידע על מקור ההגעה</b>: כתובת העמוד שממנו נשלח הטופס, האתר שממנו הגעתם אלינו, ופרמטרי הקמפיין שבקישור אם הגעתם דרך מודעה (<span dir="ltr">utm_source, utm_medium, utm_campaign, utm_content</span>). המידע הזה מאפשר לנו לדעת אילו מודעות עובדות.</li>
+    </ul>
+    <p>איננו אוספים דרך האתר כתובת מגורים, מספר תעודת זהות, פרטי תשלום, מידע רפואי או כל מידע רגיש אחר.</p>
 
     <h2>למה אנחנו אוספים אותו</h2>
-    <p>המידע משמש למטרה אחת בלבד: ליצור אתכם קשר טלפוני או בוואטסאפ כדי לתאם אימון ניסיון ולענות על שאלות. איננו שולחים דיוור פרסומי המוני.</p>
+    <p>כדי ליצור אתכם קשר טלפוני או בוואטסאפ, לתאם אימון ניסיון ולענות על שאלות; וכדי למדוד אילו ערוצי פרסום מביאים פניות. <b>איננו שולחים דיוור פרסומי ואיננו מכניסים את המספר שלכם לרשימות תפוצה.</b></p>
 
-    <h2>עם מי המידע משותף</h2>
-    <p>הפרטים נשמרים אצלנו ואינם נמכרים או מועברים לצדדים שלישיים למטרות שיווק. לצורך התפעול הטכני, הפרטים שנשלחים מהטופס נשמרים בשירות הענן של Google (Google Sheets / Apps Script), הכפוף למדיניות הפרטיות של Google.</p>
+    <h2>למי המידע מועבר</h2>
+    <p>איננו מוכרים מידע ואיננו מעבירים אותו לצדדים שלישיים למטרות שיווק. לצורך התפעול הטכני של הטופס, המידע עובר לשני ספקי שירות:</p>
+    <ul>
+      <li><b>Google</b> (Google Apps Script ו-Google Sheets) — שם נשמרת רשומת הפנייה. כפוף למדיניות הפרטיות של Google.</li>
+      <li><b>Make.com</b> — שירות אוטומציה שמעביר את הפנייה למערכת הפנימית שלנו כדי שנחזור אליכם. השרתים שלו ממוקמים <b>באיחוד האירופי</b>, כלומר המידע עובר אל מחוץ לישראל.</li>
+    </ul>
 
-    <h2>כמה זמן נשמר המידע</h2>
-    <p>אנחנו שומרים את הפרטים כל עוד הם רלוונטיים ליצירת קשר ולניהול הקשר איתכם. תוכלו לבקש מחיקה בכל עת.</p>
+    <h2>עוגיות ומדידת שימוש באתר</h2>
+    <p>האתר משתמש ב-<b>Google Analytics 4</b> כדי להבין כמה אנשים מבקרים ואילו עמודים מעניינים. השירות שומר בדפדפן שלכם עוגייה עם מזהה אנונימי, ואוסף מידע טכני כמו סוג המכשיר, הדפדפן, מקור ההגעה והעמודים שנצפו.</p>
+    <div class="box">
+      <p><b>העוגיות האלה אינן נטענות עד שאתם מאשרים.</b> בכניסה הראשונה לאתר מוצגת הודעה עם שתי אפשרויות אמיתיות: לאשר, או להסתפק בהכרחי בלבד. אם תסרבו, Google Analytics כלל לא ייטען ולא תישמר שום עוגיית מדידה. הסירוב אינו פוגע בשום דרך בשימוש באתר.</p>
+      <p>אפשר לשנות את הבחירה בכל רגע:</p>
+      <button type="button" class="cookie-btn" onclick="if(window.tlResetCookieConsent){window.tlResetCookieConsent()}">שינוי הבחירה שלי לגבי עוגיות</button>
+    </div>
+    <p>מעבר לכך האתר שומר בדפדפן רק את הבחירה שלכם לגבי עוגיות, כדי לא לשאול אתכם שוב בכל עמוד. זו שמירה הכרחית לתפקוד התקין של ההודעה.</p>
+
+    <h2>כמה זמן המידע נשמר</h2>
+    <p>פרטי פנייה שלא הבשילה לרישום נשמרים עד שנתיים ממועד הפנייה, ואז נמחקים. פרטים של מתאמנים נשמרים כל עוד הקשר פעיל ולתקופה סבירה אחריו, בין היתר לצורך חובות ניהול ספרים. אפשר לבקש מחיקה מוקדמת בכל עת.</p>
 
     <h2>הזכויות שלכם</h2>
+    <p>על פי חוק הגנת הפרטיות אתם רשאים:</p>
     <ul>
-      <li>לבקש לראות איזה מידע שמור עליכם.</li>
-      <li>לבקש לתקן מידע שגוי.</li>
-      <li>לבקש למחוק את הפרטים שלכם מהרשומות שלנו.</li>
+      <li><b>לעיין</b> במידע שנשמר עליכם אצלנו.</li>
+      <li><b>לבקש תיקון</b> של מידע שגוי, לא מדויק או לא מעודכן.</li>
+      <li><b>לבקש מחיקה</b> של הפרטים שלכם מהרשומות שלנו.</li>
+      <li><b>לחזור בכם מהסכמה</b> שנתתם, כולל ההסכמה לעוגיות.</li>
     </ul>
-    <p>לכל בקשה: שלחו הודעת וואטסאפ ל-<a href="https://wa.me/972549747713" target="_blank" rel="noopener">054-974-7713</a> ונטפל בה בהקדם.</p>
+    <p>לכל בקשה: הודעת וואטסאפ ל-<a href="https://wa.me/972549747713" target="_blank" rel="noopener">054-974-7713</a> או מייל ל-<a href="mailto:roe.liderman2003@gmail.com">roe.liderman2003@gmail.com</a>. נטפל בבקשה בהקדם, ובכל מקרה בתוך 30 יום.</p>
+
+    <h2>אבטחת מידע</h2>
+    <p>המידע נשמר בחשבונות מוגנים בסיסמה ובאימות דו-שלבי, והגישה אליו מוגבלת למי שצריך אותה כדי לחזור אליכם. האתר מוגש בחיבור מוצפן (HTTPS).</p>
+
+    <h2>קטינים</h2>
+    <p>הרשמה לקבוצות הילדים נעשית על ידי הורה או אפוטרופוס. איננו אוספים ביודעין מידע מילדים ישירות דרך האתר. פרסום תמונות או סרטונים של ילדים נעשה רק לאחר הסכמה בכתב של הורה, וניתן לחזור מההסכמה בכל עת ואנחנו נסיר את התוכן.</p>
+
+    <h2>שינויים במדיניות</h2>
+    <p>אם נשנה את המדיניות נעדכן את התאריך בראש הדף. שינוי מהותי יוצג גם בהודעה באתר.</p>
 
     <h2>יצירת קשר</h2>
-    <p>Team Lider · ראש העין · וואטסאפ/טלפון: <a href="https://wa.me/972549747713" target="_blank" rel="noopener">054-974-7713</a></p>
+    <p>Team Lider · ראש העין · וואטסאפ/טלפון: <a href="https://wa.me/972549747713" target="_blank" rel="noopener">054-974-7713</a> · דוא"ל: <a href="mailto:roe.liderman2003@gmail.com">roe.liderman2003@gmail.com</a></p>
+    <p>ראו גם: <a href="terms.html">תנאי שימוש</a> · <a href="accessibility.html">הצהרת נגישות</a></p>
 
     <a href="index.html" class="back">← חזרה לדף הבית</a>
   </div>

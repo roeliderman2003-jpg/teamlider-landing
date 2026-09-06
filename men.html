@@ -24,26 +24,8 @@
   <meta name="twitter:image" content="https://teamlider.co.il/assets/og-cover.jpg" />
   <meta name="theme-color" content="#0A1929" />
 
-  <!-- Google Analytics 4 - loaded on first interaction (or after 3s) to keep initial paint fast -->
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){ dataLayer.push(arguments); }
-    gtag('js', new Date());
-    gtag('config', 'G-67KSD0RPP4');
-    (function () {
-      var loaded = false;
-      function loadGA() {
-        if (loaded) return; loaded = true;
-        var s = document.createElement('script');
-        s.async = true; s.src = 'https://www.googletagmanager.com/gtag/js?id=G-67KSD0RPP4';
-        document.head.appendChild(s);
-      }
-      ['pointerdown', 'touchstart', 'keydown', 'scroll'].forEach(function (e) {
-        window.addEventListener(e, loadGA, { once: true, passive: true, capture: true });
-      });
-      setTimeout(loadGA, 3000);
-    })();
-  </script>
+  <!-- Analytics: GA4 is loaded by assets/consent.js only after the visitor consents -->
+  <script src="assets/consent.js"></script>
 
   <link rel="icon" type="image/png" href="assets/logo-square.png" />
   <link rel="preload" href="assets/fonts/heebo-wght-heblat.woff2" as="font" type="font/woff2" crossorigin />
@@ -484,6 +466,7 @@
                poster="assets/testimonial-father-poster.webp"
                aria-label="מתאמן מקבוצת האבות מספר על האימונים">
           <source src="assets/testimonial-father.mp4" type="video/mp4" />
+          <track kind="captions" src="assets/testimonial-father.he.vtt" srclang="he" label="עברית" default />
         </video>
         <button class="sndbtn" type="button" data-snd><svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3a4.5 4.5 0 0 0-2.5-4.03v8.05A4.47 4.47 0 0 0 16.5 12zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg>
           הקישו להפעלת הקול
@@ -592,6 +575,7 @@
     <div class="qa"><h3>מה ההבדל בין זה לחדר כושר או קרוספיט?</h3><p>שלושה דברים: קבוצה קבועה עד 12 עם מאמן שמכיר אותך, לא אולם אנונימי; עצימות שנבנית בהדרגה, בלי להתרסק בדרך; ותנאים פשוטים, בלי דמי רישום ובלי חוזה שנתי, מנוי חודשי גמיש. ומעל הכל: כאן שמים לב שלא באת. זה ההבדל שמחזיק לאורך זמן.</p></div>
     <div class="qa"><h3>העבודה שלי לא צפויה, יש שבועות שאני לא יודע אם אספיק</h3><p>מוכר. לכן אין אצלנו מינימום נוכחות ואין חוזה שנתי, מנוי חודשי גמיש, ואתה מגיע כשאתה מגיע. האימון ראשון ורביעי ב-20:00, אחרי שרוב הפגישות כבר נגמרו, והוא 60 דקות ולא ערב שלם. ההבדל היחיד בינינו לחדר כושר הוא שכאן שמים לב שלא באת, לא כדי ללחוץ, אלא כדי שתדע שיש מי שסופר אותך. אתה לא צריך להודיע מראש, ואף אחד לא ינהל לך סטטיסטיקה.</p></div>
     <div class="qa"><h3>אימון בפארק, ומה בחורף?</h3><p>בימי גשם עוברים למתחם מקורה, האימון לא מתבטל. שאר השנה זה באוויר הפתוח בגינת הכושר בפסגות אפק, וזה חלק מהעניין: אין תור למכשיר, אין אולם מחניק ואין מנוי שאתה משלם עליו ולא מנצל. אם אתה יודע מראש שאתה מחפש דווקא אולם ממוזג, אנחנו כנראה לא המקום, ועדיף לומר את זה מראש.</p></div>
+    <div class="qa"><h3>צריך למלא משהו לפני האימון הראשון?</h3><p>כן: הצהרת בריאות קצרה, גם לפני אימון הניסיון. אם יש מצב רפואי, פציעה או תרופות קבועות, זה המקום לספר, ואם צריך נבקש גם אישור רופא. זה מה שמאפשר למאמן להתאים לכם את העומס נכון מהאימון הראשון. התנאים המלאים ב<a href="terms.html" style="color:var(--cyan-bright);font-weight:700">תנאי השימוש</a>.</p></div>
 
     <div class="cta-card">
       <h2>בוא לאימון ניסיון. הקבוצה כבר בפארק</h2>
@@ -635,7 +619,7 @@
       <p class="foot-nap"><b style="color:var(--white)">Team Lider · טים לידר</b> · <a href="https://wa.me/972549747713" target="_blank" rel="noopener">וואטסאפ · 054-974-7713</a> · גינת הכושר, גולדה מאיר 20, פסגות אפק, ראש העין</p>
       <div class="foot-bottom">
         <div>© Team Lider · אימוני כושר קבוצתיים · ראש העין</div>
-        <div><a href="/">דף הבית</a> · <a href="adults.html">מבוגרים</a> · <a href="pt.html">פתח תקווה</a> · <a href="guide.html">מדריך</a> · <a href="accessibility.html">נגישות</a> · <a href="privacy.html">פרטיות</a></div>
+        <div><a href="/">דף הבית</a> · <a href="adults.html">מבוגרים</a> · <a href="pt.html">פתח תקווה</a> · <a href="guide.html">מדריך</a> · <a href="accessibility.html">נגישות</a> · <a href="privacy.html">פרטיות</a> · <a href="terms.html">תנאי שימוש</a></div>
       </div>
     </div>
   </footer>

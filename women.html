@@ -24,26 +24,8 @@
   <meta name="twitter:image" content="https://teamlider.co.il/assets/og-cover.jpg" />
   <meta name="theme-color" content="#0A1929" />
 
-  <!-- Google Analytics 4 - loaded on first interaction (or after 3s) to keep initial paint fast -->
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){ dataLayer.push(arguments); }
-    gtag('js', new Date());
-    gtag('config', 'G-67KSD0RPP4');
-    (function () {
-      var loaded = false;
-      function loadGA() {
-        if (loaded) return; loaded = true;
-        var s = document.createElement('script');
-        s.async = true; s.src = 'https://www.googletagmanager.com/gtag/js?id=G-67KSD0RPP4';
-        document.head.appendChild(s);
-      }
-      ['pointerdown', 'touchstart', 'keydown', 'scroll'].forEach(function (e) {
-        window.addEventListener(e, loadGA, { once: true, passive: true, capture: true });
-      });
-      setTimeout(loadGA, 3000);
-    })();
-  </script>
+  <!-- Analytics: GA4 is loaded by assets/consent.js only after the visitor consents -->
+  <script src="assets/consent.js"></script>
 
   <link rel="icon" type="image/png" href="assets/logo-square.png" />
   <link rel="preload" href="assets/fonts/heebo-wght-heblat.woff2" as="font" type="font/woff2" crossorigin />
@@ -493,6 +475,7 @@
                    poster="assets/testimonial-mother-2-poster.webp"
                    aria-label="מתאמנת מקבוצת האמהות מספרת על חודש וחצי של אימונים">
               <source src="assets/testimonial-mother-2.mp4" type="video/mp4" />
+              <track kind="captions" src="assets/testimonial-mother-2.he.vtt" srclang="he" label="עברית" default />
             </video>
             <button class="sndbtn" type="button" data-snd><svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3a4.5 4.5 0 0 0-2.5-4.03v8.05A4.47 4.47 0 0 0 16.5 12zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg>
           הקישו להפעלת הקול
@@ -506,6 +489,7 @@
                    poster="assets/testimonial-mother-poster.webp"
                    aria-label="מתאמנת מקבוצת האמהות מספרת על האימונים">
               <source src="assets/testimonial-mother.mp4" type="video/mp4" />
+              <track kind="captions" src="assets/testimonial-mother.he.vtt" srclang="he" label="עברית" default />
             </video>
             <button class="sndbtn" type="button" data-snd><svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3a4.5 4.5 0 0 0-2.5-4.03v8.05A4.47 4.47 0 0 0 16.5 12zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg>
           הקישו להפעלת הקול
@@ -621,6 +605,7 @@
     <div class="qa"><h3>מה עושים בפועל באימון של קבוצת האמהות?</h3><p>60 דקות של אימון פונקציונלי בקבוצה קטנה: חימום משותף, עבודה בתחנות עם קטלבלים, משקולות יד, גומיות ו-TRX (כוח, שרירי ליבה וניידות) ובסוף מתיחות וסיום ביחד. כל הציוד עלינו; את מגיעה עם בגדי ספורט, נעליים ובקבוק מים. והכי חשוב: צוחקים לא מעט בין תרגיל לתרגיל.</p></div>
     <div class="qa"><h3>בן הזוג עובד עד מאוחר, מי יהיה עם הילדים ב-20:00?</h3><p>זו בדיוק הסיבה שהשעה היא 20:00 ולא 18:00: אחרי ארוחת ערב, אחרי המקלחות, כשהבית כבר רגוע. האימון 60 דקות והגינה שכונתית, זה ערב אחד שנגמר לפני שרוב הבית בכלל שם לב שיצאת. ואם ערב אחד לא הסתדר, לא מפצים עליו ולא מתנצלים, פשוט מגיעות בפעם הבאה. המנוי חודשי וגמיש בדיוק בשביל השבועות שלא הולכים לפי התוכנית.</p></div>
     <div class="qa"><h3>אני מעדיפה מקום סגור, אימון בפארק זה בשבילי?</h3><p>שאלה הוגנת, ולא לכולן זה מתאים. הקבוצה מתאמנת בגינת הכושר בפסגות אפק באוויר הפתוח, ובימי גשם עוברות למתחם מקורה, כך שהשגרה לא נשברת. מה שרוב הבנות מגלות זה שדווקא בחוץ אין מראות ואין אולם שכולם רואים בו את כולן, וזה מוריד הרבה מהמבוכה של ההתחלה. אבל אם ידוע לך מראש שמקום סגור הוא תנאי, עדיף שתדעי את זה עכשיו ולא אחרי שנרשמת.</p></div>
+    <div class="qa"><h3>צריך למלא משהו לפני האימון הראשון?</h3><p>כן: הצהרת בריאות קצרה, גם לפני אימון הניסיון. אם יש מצב רפואי, פציעה או תרופות קבועות, זה המקום לספר, ואם צריך נבקש גם אישור רופא. זה מה שמאפשר למאמן להתאים לכם את העומס נכון מהאימון הראשון. התנאים המלאים ב<a href="terms.html" style="color:var(--cyan-bright);font-weight:700">תנאי השימוש</a>.</p></div>
     <p style="margin-top:24px;color:var(--muted);font-size:16px">מתלבטת בין המסגרות בעיר? קראי את <a href="guide.html" style="color:var(--cyan-bright);font-weight:700;border-bottom:1px solid rgba(92,203,240,.45)">המדריך המלא: אימוני כושר וספורט בראש העין</a>.</p>
 
     <div class="cta-card">
@@ -648,7 +633,7 @@
       <p class="foot-nap"><b style="color:var(--white)">Team Lider · טים לידר</b> · <a href="tel:+972549747713">054-974-7713</a> · גינת הכושר, גולדה מאיר 20, פסגות אפק, ראש העין</p>
       <div class="foot-bottom">
         <div>© Team Lider · אימוני כושר קבוצתיים · ראש העין</div>
-        <div><a href="/">דף הבית</a> · <a href="adults.html">למבוגרים</a> · <a href="pt.html">פתח תקווה</a> · <a href="guide.html">מדריך</a> · <a href="accessibility.html">נגישות</a> · <a href="privacy.html">פרטיות</a></div>
+        <div><a href="/">דף הבית</a> · <a href="adults.html">למבוגרים</a> · <a href="pt.html">פתח תקווה</a> · <a href="guide.html">מדריך</a> · <a href="accessibility.html">נגישות</a> · <a href="privacy.html">פרטיות</a> · <a href="terms.html">תנאי שימוש</a></div>
       </div>
     </div>
   </footer>
