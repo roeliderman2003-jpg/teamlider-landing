@@ -13,6 +13,3 @@ COPY-PLAYBOOK.md
 
 # raw WhatsApp screenshots — staging only, never served
 incoming-testimonials/
-
-# Draft caption transcript pending human review — must not be served publicly
-assets/testimonials-kids.he.DRAFT.vtt
