@@ -54,4 +54,22 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+  <url>
+    <loc>https://teamlider.co.il/kids-quit-sports.html</loc>
+    <lastmod>2026-09-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://teamlider.co.il/postpartum-fitness.html</loc>
+    <lastmod>2026-09-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://teamlider.co.il/back-pain-sitting.html</loc>
+    <lastmod>2026-09-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
 </urlset>
