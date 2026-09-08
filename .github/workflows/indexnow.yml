@@ -1,8 +1,12 @@
 name: IndexNow ping
 
 # Notifies Bing/IndexNow the moment pages change, so ChatGPT Search (Bing-backed)
-# and Copilot pick them up fast. Keyless protocol — the key file at the domain root
+# and Copilot pick them up fast. Keyless protocol - the key file at the domain root
 # (65be6ce801a1b48106f3830efca3c936.txt) is the only credential.
+#
+# The URL list is derived from sitemap.xml, not hardcoded: a page added to the
+# sitemap is pinged automatically. A hardcoded list silently skipped kids-strength.html
+# on the day it shipped, and nothing failed to say so.
 on:
   push:
     branches: [main]
@@ -15,22 +19,29 @@ jobs:
   ping:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v4
+
+      - name: Build the URL list from sitemap.xml
+        run: |
+          python3 - <<'PY' > payload.json
+          import json, xml.etree.ElementTree as ET
+          NS = '{http://www.sitemaps.org/schemas/sitemap/0.9}'
+          urls = [e.text.strip() for e in ET.parse('sitemap.xml').iter(NS + 'loc')]
+          assert urls, 'sitemap.xml has no <loc> entries - refusing to ping an empty list'
+          print(json.dumps({
+              "host": "teamlider.co.il",
+              "key": "65be6ce801a1b48106f3830efca3c936",
+              "keyLocation": "https://teamlider.co.il/65be6ce801a1b48106f3830efca3c936.txt",
+              "urlList": urls,
+          }, ensure_ascii=False))
+          PY
+          echo "submitting $(python3 -c 'import json;print(len(json.load(open("payload.json"))["urlList"]))') URLs:"
+          python3 -c 'import json;[print("  ",u) for u in json.load(open("payload.json"))["urlList"]]'
+
       - name: Submit URLs to IndexNow
         run: |
           curl -sS -X POST 'https://api.indexnow.org/indexnow' \
             -H 'Content-Type: application/json; charset=utf-8' \
-            --data '{
-              "host": "teamlider.co.il",
-              "key": "65be6ce801a1b48106f3830efca3c936",
-              "keyLocation": "https://teamlider.co.il/65be6ce801a1b48106f3830efca3c936.txt",
-              "urlList": [
-                "https://teamlider.co.il/",
-                "https://teamlider.co.il/kids.html",
-                "https://teamlider.co.il/women.html",
-                "https://teamlider.co.il/men.html",
-                "https://teamlider.co.il/adults.html",
-                "https://teamlider.co.il/rh.html",
-                "https://teamlider.co.il/pt.html",
-                "https://teamlider.co.il/guide.html"
-              ]
-            }' -w '\nIndexNow HTTP %{http_code}\n'
+            --data-binary @payload.json \
+            -w '\nIndexNow HTTP %{http_code}\n' \
+            --fail-with-body
