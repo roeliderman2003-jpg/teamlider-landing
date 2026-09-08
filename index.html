@@ -628,12 +628,65 @@
       { "@type": "City", "name": "ראש העין" },
       { "@type": "City", "name": "פתח תקווה" }
     ],
-    "founder": { "@type": "Person", "name": "רועי לידרמן" },
-    "employee": { "@type": "Person", "name": "תמיר סיטון", "jobTitle": "מאמן ראשי" },
+    "founder": { "@id": "https://teamlider.co.il/#roee-liderman" },
+    "employee": { "@id": "https://teamlider.co.il/#tamir-siton" },
     "sameAs": [
       "https://www.instagram.com/team_lider01",
       "https://www.tiktok.com/@team_lider_1",
       "https://www.facebook.com/TeamLider.fitness"
+    ]
+  }
+  </script>
+
+  <!-- Structured data: the people behind the content (canonical Person entities) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Person",
+        "@id": "https://teamlider.co.il/#tamir-siton",
+        "name": "תמיר סיטון",
+        "givenName": "תמיר",
+        "familyName": "סיטון",
+        "jobTitle": "מאמן ראשי מוסמך",
+        "description": "מאמן ראשי מוסמך בטים לידר. מוביל את האימונים של כל הקבוצות בראש העין, ילדים ומבוגרים. מכיר כל מתאמן, שם לב מי לא הגיע, ומתאים כל תרגיל לרמה ולגוף של כל אחד.",
+        "worksFor": {
+          "@id": "https://teamlider.co.il/#business"
+        },
+        "workLocation": {
+          "@id": "https://teamlider.co.il/#business"
+        },
+        "url": "https://teamlider.co.il/#tamir-siton",
+        "mainEntityOfPage": "https://teamlider.co.il/",
+        "knowsLanguage": "he",
+        "knowsAbout": [
+          "אימוני כוח לילדים ולנוער",
+          "אימון כושר קבוצתי",
+          "התאמת תרגילים לרמת המתאמן",
+          "אימוני כושר בפארק"
+        ]
+      },
+      {
+        "@type": "Person",
+        "@id": "https://teamlider.co.il/#roee-liderman",
+        "name": "רועי לידרמן",
+        "givenName": "רועי",
+        "familyName": "לידרמן",
+        "jobTitle": "מייסד טים לידר",
+        "description": "מייסד טים לידר. יזם ומפקד לשעבר בסיירת קרבית. בנה את טים לידר מאפס בראש העין, אימן בעצמו את מאות המתאמנים הראשונים, וכיום מוביל את הקהילה לצד תמיר.",
+        "worksFor": {
+          "@id": "https://teamlider.co.il/#business"
+        },
+        "url": "https://teamlider.co.il/#roee-liderman",
+        "mainEntityOfPage": "https://teamlider.co.il/",
+        "knowsLanguage": "he",
+        "knowsAbout": [
+          "בניית קהילת כושר מקומית",
+          "אימוני כושר לילדים ולנוער",
+          "אימון כושר קבוצתי למבוגרים"
+        ]
+      }
     ]
   }
   </script>
@@ -1070,7 +1123,7 @@
         <p class="section-sub">שני אנשים אמיתיים שיודעים את השם שלכם, ואכפת להם מהתוצאה שלכם. המאמן של הקבוצות בפתח תקווה נבחר לפי אותם קריטריונים, ונכנס לתפקיד לקראת הפתיחה.</p>
       </div>
       <div class="coach-grid">
-        <div class="coach reveal">
+        <div class="coach reveal" id="tamir-siton">
           <div class="avatar"><span>ת</span></div>
           <div>
             <div class="role">מאמן ראשי מוסמך</div>
@@ -1078,7 +1131,7 @@
             <p>מוביל את האימונים של כל הקבוצות, ילדים ומבוגרים. מכיר כל מתאמן, שם לב מי לא הגיע, ומתאים כל תרגיל לרמה ולגוף של כל אחד.</p>
           </div>
         </div>
-        <div class="coach reveal">
+        <div class="coach reveal" id="roee-liderman">
           <div class="avatar"><span>ר</span></div>
           <div>
             <div class="role">מייסד טים לידר</div>
