@@ -30,6 +30,9 @@ const PANEL = [
   'אימון קבוצתי בפארק ראש העין',
   'אימוני כושר למבוגרים בראש העין',
   'אימוני כוח לילדים זה בטוח',
+  // 11/09/2026: an AI answer named the wrong person as the women's coach.
+  // Keep asking until the answer names the real one.
+  'מי מאמן את קבוצת האמהות בטים לידר',
 ];
 
 const ENGINES = ['ChatGPT', 'Gemini', 'Perplexity', 'Claude', 'Google AI Overviews'];
