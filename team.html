@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>מה מספרים עלינו | Team Lider</title>
+<meta name="robots" content="noindex, nofollow" />
+<meta name="description" content="הורים ומתאמנים של Team Lider מספרים במילים שלהם: סרטונים, ביקורות והודעות אמיתיות." />
+<meta property="og:title" content="לפני שמצטרפים לצוות, תשמעו מהם | Team Lider" />
+<meta property="og:description" content="סרטונים, ביקורות והודעות אמיתיות של הורים ומתאמנים." />
+<meta property="og:type" content="website" />
+<meta property="og:image" content="https://teamlider.co.il/assets/og-cover.jpg" />
+<meta name="theme-color" content="#0A1929" />
+<link rel="icon" href="assets/logo-square.png" />
+<link rel="preload" href="assets/fonts/heebo-wght-heblat.woff2" as="font" type="font/woff2" crossorigin />
+<style>
+@font-face{font-family:'Heebo';src:url('assets/fonts/heebo-wght-heblat.woff2') format('woff2');font-weight:400 900;font-display:swap}
+:root{--gold:#F0C05C;--deep:#0A1929;--deep2:#0F2438;--mid:#143D52;--cyan:#29B5E8;--cyan-b:#5CCBF0;--white:#fff;--muted:rgba(255,255,255,.72);--faint:rgba(255,255,255,.5);--line:rgba(255,255,255,.10);--card:rgba(255,255,255,.045);--r:18px;--maxw:1120px}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:'Heebo',system-ui,-apple-system,'Segoe UI',sans-serif;background:var(--deep);color:var(--white);font-size:17px;line-height:1.65;overflow-x:hidden}
+img,video{display:block;max-width:100%}
+a{color:var(--cyan-b)}
+.wrap{width:100%;max-width:var(--maxw);margin-inline:auto;padding-inline:16px}
+section{padding-block:56px}
+h1,h2,h3{line-height:1.15;font-weight:900;letter-spacing:-.01em}
+h2{font-size:clamp(28px,5vw,42px);margin-bottom:12px}
+.sub{color:var(--muted);max-width:640px;margin-bottom:28px}
+.eyebrow{display:block;color:var(--gold);font-weight:800;font-size:15px;margin-bottom:10px}
+
+/* hero */
+.hero{padding-block:24px 48px;background:radial-gradient(90% 60% at 80% 0,rgba(41,181,232,.20),transparent 70%),var(--deep)}
+.top{display:flex;align-items:center;justify-content:space-between;margin-bottom:32px}
+.top img{height:52px;width:auto}
+.top span{color:var(--faint);font-size:14px}
+.hero-grid{display:grid;gap:28px;align-items:center}
+h1{font-size:clamp(40px,9.5vw,76px);margin-bottom:16px}
+h1 em{font-style:normal;color:var(--gold)}
+.lead{font-size:clamp(18px,2.6vw,21px);color:var(--muted);max-width:560px}
+.reel{position:relative;border-radius:var(--r);overflow:hidden;background:#000;box-shadow:0 24px 60px -24px rgba(0,0,0,.8);border:1px solid var(--line)}
+.reel video{width:100%;height:auto}
+.reelcap{color:var(--faint);font-size:14.5px;margin-top:8px}
+@media(min-width:900px){h1{font-size:60px}.hero{padding-bottom:72px}.hero-grid{grid-template-columns:1.05fr .95fr;gap:48px}}
+
+/* numbers */
+.stats{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--line);border-block:1px solid var(--line)}
+.stat{background:var(--deep2);padding:22px 16px;text-align:center}
+.stat b{display:block;font-size:clamp(32px,6vw,46px);font-weight:900;color:var(--gold);line-height:1.1}
+.stat>span{display:block;color:var(--muted);font-size:14.5px;line-height:1.35;margin-top:6px}
+@media(min-width:760px){.stats{grid-template-columns:repeat(4,1fr)}.stat{padding:30px 16px}}
+
+/* videos */
+.vgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+@media(min-width:760px){.vgrid{grid-template-columns:repeat(4,1fr);gap:16px}}
+.v{min-width:0}
+.v button{position:relative;display:block;width:100%;aspect-ratio:9/16;border:0;border-radius:14px;overflow:hidden;background:var(--mid);cursor:pointer;padding:0}
+.v.wide{grid-column:1/-1}
+.v.wide button{aspect-ratio:16/9}
+.v img,.v video{width:100%;height:100%;object-fit:cover}
+.v .play{position:absolute;inset:0;display:grid;place-items:center;background:linear-gradient(to top,rgba(0,0,0,.45),transparent 55%)}
+.v .play i{width:54px;height:54px;border-radius:50%;background:var(--gold);display:grid;place-items:center}
+.v .dur{position:absolute;bottom:8px;inset-inline-start:8px;background:rgba(0,0,0,.65);color:#fff;font-size:12.5px;padding:1px 8px;border-radius:99px;direction:ltr}
+.v p{font-size:15px;line-height:1.4;margin-top:8px;color:var(--white);font-weight:600}
+.v small{display:block;color:var(--faint);font-size:13px;font-weight:400;margin-top:2px}
+
+/* pull */
+.pull{background:var(--gold);color:var(--deep);padding-block:48px}
+.pull blockquote{font-size:clamp(30px,6.4vw,54px);font-weight:900;line-height:1.14;max-width:900px}
+.pull cite{display:block;font-style:normal;font-size:16px;font-weight:600;margin-top:14px;opacity:.75}
+
+/* patterns */
+.pat{display:grid;gap:12px}
+@media(min-width:760px){.pat{grid-template-columns:repeat(3,1fr);gap:16px}}
+.pat div{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:22px}
+.pat b{display:block;font-size:44px;font-weight:900;color:var(--cyan-b);line-height:1}
+.pat h3{font-size:20px;margin:8px 0 6px}
+.pat p{color:var(--muted);font-size:15.5px;line-height:1.5}
+
+/* wall */
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px}
+.filters button{font:inherit;font-size:15px;font-weight:700;color:var(--white);background:var(--card);border:1px solid var(--line);border-radius:99px;padding:7px 16px;cursor:pointer}
+.filters button[aria-pressed=true]{background:var(--white);color:var(--deep);border-color:var(--white)}
+.wall{columns:1;column-gap:14px}
+@media(min-width:640px){.wall{columns:2}}
+@media(min-width:980px){.wall{columns:3}}
+.q{break-inside:avoid;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 18px;margin-bottom:14px}
+.q p{white-space:pre-line;font-size:16.5px;line-height:1.55}
+.q footer{display:flex;justify-content:space-between;gap:10px;margin-top:10px;font-size:13.5px;color:var(--faint);line-height:1.3}
+.q footer strong{font-weight:700;color:var(--cyan-b);white-space:nowrap}
+.more{display:block;margin:12px auto 0;font:inherit;font-weight:800;background:transparent;color:var(--white);border:1.5px solid rgba(255,255,255,.35);border-radius:99px;padding:12px 28px;cursor:pointer}
+.more[hidden]{display:none}
+
+/* honest */
+.honest{background:var(--deep2);border-block:1px solid var(--line)}
+.bars{max-width:520px;margin-bottom:20px}
+.bar{display:grid;grid-template-columns:62px 1fr 34px;gap:10px;align-items:center;font-size:15px;margin-bottom:8px}
+.bar i{display:block;height:10px;border-radius:99px;background:var(--gold)}
+.bar .t{background:var(--line);border-radius:99px}
+.cta-g{display:inline-block;font-weight:800;background:var(--white);color:var(--deep);padding:13px 24px;border-radius:99px;text-decoration:none}
+
+/* close */
+.close{text-align:start;padding-bottom:40px}
+.close p{max-width:620px;color:var(--muted);font-size:18px;margin-bottom:12px}
+.close .sign{color:var(--white);font-weight:800}
+footer.f{border-top:1px solid var(--line);padding:18px 0 28px;color:var(--faint);font-size:13.5px}
+footer.f a{color:var(--faint)}
+:focus-visible{outline:3px solid var(--cyan-b);outline-offset:2px}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="top"><img src="assets/logo-white.png" alt="Team Lider" /><span>למי שמצטרף לצוות</span></div>
+    <div class="hero-grid">
+      <div>
+        <h1>לפני שמצטרפים,<br /><em>תשמעו מהם.</em></h1>
+        <p class="lead">לא מה שאנחנו אומרים על עצמנו, אלא מה שהורים ומתאמנים אומרים עלינו. סרטונים מהשטח, ביקורות בגוגל והודעות ששלחו לנו אחרי אימונים.</p>
+      </div>
+      <div><div class="reel">
+        <video controls playsinline preload="metadata" poster="assets/testimonials-kids-poster.webp" aria-label="מתאמנים והורים מספרים על Team Lider">
+          <source src="assets/testimonials-kids.mp4" type="video/mp4" />
+        </video>
+      </div><p class="reelcap">הסרטון המלא, 2:24. כדאי לראות עם קול.</p></div>
+    </div>
+  </div>
+</header>
+
+<div class="stats">
+  <div class="stat"><b><span data-rating>4.7</span>★</b><span><span data-count>86</span> ביקורות בגוגל</span></div>
+  <div class="stat"><b dir="ltr">+500</b><span>ילדים, נערים ומבוגרים שהתאמנו איתנו</span></div>
+  <div class="stat"><b>2019</b><span>מאז פועלים בראש העין, ומאוקטובר 2026 גם בפתח תקווה</span></div>
+  <div class="stat"><b>6 מ-10</b><span>שהגיעו לאימון ניסיון נרשמו (ספטמבר-אוקטובר 2026)</span></div>
+</div>
+
+<section id="videos">
+  <div class="wrap">
+    <span class="eyebrow">בסרטונים</span>
+    <h2>הם מספרים, בלי תסריט</h2>
+    <p class="sub">הקישו על סרטון כדי לנגן אותו עם קול.</p>
+    <div class="vgrid" id="vgrid"></div>
+  </div>
+</section>
+
+<div class="pull">
+  <div class="wrap">
+    <blockquote>«בהתחלה בגלל נוחות, נשארנו בגלל המקצועיות והאכפתיות»</blockquote>
+    <cite>הורה למתאמן בקבוצת הילדים</cite>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <span class="eyebrow">מה חוזר על עצמו</span>
+    <h2>אנשים שלא מכירים זה את זה כותבים אותו דבר</h2>
+    <p class="sub">עברנו על 63 ההמלצות שבדף הזה וספרנו כמה מהן מזכירות כל דבר.</p>
+    <div class="pat">
+      <div><b>28</b><h3>מגיעים בשמחה</h3><p>נהנים, שמחים, מחכים לאימון הבא. גם ילדים שלא אהבו ספורט.</p></div>
+      <div><b>22</b><h3>מקצועיות</h3><p>אימון שבנוי מראש, מאמן מוכשר, תוצאות שרואים בבית.</p></div>
+      <div><b>15</b><h3>יחס אישי</h3><p>כל אחד לפי הרמה שלו, בגובה העיניים, עם מאמן שמכיר אותו.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="wall" style="padding-top:0">
+  <div class="wrap">
+    <span class="eyebrow">במילים שלהם</span>
+    <h2>כל ההמלצות</h2>
+    <p class="sub">מילה במילה, כולל שגיאות הכתיב. בלי שמות, כדי לשמור על הפרטיות של המשפחות. «…» מסמן שם שהוסר.</p>
+    <div class="filters" role="group" aria-label="סינון המלצות">
+      <button type="button" data-f="all" aria-pressed="true">הכל</button>
+      <button type="button" data-f="parent" aria-pressed="false">הורים</button>
+      <button type="button" data-f="trainee" aria-pressed="false">מתאמנים</button>
+      <button type="button" data-f="wa" aria-pressed="false">הודעות אלינו</button>
+    </div>
+    <div class="wall" id="wallq"></div>
+    <button class="more" id="more" type="button">להציג עוד</button>
+  </div>
+</section>
+
+<section class="honest">
+  <div class="wrap">
+    <span class="eyebrow">וגם מה שפחות נעים</span>
+    <h2>לא כולם מרוצים, וזה גלוי לכולם</h2>
+    <p class="sub">הביקורות נמצאות בגוגל, כולל מי שנתן כוכב אחד, ואפשר לקרוא הכל בלעדינו. כך זה נראה (ספירה מ-22/09/2026):</p>
+    <div class="bars" aria-label="התפלגות הביקורות בגוגל">
+      <div class="bar"><span>5 כוכבים</span><span class="t"><i style="width:90.6%"></i></span><span>77</span></div>
+      <div class="bar"><span>4 כוכבים</span><span class="t"><i style="width:1.2%"></i></span><span>1</span></div>
+      <div class="bar"><span>כוכב אחד</span><span class="t"><i style="width:8.2%"></i></span><span>7</span></div>
+    </div>
+    <a class="cta-g" id="glink" href="https://maps.google.com/?cid=17058524788808067723" target="_blank" rel="noopener">לקרוא את כל הביקורות בגוגל</a>
+  </div>
+</section>
+
+<section class="close">
+  <div class="wrap">
+    <h2>זה מה שתייצגו.</h2>
+    <p>מי שעובד איתנו לא צריך להמציא כלום ולא צריך לשכנע אף אחד במשהו שהוא לא מאמין בו. הוא מספר להורה הבא מה שההורים שלפניו כבר אמרו.</p>
+    <p>יש שאלה? תענו לי בהודעה שבה קיבלתם את הקישור.</p>
+    <p class="sign">רועי לידרמן, מייסד Team Lider</p>
+  </div>
+</section>
+
+<footer class="f"><div class="wrap">Team Lider · <a href="accessibility.html">הצהרת נגישות</a> · <a href="privacy.html">פרטיות</a></div></footer>
+
+<script>
+var VIDEOS = [{"src": "assets/team/t07.mp4", "poster": "assets/team/t07.webp", "title": "«הדבר הכי טוב שעשיתי לעצמי בשנה האחרונה»", "who": "מתאמן", "dur": "0:47"}, {"src": "assets/team/t04.mp4", "poster": "assets/team/t04.webp", "title": "«אפשר גם ליהנות מאימונים, ולא רק לסבול»", "who": "מתאמן, חצי שנה איתנו", "dur": "2:06"}, {"src": "assets/testimonial-mother-2.mp4", "poster": "assets/testimonial-mother-2-poster.webp", "title": "«הרמה עולה לפי היכולת שלי»", "who": "מתאמנת בקבוצת האמהות", "dur": "0:14"}, {"src": "assets/team/t06.mp4", "poster": "assets/team/t06.webp", "title": "משכיבת סמיכה אחת ל-14", "who": "מתאמן, 4 חודשים איתנו", "dur": "1:23"}, {"src": "assets/testimonial-father.mp4", "poster": "assets/testimonial-father-poster.webp", "title": "«אין יותר טוב מזה»", "who": "מתאמן בקבוצת האבות", "dur": "0:16"}, {"src": "assets/team/t15.mp4", "poster": "assets/team/t15.webp", "title": "«אני מחכה לאימונים האלה כל השבוע»", "who": "מתאמן", "dur": "0:50"}, {"src": "assets/testimonial-mother.mp4", "poster": "assets/testimonial-mother-poster.webp", "title": "«היה ממש ממש כיף»", "who": "מתאמנת, בדרך הביתה", "dur": "0:13"}, {"src": "assets/team/t08.mp4", "poster": "assets/team/t08.webp", "title": "«אל תדאגו, זה מקום בשבילכם»", "who": "מתאמן, 3-4 חודשים איתנו", "dur": "2:16"}, {"src": "assets/team/t12.mp4", "poster": "assets/team/t12.webp", "title": "«כל פעם נהנה מחדש»", "who": "מתאמן", "dur": "0:32"}, {"src": "assets/team/t03.mp4", "poster": "assets/team/t03.webp", "title": "«קשה, אבל כיף»", "who": "שני מתאמנים", "dur": "0:53"}, {"src": "assets/team/t09.mp4", "poster": "assets/team/t09.webp", "title": "«הרבה יותר חזק»", "who": "מתאמן", "dur": "0:50"}, {"src": "assets/team/t11.mp4", "poster": "assets/team/t11.webp", "title": "«עוזר להכיר חברים חדשים»", "who": "מתאמן", "dur": "0:38"}, {"src": "assets/team/t21.mp4", "poster": "assets/team/t21.webp", "title": "«הכל היה כיף»", "who": "ילדים אחרי אימון", "dur": "0:36"}];
+var QUOTES = [{"t": "ממליצה בחום!! פעם ראשונה היינו היום הבן שלי הגיע פעם ראשונה עם אחותי לשיעור ניסיון חסר ביטחון ולא אוהב להתאמן הגיע מאושר מלא מרץ, נהנה מאוד וזה אחרי שניסיתי לו כל סוגי הספורט!", "a": "אמא אחרי שיעור הניסיון הראשון", "s": "facebook", "g": "parent"}, {"t": "היה לו מעולה! לא נשמתי עד שהתקשר ואמר שהיה כיף, כל כך פחדתי שלא ירצה. תודה רבה.", "a": "הורה אחרי האימון הראשון של הבן", "s": "doc", "g": "parent"}, {"t": "ההיכרות איתכם היא מתנה עבורנו. מגיע בשמחה לאימונים והספורט הפך להיות חיובי ונעים, וזה ההישג הכי גדול מבחינתי. משתדל לא לפספס אף שיעור, ואנחנו רואים שינוי חיובי ביותר בכושר שלו וביכולות הספורטיביות.", "a": "אמא של מתאמן", "s": "wa", "g": "parent"}, {"t": "אין עליו!!!!! הכי מקצוען ומוכשר בתחום, מומלץ בחום כאמא ששלחה את 2 הבנים הקטנים שלה שרק אומרים לי כמה נהנים!", "a": "אמא לשני מתאמנים בקבוצת הילדים", "s": "google", "g": "parent"}, {"t": "מילד שלא אהב ספורט הוא מחכה לשיעורים בקוצר רוח.", "a": "אמא של מתאמן", "s": "wa", "g": "parent"}, {"t": "בשבילי היה ניצחון להוציא את הנכד שלי מהבית לזמן איכות איתי. המדריך היה מעולה, מכיל, ניגש לנכד שלי בגובה העיניים ומכבד.", "a": "סבתא של מתאמן", "s": "wa", "g": "parent"}, {"t": "הבן שלי מתאמן אצלו כבר כמה חודשים והייתי חייב להגיד תודה ענקית ממש מרגישים שינוי גם בפיזי וגם בביטחון שלו.", "a": "אבא למתאמן בקבוצת הילדים", "s": "google", "g": "parent"}, {"t": "להיות מאמן כושר זה לא הקושי הגדול, הקושי הגדול הוא לתת את היחס שיתן מוטיבציה השראה והתמקדות במטרה למתאמנים וזה בדיוק מה שאתה עושה, כל הכבוד לך אלוף", "a": "ביקורת בגוגל", "s": "google", "g": "other"}, {"t": "חייבת לומר שהוא מאוד נהנה באימונים, אני מרגישה שזה מפתח אותו ומחזק לא רק פיסית אלא גם נפשית! מעצב את מי שהוא! הוא משתף אותי בפרגונים שאתם נותנים לו, בזכותכם הוא מרגיש שהוא טוב וחזק בתחום הזה.", "a": "אמא של מתאמן", "s": "wa", "g": "parent"}, {"t": "מומולץ בחום!\nרועי מדבר בגובה העיניים עם הילד, עוזר להתמודד עם קשיים וסוחף אחריו. מומלץ!", "a": "הורה למתאמן בקבוצת הילדים", "s": "doc", "g": "parent"}, {"t": "אתה פשוט אלוף … ממש נהנה מכל שיעור איתך. נקרע אבל עף על זה", "a": "הורה למתאמן, הודעה למאמן", "s": "doc", "g": "parent"}, {"t": "מאמן מעולה! מלבד ברצינות ואיכות האימון, רועי יוצר קשר אישי קרוב עם המתאמנים שלו. עזר הרבה לאחי הקטן", "a": "מבני המשפחה של מתאמן", "s": "doc", "g": "parent"}, {"t": "אני רוצה להמליץ בחום על רועי לידרמן - מאמן כושר - מאמן כושר לילדים ונוער כאן בשכונה.\nהבן שלי מתאמן אצלו בשנה האחרונה ומגיע בשמחה לכל אימון. בנוסף לזה שהוא בכושר מעולה, זה גם חיזק לו את הבטחון העצמי. רועי משקיע בכל ילד ומאמן כל אחד לפי הרמה והיכולת שלו.\nמעבר לזה שרועי מאמן מצוין, הוא גם מלח הארץ, וזה לא פחות חשוב בעיניי.\nשירת בגבעתי, לחם בעזה במלחמת 7 באוקטובר גם בסדיר וגם במילואים, אלוף ג'ודו לשעבר, בעל נחישות, משמעת עצמית, ולב זהב. אדם כזה אני רוצה שיאמן את הילדים שלי\nרוצו להירשם כי הקבוצות שלו מתמלאות מהר!", "a": "אמא למתאמן בקבוצת הילדים", "s": "facebook", "g": "parent"}, {"t": "רוצה לשתף את החוויה של בני … מהאימונים שהוא מאוד נהנה. פעילות ספורטיבית מהנה ומאתגרת עם עוד ילדים בני גילו שעוזר לו חברתי.. מבצעים תרגילים שבחיים לא עשה.. כמו.. פלאנק, סקווטים. כפיפות בטן.. וכוו.. חוזר בעננים וסוף סוף יוצא ממסגרת המסכים. תודה לצוות המאמנים המקסים. יישר כח ועשיה מהנה ומרובה. מחכה כבר ליום חמישי לאימון.", "a": "אמא למתאמן בקבוצת הילדים", "s": "google", "g": "parent"}, {"t": "… ממש אוהב להתאמן איתך, לפי טענתו אתה מאוד קשוב לגוף שלו ולצורך שלו בחיזוקים. מעבר לכך שנהנה לדבר איתך על הא ודה ואתה מייעץ לו בדברים, וזה בעיניי מאוד חשוב ומשמח שיש לו גם אוזן קשבת עם המאמן שלו.", "a": "הורה למתאמן בקבוצת הילדים", "s": "doc", "g": "parent"}, {"t": "רועי לידרמן - מאמן כושר כשמגיע לפרגן אז מפרגנים בגדול! רועי מאמן כושר המתמחה בילדים ונוער. יודע לחבר אליו את הילדים, מקצוען אמיתי ומביא לשיפור גדול בכושר ובביטחון העצמי. ממליצה בחום מנסיון אישי", "a": "ממליצה מניסיון אישי", "s": "facebook", "g": "other"}, {"t": "זכות גדולה להיות חלק מהקבוצה שמוביל מהמאמן הצעיר המוכשר והרציני הזה. איש ערכים. מקצוען אמיתי. יודע את החשוב והנכון באימון לצעירים. לקח מתאמן ספקן והוביל אותו לדרך של רצינות והתמדה. מומלץ מאד.", "a": "ביקורת בגוגל", "s": "google", "g": "other"}, {"t": "מהיכרותי אותך מגיל קטן אני יודעת שאתה מקצוען, אמין, עם משמעת עצמית גבוהה, אמיץ, טוב לב ונחוש שמציב מטרה ומגשים אותה. אלו בדיוק התכונות שאני מחפשת במי שמדריך את הבן שלי.", "a": "אמא למתאמן בקבוצת הילדים", "s": "doc", "g": "parent"}, {"t": "ממליצה בחום, לא להסס לרגע!\nרועי בחור מקסים, מלח הארץ, עם גישה נהדרת לבני נוער. הבן שלי נהנה והולך בכיף לכל אימון. האימונים בשכונה קרוב לבית, לא צריך יותר מזה.", "a": "אמא למתאמן בקבוצת הילדים", "s": "doc", "g": "parent"}, {"t": "רועי בעל גישה מיוחדת לילדים (כולל בני נוער), מצליח לרתום אותם לאימון ועושה זאת בדרך של משחק והנאה. והתוצאות מרשימות. ממליצה בחום - אלוף!", "a": "ממליצה, ביקורת בגוגל", "s": "google", "g": "other"}, {"t": "בחור רציני. אהוב על המתאמן הצעיר שלנו. הכנסי אותו למשמעת אימונים והרבה יותר חשוב ערכים. על שמירת הגוף. טיפוח הנפש. מוטיבציה. מומלץ בחום", "a": "אבא למתאמן בקבוצת הילדים", "s": "google", "g": "parent"}, {"t": "הבן שלי התחיל באימונוער לפני חודש, הולך בשמחה לאימון, נהנה מאוד, נהנה עם החברים שמגיעים לשם, פיזית משפר לו את היכולות שלו. מרוצה מאוד", "a": "אמא למתאמן בקבוצת הילדים", "s": "google", "g": "parent"}, {"t": "רועי יקר, אני חייבת לעצור רגע ולהודות לך על האימונים. … ממש ממש נהנה מהם, מרגיש שמשתפר ומגיע בשמחה.\nגם דברים טובים צריך להגיד....", "a": "אמא למתאמן בקבוצת הילדים", "s": "doc", "g": "parent"}, {"t": "מדריך כושר איכותי, מקצועי, אמין ומוכשר. ממליצה מכל הלב לכל מי שצריך ספורט, כושר ושגרת חיים בריאה!!! רועי לידרמן - מאמן כושר.", "a": "ממליצה ברשתות", "s": "doc", "g": "other"}, {"t": "מאמן מקצועי מאד!!! עזר לי לשפר את הכושר הגופני תוך מספר חודשים בלבד. ממליץ בחום כל מי שרוצה גם להנות וגם להשתפר בביצועים", "a": "מתאמן, ביקורת בגוגל", "s": "google", "g": "trainee"}, {"t": "רועי מאמן ממש מצויין משלב גם אימוני כושר וגם משחקים ממש מהנים אני ממליץ מאוד לבוא לאימונים שלו הם האימונים הכי טובים שיש", "a": "מתאמן, ביקורת בגוגל", "s": "google", "g": "trainee"}, {"t": "אנו מרגישים כי הנסיך שלנו נמצא בידיים נאמנות ובצוות מעצים, שכבר נכנס אליו ללב! הוא מרגיש שייך ומגיע בשמחה וטוב לב!", "a": "הורים של מתאמן", "s": "wa", "g": "parent"}, {"t": "הבן שלנו התחיל לפני שבועיים וכבר 4 פעמים שהוא חוזר הביתה מרוצה ומרגיש שהוא עובד, מתאמץ, מתאמן, ונהנה. ישר כח", "a": "הורים למתאמן חדש בקבוצת הילדים", "s": "google", "g": "parent"}, {"t": "מומלץ ביותר, גם ילדים שפחות אוהבים להתאמן, יאהבו את האימונים, הכל עם גישה אישית ודרך משחק", "a": "ביקורת 5 כוכבים בגוגל", "s": "google", "g": "other"}, {"t": "רועי מהממממם, אין כמוך!! יצרת קשר מצויין עם …, הוא מרגיש שמתקדם, שילוב מצויין עם הכדוריד", "a": "הורה למתאמן בקבוצת הילדים", "s": "doc", "g": "parent"}, {"t": "מאמן מטורף יש תחושת גיבוש חזקה בקבוצה ואווירה טובה\nהילדים מתחזקים בתכנית מגובשת ומתוכננת", "a": "ביקורת בגוגל", "s": "google", "g": "other"}, {"t": "הוא מאוד נהנה בשיעור. אמר שהיה קשה יותר אבל עמד בזה בגבורה\nהוא מדבר על זה בלי סוף.", "a": "הורה למתאמן, הודעה למאמן", "s": "doc", "g": "parent"}, {"t": "רועי מאמן שמבין את הנוער, מקצוען ומביא לתוצאות בדרכי נועם, משחק והנאה - מומלץ!!!", "a": "ממליצה בפייסבוק", "s": "facebook", "g": "other"}, {"t": "מאוד מומלץ, אימונים חוויתיים מתאים לבני נוער שרוצים אורח חיים ספורטיבי", "a": "ביקורת בגוגל", "s": "google", "g": "other"}, {"t": "האימונים מתאימים ליכולת שלו. … אוהב את השיעורים והמקום במרחק הליכה.", "a": "הורה למתאמן בקבוצת הילדים", "s": "doc", "g": "parent"}, {"t": "מקום מקסים ומהמם, שמחתי לבקר ולהתאמן ואשוב עוד פעם במלוא האחוזים", "a": "ביקורת בגוגל", "s": "google", "g": "other"}, {"t": "מאמן מספר 1\nמעבר לתוצאות אתה מקבל חוויה שלא תקבל בשום מקום אחר", "a": "ממליץ בפייסבוק", "s": "facebook", "g": "other"}, {"t": "… בכושר מצוין, שמח להגיע לאימונים ומאוד גאה בתוצאות שהוא משיג.", "a": "הורה למתאמן בקבוצת הילדים", "s": "doc", "g": "parent"}, {"t": "אני מתאמן כבר חודשיים והתקדמתי בכמה רמות שבחיים לא חשבתי שאגיע", "a": "מתאמן, ביקורת בגוגל", "s": "google", "g": "trainee"}, {"t": "אימונים מעולים מקשים ובידיוק לרמה שלך, מדרבן אותך לקום מהמיטה", "a": "מתאמן, ביקורת בגוגל", "s": "google", "g": "trainee"}, {"t": "מגיע בכיף לאימון. שמח מאוד עם תמיר. אמר שמרגיש שהתקדם בריצה.", "a": "אבא של מתאמן", "s": "wa", "g": "parent"}, {"t": "בחור תותח, מעביר אימונים כיפיים ברמה גבוהה\nתוצאות מובטחות!", "a": "ביקורת בגוגל", "s": "google", "g": "other"}, {"t": "רועי מאמן עם נשמה, יודע להגיע לילד ולהוציא ממנו את המיטב", "a": "ממליצה בפייסבוק", "s": "facebook", "g": "other"}, {"t": "רועי המאמן הכי טוב וגורם לכל אימון להיות גם כיף וגם מחזק", "a": "ביקורת בגוגל", "s": "google", "g": "other"}, {"t": "מאמן כושר נהדר לילדים. האימונים מאתגרים ומביאים תוצאות.", "a": "ממליץ בפייסבוק", "s": "facebook", "g": "other"}, {"t": "כל אימון הוא חוויה ממליץ בחום לכל מי שיש דופק ונושם", "a": "ביקורת בגוגל", "s": "google", "g": "other"}, {"t": "מאמן תותח ומקצועי, ממליץ בחום מכל הלב עזר לי המון!", "a": "מתאמן, ממליץ בפייסבוק", "s": "facebook", "g": "trainee"}, {"t": "בהתחלה בגלל נוחות, נשארנו בגלל המקצועיות והאכפתיות", "a": "הורה למתאמן בקבוצת הילדים", "s": "doc", "g": "parent"}, {"t": "המקום הכי טוב לשלוח את הילדים שלכם אליו בהבטחה", "a": "ביקורת בגוגל", "s": "google", "g": "other"}, {"t": "שלחתי את הבן שלי וזה ממש עזר לו, ממליצה בחום", "a": "אמא למתאמן בקבוצת הילדים", "s": "google", "g": "parent"}, {"t": "הבן שלי נהנה מאוד. אחלה אימונים מאמן מקצועי!", "a": "אמא למתאמן בקבוצת הילדים", "s": "google", "g": "parent"}, {"t": "בחור תותח, גם חברתי גם מקצועי מומלץ ממש!!!", "a": "ביקורת בגוגל", "s": "google", "g": "other"}, {"t": "… מאוד נהנה מהשיעורים והאופן שהם בנויים.", "a": "הורה למתאמן בקבוצת הילדים", "s": "doc", "g": "parent"}, {"t": "אימון חוויתי ומהנה לילדים\nממליצה בחום", "a": "ממליצה, ביקורת בגוגל", "s": "google", "g": "other"}, {"t": "הילד שלי יצא סופר מרוצה\nמומלץ לכולם", "a": "אבא למתאמן בקבוצת הילדים", "s": "google", "g": "parent"}, {"t": "ממליץ מאוד הבן שלי מתאמן ותיק אצלם", "a": "אבא למתאמן ותיק", "s": "google", "g": "parent"}, {"t": "מקצוען ברמות!! ממליץ בחום!!!", "a": "ממליץ בפייסבוק", "s": "facebook", "g": "other"}, {"t": "אלוף ומקצוען!! מספר 1 בתחום", "a": "ממליץ בפייסבוק", "s": "facebook", "g": "other"}, {"t": "מוכשר ומקצועי\nמומלץ ביותר!!", "a": "ביקורת בגוגל", "s": "google", "g": "other"}, {"t": "אחלה של מקום ממליץ מאוד", "a": "ביקורת בגוגל", "s": "google", "g": "other"}, {"t": "המאמן הכי מקצועי שיש!!", "a": "ביקורת בגוגל", "s": "google", "g": "other"}, {"t": "מאמן מעולה!!!!! מומלץ!", "a": "ביקורת בגוגל", "s": "google", "g": "other"}, {"t": "מספר 1 בתחום בפער!!", "a": "ביקורת בגוגל", "s": "google", "g": "other"}];
+var PAGE = 12;
+
+var vg = document.getElementById('vgrid');
+var playIcon = '<svg width="22" height="22" viewBox="0 0 24 24" fill="#0A1929" aria-hidden="true" style="margin-inline-start:-2px"><path d="M8 5v14l11-7z"/></svg>';
+VIDEOS.forEach(function (v) {
+  var d = document.createElement('div');
+  d.className = 'v' + (v.wide ? ' wide' : '');
+  var b = document.createElement('button');
+  b.type = 'button';
+  b.setAttribute('aria-label', 'לנגן: ' + v.title);
+  b.innerHTML = '<img loading="lazy" alt="" src="' + v.poster + '"><span class="play"><i>' + playIcon + '</i></span><span class="dur">' + v.dur + '</span>';
+  b.addEventListener('click', function () {
+    var el = document.createElement('video');
+    el.src = v.src; el.controls = true; el.playsInline = true; el.setAttribute('playsinline', ''); el.poster = v.poster; el.setAttribute('aria-label', v.title);
+    b.replaceWith(el);
+    el.style.borderRadius = '14px'; el.style.aspectRatio = v.wide ? '16/9' : '9/16'; el.style.background = '#000';
+    el.play();
+  });
+  var p = document.createElement('p');
+  p.textContent = v.title;
+  var s = document.createElement('small');
+  s.textContent = v.who;
+  p.appendChild(s);
+  d.append(b, p);
+  vg.appendChild(d);
+});
+
+// one video at a time
+document.addEventListener('play', function (e) {
+  document.querySelectorAll('video').forEach(function (x) { if (x !== e.target) x.pause(); });
+}, true);
+
+var wall = document.getElementById('wallq'), more = document.getElementById('more'), filter = 'all', shown = PAGE;
+var SRC = { google: 'גוגל', facebook: 'פייסבוק', doc: 'הודעה', wa: 'ווצאפ' };
+function matches(q) {
+  if (filter === 'all') return true;
+  if (filter === 'wa') return q.s === 'wa' || q.s === 'doc';
+  return q.g === filter;
+}
+function render() {
+  var list = QUOTES.filter(matches);
+  wall.textContent = '';
+  list.slice(0, shown).forEach(function (q) {
+    var a = document.createElement('article'); a.className = 'q';
+    var p = document.createElement('p'); p.textContent = q.t;
+    var f = document.createElement('footer');
+    var w = document.createElement('span'); w.textContent = q.a;
+    var st = document.createElement('strong'); st.textContent = SRC[q.s];
+    f.append(w, st); a.append(p, f); wall.appendChild(a);
+  });
+  more.hidden = shown >= list.length;
+  more.textContent = 'להציג עוד (' + (list.length - Math.min(shown, list.length)) + ')';
+}
+more.addEventListener('click', function () { shown += PAGE * 2; render(); });
+document.querySelectorAll('.filters button').forEach(function (b) {
+  b.addEventListener('click', function () {
+    filter = b.dataset.f; shown = PAGE;
+    document.querySelectorAll('.filters button').forEach(function (x) { x.setAttribute('aria-pressed', x === b); });
+    render();
+  });
+});
+render();
+
+// live Google rating, same source as the rest of the site
+fetch('reviews.json?_=' + Date.now()).then(function (r) { return r.ok ? r.json() : null; }).then(function (d) {
+  if (!d) return;
+  if (d.rating) document.querySelector('[data-rating]').textContent = d.rating;
+  if (d.count) document.querySelector('[data-count]').textContent = d.count;
+  if (d.mapsUrl) document.getElementById('glink').href = d.mapsUrl;
+}).catch(function () {});
+</script>
+</body>
+</html>
