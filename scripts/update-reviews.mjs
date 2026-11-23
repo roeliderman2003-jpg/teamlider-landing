@@ -16,7 +16,7 @@ import { writeFileSync, readFileSync } from 'node:fs';
 // only reviews.json left all of those frozen at whatever they were the day they
 // were typed, so the schema told Google 84 while Google itself showed 85.
 // Every occurrence is rewritten here, so the number can never drift again.
-const PAGES = ['index.html','kids.html','men.html','women.html','adults.html','rh.html','pt.html','guide.html','thanks.html'];
+const PAGES = ['index.html','kids.html','men.html','women.html','adults.html','rh.html','guide.html','thanks.html'];
 
 export function syncHtml(rating, count, { dryRun = false } = {}) {
   const rules = [

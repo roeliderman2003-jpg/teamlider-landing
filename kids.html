@@ -340,11 +340,9 @@
     @media (max-width: 620px) { .city-switch { font-size: 13px; gap: 5px; } .city-switch a { padding: 5px 9px; } }
 
     :root { --gold: #F0C05C; }
-    .pt-only { font-size: 13px; color: var(--gold); margin-top: 10px; line-height: 1.55; }
-    .pt-only a { color: var(--gold); text-decoration: underline; font-weight: 700; }
       /* touch targets: inline links sat at line-height only (16-23px) on phones */
     @media (max-width: 760px) {
-      .lead-link, .city-band a, .pt-only a, .form-route a, .city-cta {
+      .lead-link, .city-band a, .form-route a, .city-cta {
         display: inline-block; padding-block: 9px;
       }
       .city-switch a { padding: 11px 12px; }
@@ -393,7 +391,7 @@
       .form-privacy { font-size: 14px; }
       .form-privacy a { display: inline-block; padding-block: 12px; }
 
-      .lead-link, .city-band a, .pt-only a, .form-route a, .city-cta { padding-block: 14px; }
+      .lead-link, .city-band a, .form-route a, .city-cta { padding-block: 14px; }
       .burger { min-width: 44px; min-height: 44px; font-size: 14px; }
       .city-band a, .city-switch a { font-size: 14px; }
 
@@ -460,11 +458,6 @@
         <img src="assets/logo-square.png" alt="Team Lider" />
         <span style="font-weight:900">TEAM<b style="color:var(--cyan-bright)"> LIDER</b></span>
       </a>
-            <nav class="city-switch" aria-label="בחירת עיר">
-        <a href="rh.html">ראש העין</a>
-        <span class="sep" aria-hidden="true"></span>
-        <a href="pt.html">פתח תקווה</a>
-      </nav>
       <div class="nav-cta">
         <a href="/" class="btn btn-ghost">לדף הבית</a>
         <a href="https://wa.me/972549747713?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%AA%D7%90%D7%9D%20%D7%90%D7%99%D7%9E%D7%95%D7%9F%20%D7%A0%D7%99%D7%A1%D7%99%D7%95%D7%9F%20%D7%9C%D7%99%D7%9C%D7%93" class="btn btn-primary" target="_blank" rel="noopener">אימון ניסיון לילד</a>
@@ -492,7 +485,6 @@
       </form>
       <div class="lead-msg" aria-live="polite"></div>
       <div class="form-privacy">הפרטים לתיאום בלבד, בלי ספאם ובלי רשימות תפוצה · <a href="privacy.html">מדיניות פרטיות</a></div>
-      <div class="form-privacy" style="margin-top:10px">קבוצות הילדים והנערים מתאמנות ב<a href="rh.html">ראש העין</a>. ב<a href="pt.html">פתח תקווה</a> נפתחות בשלב הראשון קבוצות אבות ואמהות, וקבוצות הילדים שם ייפתחו בהמשך.</div>
       <div class="hero-micro">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="#5CCBF0" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
         נחזור אליכם עוד היום
@@ -716,7 +708,7 @@
         </div>
       <div class="foot-bottom">
         <div>© Team Lider · אימוני כושר קבוצתיים · ראש העין</div>
-        <div><a href="/">דף הבית</a> · <a href="adults.html">אימוני מבוגרים</a> · <a href="pt.html">פתח תקווה</a> · <a href="guide.html">מדריך</a> · <a href="accessibility.html">נגישות</a> · <a href="privacy.html">פרטיות</a> · <a href="terms.html">תנאי שימוש</a></div>
+        <div><a href="/">דף הבית</a> · <a href="adults.html">אימוני מבוגרים</a> · <a href="guide.html">מדריך</a> · <a href="accessibility.html">נגישות</a> · <a href="privacy.html">פרטיות</a> · <a href="terms.html">תנאי שימוש</a></div>
       </div>
     </div>
   </footer>
@@ -790,7 +782,7 @@
       var grp = (form.group && form.group.value) || '';
       var payload = new URLSearchParams({
         // city is stated EXPLICITLY on every form (never derived from `page` or utm_*): the URL
-        // changes, and a derived city would break the branch attribution silently. pt.html sends 'pt'.
+        // changes, and a derived city would break the branch attribution silently. Rosh HaAyin is the only branch.
         name: name, phone: phone, group: grp, city: 'rh',
         utm_source: qs.get('utm_source') || '', utm_medium: qs.get('utm_medium') || '',
         utm_campaign: qs.get('utm_campaign') || '', utm_content: qs.get('utm_content') || ('rh · kids · קבוצה: ' + (grp || '')),
