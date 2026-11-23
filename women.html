@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <script>if (location.protocol === 'http:' && location.hostname.indexOf('teamlider.co.il') !== -1) location.replace('https://teamlider.co.il' + location.pathname + location.search + location.hash);</script>
   <title>אימוני כושר לנשים בראש העין: קבוצת אמהות בפארק | Team Lider</title>
-  <meta name="description" content="אימוני כושר לנשים בראש העין: קבוצת אמהות בפארק בפסגות אפק, שני וחמישי 20:00. מרחב נשי בלי שיפוט, בכל רמה, כולל אחרי לידה. אימון ניסיון בלי התחייבות. קבוצת אמהות נפתחת גם בפתח תקווה ב-11 באוקטובר." />
+  <meta name="description" content="אימוני כושר לנשים בראש העין: קבוצת אמהות בפארק בפסגות אפק, שני וחמישי 20:00. מרחב נשי בלי שיפוט, בכל רמה, כולל אחרי לידה. אימון ניסיון בלי התחייבות." />
 
   <link rel="canonical" href="https://teamlider.co.il/women.html" />
 
@@ -105,7 +105,7 @@
         "name": "מי מאמן את קבוצת האמהות?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "בראש העין את קבוצת האמהות מאמן תמיר סיטון, המאמן הראשי המוסמך של טים לידר. הוא מלווה כל תרגיל, מכיר כל מתאמנת בשם ושם לב כשמישהי לא הגיעה. בפתח תקווה, שבה הקבוצה נפתחת ב-11 באוקטובר, את האימונים יוביל מאמן שנבחר לפי אותם קריטריונים, ושמו יימסר לנרשמות לפני האימון הראשון."
+          "text": "בראש העין את קבוצת האמהות מאמן תמיר סיטון, המאמן הראשי המוסמך של טים לידר. הוא מלווה כל תרגיל, מכיר כל מתאמנת בשם ושם לב כשמישהי לא הגיעה."
         }
       },
       {
@@ -319,10 +319,8 @@
     @media (max-width: 620px) { .city-switch { font-size: 13px; gap: 5px; } .city-switch a { padding: 5px 9px; } }
 
     :root { --gold: #F0C05C; }
-    .pt-only { font-size: 13px; color: var(--gold); margin-top: 10px; line-height: 1.55; }
-    .pt-only a { color: var(--gold); text-decoration: underline; font-weight: 700; }
 
-    /* The Petah Tikva half of an audience page */
+    /* (unused) gold block styles */
     .pt-block { background: rgba(240,192,92,.06); border: 1px solid rgba(240,192,92,.30); border-radius: 20px; padding: 26px; margin: 6px 0 10px; }
     .pt-block .tagline { display: inline-block; font-size: 12.5px; font-weight: 800; letter-spacing: .3px; color: var(--gold); background: rgba(240,192,92,.14); border-radius: 100px; padding: 5px 13px; margin-bottom: 14px; }
     .pt-block p { margin-bottom: 14px; }
@@ -339,7 +337,7 @@
     @media (max-width: 620px) { .photo-pair { gap: 9px; } }
       /* touch targets: inline links sat at line-height only (16-23px) on phones */
     @media (max-width: 760px) {
-      .lead-link, .city-band a, .pt-only a, .form-route a, .city-cta {
+      .lead-link, .city-band a, .form-route a, .city-cta {
         display: inline-block; padding-block: 9px;
       }
       .city-switch a { padding: 11px 12px; }
@@ -400,7 +398,7 @@
       .form-privacy { font-size: 14px; }
       .form-privacy a { display: inline-block; padding-block: 12px; }
 
-      .lead-link, .city-band a, .pt-only a, .form-route a, .city-cta { padding-block: 14px; }
+      .lead-link, .city-band a, .form-route a, .city-cta { padding-block: 14px; }
       .burger { min-width: 44px; min-height: 44px; font-size: 14px; }
       .city-band a, .city-switch a { font-size: 14px; }
 
@@ -459,11 +457,6 @@
         <img src="assets/logo-square.png" alt="Team Lider" />
         <span style="font-weight:900">TEAM<b style="color:var(--cyan-bright)"> LIDER</b></span>
       </a>
-            <nav class="city-switch" aria-label="בחירת עיר">
-        <a href="rh.html">ראש העין</a>
-        <span class="sep" aria-hidden="true"></span>
-        <a href="pt.html">פתח תקווה</a>
-      </nav>
       <div class="nav-cta">
         <a href="/" class="btn btn-ghost">לדף הבית</a>
         <a href="https://wa.me/972549747713?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A4%D7%A8%D7%98%D7%99%D7%9D%20%D7%A2%D7%9C%20%D7%A7%D7%91%D7%95%D7%A6%D7%AA%20%D7%94%D7%90%D7%9E%D7%94%D7%95%D7%AA" class="btn btn-primary" target="_blank" rel="noopener">לתיאום אימון ניסיון</a>
@@ -479,21 +472,16 @@
       <p class="lead">שעתיים בשבוע שהן רק שלך. קבוצת אמהות מהשכונה שמתאמנת בפארק בפסגות אפק בימי שני וחמישי ב-20:00, אחרי שכולם בבית אכלו ונרגעו. לא צריך להיות בכושר, לא צריך להגיע לבד, ולא צריך להרגיש לא בנוח: מרחב נשי, קבוצה קטנה, כל רמה. ואם נעלמת שבועיים בגלל הילדים או העבודה, חוזרת בלי אשמה.</p>
 
       <form class="lead-form" id="leadform" onsubmit="return submitLead(this)">
-        <div class="grp city-grp" role="group" aria-label="באיזו עיר?">
-          <button type="button" class="chip active" data-city="rh" aria-pressed="true">ראש העין</button>
-          <button type="button" class="chip" data-city="pt" aria-pressed="false">פתח תקווה</button>
-        </div>
         <input type="hidden" name="city" value="rh" />
         <input type="hidden" name="group" value="אמא" />
         <input name="name" type="text" required placeholder="שם מלא" autocomplete="name" aria-label="שם מלא" />
         <input name="phone" type="tel" required placeholder="טלפון" autocomplete="tel" inputmode="tel" aria-label="מספר טלפון" />
         <input type="text" name="company" class="hp-field" tabindex="-1" autocomplete="off" aria-hidden="true" />
-        <button type="submit" class="btn btn-primary lead-btn" data-cta-rh="שריינו לי אימון ניסיון" data-cta-pt="שריינו לי מקום בהרשמה המוקדמת">שריינו לי אימון ניסיון</button>
+        <button type="submit" class="btn btn-primary lead-btn">שריינו לי אימון ניסיון</button>
       </form>
       <div class="lead-msg" aria-live="polite"></div>
       <div class="form-privacy">הפרטים לתיאום בלבד, בלי ספאם ובלי רשימות תפוצה · <a href="privacy.html">מדיניות פרטיות</a></div>
       <div class="form-privacy" style="margin-top:12px">מחפשת בשביל הילד או בן הזוג? <a href="/">כל הקבוצות בדף הבית ←</a></div>
-      <div class="pt-only" data-pt-only hidden>הקבוצות בפתח תקווה נפתחות ב-11 באוקטובר, וההרשמה עכשיו היא לפריסייל חברי מייסד. <a href="pt.html">לכל התנאים ←</a></div>
       <div class="hero-micro">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="#5CCBF0" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
         נחזור אלייך עוד היום · הקבוצות עד 12 מתאמנות
@@ -591,20 +579,6 @@
     <h2>נעלמת שבועיים? חוזרת בלי אשמה</h2>
     <p class="sub">שגרה של אמא היא לא שגרה של לוח אימונים: ילד חולה, שבוע עמוס בעבודה, חופש גדול. ברוב המקומות זה הרגע שבו המנוי הופך למשקולת של אשמה. אצלנו זה בדיוק הפוך. <strong>נעלמת שבועיים בגלל שגרה משוגעת? חוזרים בלי אשמה, הקבוצה שומרת לך מקום.</strong> תמיר מתאים את העומס בחזרה, וממשיכות מאיפה שנוח לך. בלי "הכל או כלום". פשוט לחזור.</p>
 
-        <h2 id="pt" class="city-h2">קבוצת האמהות בפתח תקווה <span class="tag-city">· נפתחת ב-11 באוקטובר</span></h2>
-    <div class="pt-block">
-      <span class="tagline">⭐ פריסייל · חבר מייסד</span>
-      <p>אותה שיטה, אותו גודל קבוצה, עיר שנייה. ב-11 באוקטובר נפתחת בפתח תקווה קבוצת אמהות, אימון פונקציונלי בפארק, פעמיים בשבוע בשעות הערב, בקבוצה קטנה עם מאמן צמוד. מי שנרשם לפני הפתיחה נכנס כחבר מייסד.</p>
-      <ul class="checks">
-        <li><b>10% הנחה על המחיר, לשנה שלמה.</b> לא לחודש הראשון, לשנה.</li>
-        <li><b>יציאה חופשית ב-30 הימים הראשונים.</b> לא מתאים? מפסיקים, בלי התחייבות לתקופה.</li>
-        <li><b>אין חיוב עכשיו.</b> ההרשמה נסגרת בשיחה, והחיוב מתחיל עם פתיחת הקבוצה.</li>
-        <li><b>לוח הזמנים המדויק ונקודת המפגש</b> נשלחים לנרשמים לפני האימון הראשון.</li>
-      </ul>
-      <div class="cta-row" style="margin-top:20px">
-        <a href="pt.html" class="btn btn-gold">לעמוד פתח תקווה ולהרשמה המוקדמת</a>
-      </div>
-    </div>
 
     <h2>את כבר מכירה אותנו מהאימון של הילדים. עכשיו תורך</h2>
     <p class="sub">יותר מ-500 ילדים, נערים ומבוגרים כבר התאמנו בקהילת טים לידר. אם הילד שלך מתאמן אצלנו, את כבר יודעת בדיוק איך זה נראה: אותה גינת כושר, אותו מאמן שמכיר כל אחד בשם, אותה אווירה. ההבדל היחיד? הפעם זה בשבילך. מספיק שנים שאת עומדת בצד ומחכה שיסיימו. עכשיו שיחכו לך חמש דקות בסוף האימון שלך.</p>
@@ -642,7 +616,7 @@
     <div class="qa"><h3>ומה אם איעלם לשבועיים בגלל הילדים או העבודה?</h3><p>יקרה, וזה בסדר. זו שגרה של אמא, ואנחנו בנויים לה. חוזרים בלי אשמה: הקבוצה שומרת לך מקום, תמיר מתאים את העומס בחזרה, וממשיכות. המנוי חודשי וגמיש, בלי "הכל או כלום" ובלי חשבון של אשמה.</p></div>
     <div class="qa"><h3>אני אחרי לידה, מתי אפשר להצטרף?</h3><p>אחרי שקיבלת מהרופא אישור לחזרה לפעילות גופנית. התזמון הזה אישי ומשתנה מאישה לאישה. מגיעות לאימון ניסיון, מספרות לתמיר איפה את עומדת, והוא בונה לך עצימות מדורגת עם דגש על שרירי ליבה ויציבה, וחלופה מותאמת לכל תרגיל. בקצב שלך, בלי שעון עצר. <a href="postpartum-fitness.html" style="color:var(--cyan-bright);font-weight:700">המדריך המלא לחזרה לכושר אחרי לידה ←</a></p></div>
     <div class="qa"><h3>חייבת להיות אמא כדי להצטרף?</h3><p>לא. הקבוצה פתוחה לכל אישה מגיל 18, ולא בודקים תעודת אמא בכניסה. האופי שלה הוא קבוצת אמהות מהשכונה: השעה (20:00, אחרי שגרת הערב), האווירה והבנות. אם זה מסתדר לך, מקומך איתנו, והמרחב נשי בלבד.</p></div>
-    <div class="qa"><h3>מי מאמן את קבוצת האמהות?</h3><p>בראש העין את קבוצת האמהות מאמן תמיר סיטון, המאמן הראשי המוסמך של טים לידר. הוא מלווה כל תרגיל, מכיר כל מתאמנת בשם ושם לב כשמישהי לא הגיעה. בפתח תקווה, שבה הקבוצה נפתחת ב-11 באוקטובר, את האימונים יוביל מאמן שנבחר לפי אותם קריטריונים, ושמו יימסר לנרשמות לפני האימון הראשון.</p></div>
+    <div class="qa"><h3>מי מאמן את קבוצת האמהות?</h3><p>בראש העין את קבוצת האמהות מאמן תמיר סיטון, המאמן הראשי המוסמך של טים לידר. הוא מלווה כל תרגיל, מכיר כל מתאמנת בשם ושם לב כשמישהי לא הגיעה.</p></div>
     <div class="qa"><h3>מה עושים בפועל באימון של קבוצת האמהות?</h3><p>60 דקות של אימון פונקציונלי בקבוצה קטנה: חימום משותף, עבודה בתחנות עם קטלבלים, משקולות יד, גומיות ו-TRX (כוח, שרירי ליבה וניידות) ובסוף מתיחות וסיום ביחד. כל הציוד עלינו; את מגיעה עם בגדי ספורט, נעליים ובקבוק מים. והכי חשוב: צוחקים לא מעט בין תרגיל לתרגיל.</p></div>
     <div class="qa"><h3>בן הזוג עובד עד מאוחר, מי יהיה עם הילדים ב-20:00?</h3><p>זו בדיוק הסיבה שהשעה היא 20:00 ולא 18:00: אחרי ארוחת ערב, אחרי המקלחות, כשהבית כבר רגוע. האימון 60 דקות והגינה שכונתית, זה ערב אחד שנגמר לפני שרוב הבית בכלל שם לב שיצאת. ואם ערב אחד לא הסתדר, לא מפצים עליו ולא מתנצלים, פשוט מגיעות בפעם הבאה. המנוי חודשי וגמיש בדיוק בשביל השבועות שלא הולכים לפי התוכנית.</p></div>
     <div class="qa"><h3>אני מעדיפה מקום סגור, אימון בפארק זה בשבילי?</h3><p>שאלה הוגנת, ולא לכולן זה מתאים. הקבוצה מתאמנת בגינת הכושר בפסגות אפק באוויר הפתוח, ובימי גשם עוברות למתחם מקורה, כך שהשגרה לא נשברת. מה שרוב הבנות מגלות זה שדווקא בחוץ אין מראות ואין אולם שכולם רואים בו את כולן, וזה מוריד הרבה מהמבוכה של ההתחלה. אבל אם ידוע לך מראש שמקום סגור הוא תנאי, עדיף שתדעי את זה עכשיו ולא אחרי שנרשמת.</p></div>
@@ -680,7 +654,7 @@
         </div>
       <div class="foot-bottom">
         <div>© Team Lider · אימוני כושר קבוצתיים · ראש העין</div>
-        <div><a href="/">דף הבית</a> · <a href="adults.html">למבוגרים</a> · <a href="pt.html">פתח תקווה</a> · <a href="guide.html">מדריך</a> · <a href="accessibility.html">נגישות</a> · <a href="privacy.html">פרטיות</a> · <a href="terms.html">תנאי שימוש</a></div>
+        <div><a href="/">דף הבית</a> · <a href="adults.html">למבוגרים</a> · <a href="guide.html">מדריך</a> · <a href="accessibility.html">נגישות</a> · <a href="privacy.html">פרטיות</a> · <a href="terms.html">תנאי שימוש</a></div>
       </div>
     </div>
   </footer>
@@ -702,28 +676,9 @@
         g.querySelectorAll('.chip').forEach(function (o) { o.classList.remove('active'); o.setAttribute('aria-pressed', 'false'); });
         c.classList.add('active'); c.setAttribute('aria-pressed', 'true');
         if (c.dataset.grp && f.group) f.group.value = c.dataset.grp;
-        if (c.dataset.city && f.city) { f.city.value = c.dataset.city; applyCity(f); }
       });
     });
 
-    // Chips - the forms hold TWO groups (city, audience), so a click clears only its own
-    // .grp. Petah Tikva opens with adult groups only; a kid chip there has nothing to book.
-    function applyCity(form) {
-      var isPT = !!(form.city && form.city.value === 'pt');
-      var kidChips = form.querySelectorAll('.chip[data-grp="ילד"], .chip[data-grp="נער"]');
-      kidChips.forEach(function (c) { c.hidden = isPT; });
-      if (isPT && form.querySelector('.chip.active[data-grp="ילד"], .chip.active[data-grp="נער"]')) {
-        var fb = form.querySelector('.chip[data-grp="אבא"]');
-        if (fb) fb.click();
-      }
-      var box = form.closest('section, .final-card, .ghero') || document;
-      box.querySelectorAll('[data-pt-only]').forEach(function (el) { el.hidden = !isPT; });
-      // בפתח תקווה אין עדיין אימון ניסיון לשריין, יש הרשמה מוקדמת.
-      // הכפתור חייב להבטיח את מה שקורה בפועל בעיר שנבחרה.
-      var cta = form.querySelector('[data-cta-rh]');
-      if (cta) cta.textContent = isPT ? cta.dataset.ctaPt : cta.dataset.ctaRh;
-    }
-    document.querySelectorAll('form.lead-form').forEach(applyCity);
 
     // Sticky mobile CTA - shows once the hero form scrolls out of view
     var leadForm = document.getElementById('leadform');
@@ -751,11 +706,10 @@
       if (msg) { msg.textContent = 'שולח...'; msg.className = 'lead-msg'; }
       var qs = new URLSearchParams(location.search);
       var grp = (form.group && form.group.value) || 'אמא';
-      var city = (form.city && form.city.value) || 'rh';
+      var city = 'rh'; // Rosh HaAyin is the only branch: always 'rh', whatever the form or URL says
       var payload = new URLSearchParams({
         // city is stated EXPLICITLY on every form (never derived from `page` or utm_*): the URL
-        // changes, and a derived city would break the branch attribution silently. Here it comes
-        // from the city chips and defaults to 'rh'; pt.html always sends 'pt'.
+        // changes, and a derived city would break the branch attribution silently.
         name: name, phone: phone, group: grp, city: city,
         utm_source: qs.get('utm_source') || '', utm_medium: qs.get('utm_medium') || '',
         utm_campaign: qs.get('utm_campaign') || '', utm_content: qs.get('utm_content') || (city + ' · women · קבוצה: אמא'),

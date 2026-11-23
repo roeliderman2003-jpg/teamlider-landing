@@ -285,7 +285,7 @@
     .shots figcaption { font-size: 12.5px; color: var(--muted-2); margin-top: 7px; }
     @media (max-width: 700px) { .shots { grid-template-columns: 1fr 1fr; } .shots figure:last-child { grid-column: 1 / -1; } }
 
-    /* rh-only: the city switch that sits in every header */
+    /* city switch (header) */
     .city-switch { display: flex; align-items: center; gap: 10px; font-size: 14.5px; font-weight: 700; }
     .city-switch a { color: var(--muted); padding: 6px 12px; border-radius: 100px; border: 1px solid transparent; }
     .city-switch a:hover { color: var(--white); }
@@ -301,7 +301,7 @@
     @media (max-width: 760px) { .people { grid-template-columns: 1fr; } }
       /* touch targets: inline links sat at line-height only (16-23px) on phones */
     @media (max-width: 760px) {
-      .lead-link, .city-band a, .pt-only a, .form-route a, .city-cta {
+      .lead-link, .city-band a, .form-route a, .city-cta {
         display: inline-block; padding-block: 9px;
       }
       .city-switch a { padding: 11px 12px; }
@@ -332,7 +332,7 @@
       .form-privacy { font-size: 14px; }
       .form-privacy a { display: inline-block; padding-block: 12px; }
 
-      .lead-link, .city-band a, .pt-only a, .form-route a, .city-cta { padding-block: 14px; }
+      .lead-link, .city-band a, .form-route a, .city-cta { padding-block: 14px; }
       .burger { min-width: 44px; min-height: 44px; font-size: 14px; }
       .city-band a, .city-switch a { font-size: 14px; }
 
@@ -426,11 +426,6 @@
         <img src="assets/logo-square.png" alt="Team Lider" />
         <span style="font-weight:900">TEAM<b style="color:var(--cyan-bright)"> LIDER</b></span>
       </a>
-      <nav class="city-switch" aria-label="בחירת עיר">
-        <a href="rh.html" aria-current="page">ראש העין</a>
-        <span class="sep" aria-hidden="true"></span>
-        <a href="pt.html">פתח תקווה</a>
-      </nav>
       <div class="nav-cta">
         <a href="https://wa.me/972549747713?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%AA%D7%90%D7%9D%20%D7%90%D7%99%D7%9E%D7%95%D7%9F%20%D7%A0%D7%99%D7%A1%D7%99%D7%95%D7%9F%20%D7%91%D7%A8%D7%90%D7%A9%20%D7%94%D7%A2%D7%99%D7%9F" class="btn btn-primary" target="_blank" rel="noopener">אימון ניסיון</a>
       </div>
@@ -587,7 +582,6 @@
     <div class="qa"><h3>מה קורה בחורף או בימי גשם?</h3><p>רוב השנה מתאמנים בפארק באוויר הפתוח. בימי גשם עוברים למתחם מקורה, האימון מתקיים כרגיל ולא מתבטל.</p></div>
     <div class="qa"><h3>אפשר לבוא לאימון ניסיון לפני שמחליטים?</h3><p>כן, וזו הדרך הרגילה להתחיל. משאירים פרטים ואנחנו מתאמים אימון ניסיון בקבוצה המתאימה, בלי התחייבות ובלי דמי רישום.</p></div>
     <div class="qa"><h3>אני ממש לא בכושר. זה מתאים לי?</h3><p>כן. כל תרגיל ניתן בכמה רמות והמאמן מתאים את העומס לכל אחד בקבוצה. רוב המצטרפים מגיעים אחרי שנים בלי פעילות מסודרת.</p></div>
-    <div class="qa"><h3>יש לכם קבוצות גם בפתח תקווה?</h3><p>כן. ב-11 באוקטובר 2026 נפתחות בפתח תקווה קבוצת אבות וקבוצת אמהות, וההרשמה המוקדמת פתוחה כבר עכשיו. <a href="pt.html" style="color:var(--cyan-bright);font-weight:700">לעמוד פתח תקווה ←</a></p></div>
     <div class="qa"><h3>צריך למלא משהו לפני האימון הראשון?</h3><p>כן: הצהרת בריאות קצרה, גם לפני אימון הניסיון. אם יש מצב רפואי, פציעה או תרופות קבועות, זה המקום לספר, ואם צריך נבקש גם אישור רופא. זה מה שמאפשר למאמן להתאים לכם את העומס נכון מהאימון הראשון. התנאים המלאים ב<a href="terms.html" style="color:var(--cyan-bright);font-weight:700">תנאי השימוש</a>.</p></div>
 
     <div class="cta-card">
@@ -615,8 +609,8 @@
             <a href="https://wa.me/972549747713" target="_blank" rel="noopener" aria-label="WhatsApp" title="WhatsApp"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21 5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2z"/></svg></a>
         </div>
       <div class="foot-bottom">
-        <div>© Team Lider · אימוני כושר קבוצתיים · ראש העין ופתח תקווה</div>
-        <div><a href="/">דף הבית</a> · <a href="men.html">אבות</a> · <a href="women.html">אמהות</a> · <a href="kids.html">ילדים</a> · <a href="pt.html">פתח תקווה</a> · <a href="guide.html">מדריך</a> · <a href="accessibility.html">נגישות</a> · <a href="privacy.html">פרטיות</a> · <a href="terms.html">תנאי שימוש</a></div>
+        <div>© Team Lider · אימוני כושר קבוצתיים · ראש העין</div>
+        <div><a href="/">דף הבית</a> · <a href="men.html">אבות</a> · <a href="women.html">אמהות</a> · <a href="kids.html">ילדים</a> · <a href="guide.html">מדריך</a> · <a href="accessibility.html">נגישות</a> · <a href="privacy.html">פרטיות</a> · <a href="terms.html">תנאי שימוש</a></div>
       </div>
     </div>
   </footer>
@@ -663,7 +657,7 @@
       if (msg) { msg.textContent = 'שולח...'; msg.className = 'lead-msg'; }
       var qs = new URLSearchParams(location.search);
       var grp = (form.group && form.group.value) || 'אבא';
-      var city = (form.city && form.city.value) || 'rh';
+      var city = 'rh'; // Rosh HaAyin is the only branch: always 'rh', whatever the form or URL says
       var payload = new URLSearchParams({
         // city is stated EXPLICITLY on every form (never derived from `page` or utm_*): the URL
         // changes, and a derived city would break the branch attribution silently.
